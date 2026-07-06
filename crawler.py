@@ -209,7 +209,8 @@ def save_to_markdown(books, page_number, readrang_name, testing_name, keywords):
             status = book.get("status", "")
             url = book.get("url", "")
             
-            title_link = f"[{title}]({url})" if url else title
+            # 同時提供 Markdown 連結與完整網址，方便手機在各種閱讀器（含純文字）下直接點擊
+            title_link = f"[{title}]({url})<br>{url}" if url else title
             f.write(f"| {i} | {title_link} | {author} | {publisher} | {readers_range} | {status} | [詳細頁面]({url}) |\n")
             
     print(f"\n🎉 成功將第 {page_number} 頁的書籍儲存至：\n👉 {filepath}")

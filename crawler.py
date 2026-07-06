@@ -176,30 +176,71 @@ def fetch_books_by_page(session, page_number):
         
     return books
 
-def save_to_markdown(books, page_number, readrang_name, testing_name, keywords):
+def save_to_html(books, page_number, readrang_name, testing_name, keywords):
     """
-    將書籍清單存入 Markdown 檔案
+    將書籍清單存入 HTML 檔案
     """
     if not books:
         print(f"\n第 {page_number} 頁沒有任何書籍資料，不進行儲存。")
         return None
         
-    filename = f"books_page_{page_number}.md"
+    filename = f"books_page_{page_number}.html"
     script_dir = os.path.dirname(os.path.abspath(__file__))
     filepath = os.path.join(script_dir, filename)
     
     with open(filepath, "w", encoding="utf-8") as f:
-        f.write(f"# 群書博覽 - 書籍清單 (第 {page_number} 頁)\n\n")
-        f.write(f"### 篩選條件：\n")
-        f.write(f"- 適讀年段：{readrang_name}\n")
-        f.write(f"- 認證狀態：{testing_name}\n")
+        f.write("<!DOCTYPE html>\n")
+        f.write('<html lang="zh-TW">\n')
+        f.write('<head>\n')
+        f.write('    <meta charset="UTF-8">\n')
+        f.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
+        f.write(f'    <title>書籍清單 - 第 {page_number} 頁</title>\n')
+        f.write('    <style>\n')
+        f.write('        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; padding: 15px; line-height: 1.6; max-width: 1200px; margin: 0 auto; background-color: #f8f9fa; color: #333; }\n')
+        f.write('        h1 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 15px; text-align: center; }\n')
+        f.write('        .info { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; border-left: 5px solid #007bff; }\n')
+        f.write('        .info p { margin: 5px 0; font-size: 0.95rem; }\n')
+        f.write('        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }\n')
+        f.write('        th, td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #eee; font-size: 0.9rem; }\n')
+        f.write('        th { background-color: #007bff; color: white; font-weight: 600; }\n')
+        f.write('        tr:hover { background-color: #f8f9fa; }\n')
+        f.write('        a { color: #0056b3; text-decoration: none; font-weight: 600; word-break: break-all; }\n')
+        f.write('        a:hover { text-decoration: underline; color: #003d80; }\n')
+        f.write('        .status { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }\n')
+        f.write('        .status-yes { background-color: #d4edda; color: #155724; }\n')
+        f.write('        .status-no { background-color: #f8d7da; color: #721c24; }\n')
+        f.write('        /* 針對手機裝置的排版優化 */\n')
+        f.write('        @media screen and (max-width: 600px) {\n')
+        f.write('            table, thead, tbody, th, td, tr { display: block; }\n')
+        f.write('            thead tr { position: absolute; top: -9999px; left: -9999px; }\n')
+        f.write('            tr { border: 1px solid #ccc; margin-bottom: 10px; border-radius: 8px; padding: 8px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }\n')
+        f.write('            td { border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 35%; text-align: left; white-space: normal; }\n')
+        f.write('            td:last-child { border-bottom: none; }\n')
+        f.write('            td:before { position: absolute; top: 12px; left: 10px; width: 30%; padding-right: 10px; white-space: nowrap; font-weight: bold; color: #666; content: attr(data-label); }\n')
+        f.write('        }\n')
+        f.write('    </style>\n')
+        f.write('</head>\n')
+        f.write('<body>\n')
+        f.write(f'    <h1>群書博覽 - 中書籍清單 (第 {page_number} 頁)</h1>\n')
+        f.write('    <div class="info">\n')
+        f.write(f'        <p><strong>適讀年段：</strong>{readrang_name}</p>\n')
+        f.write(f'        <p><strong>認證狀態：</strong>{testing_name}</p>\n')
         if keywords:
-            f.write(f"- 關鍵字：{keywords}\n")
-        f.write(f"\n資料來源：[讀步彰化飛閱雲端 閱讀線上認證系統](https://read.chc.edu.tw/index.php?inter=books&kind=cht&search=1&page={page_number})\n\n")
-        
-        # 寫入表格
-        f.write("| 序號 | 書名 | 作者 | 出版社 | 適讀年段 | 認證狀態 | 詳細連結 |\n")
-        f.write("| --- | --- | --- | --- | --- | --- | --- |\n")
+            f.write(f'        <p><strong>關鍵字：</strong>{keywords}</p>\n')
+        f.write(f'        <p><strong>資料來源：</strong><a href="https://read.chc.edu.tw/index.php?inter=books&kind=cht&search=1&page={page_number}" target="_blank">讀步彰化飛閱雲端 閱讀線上認證系統</a></p>\n')
+        f.write('    </div>\n')
+        f.write('    <table>\n')
+        f.write('        <thead>\n')
+        f.write('            <tr>\n')
+        f.write('                <th>序號</th>\n')
+        f.write('                <th>書名</th>\n')
+        f.write('                <th>作者</th>\n')
+        f.write('                <th>出版社</th>\n')
+        f.write('                <th>適讀年段</th>\n')
+        f.write('                <th>認證狀態</th>\n')
+        f.write('            </tr>\n')
+        f.write('        </thead>\n')
+        f.write('        <tbody>\n')
         
         for i, book in enumerate(books, 1):
             title = book.get("title", "")
@@ -209,10 +250,23 @@ def save_to_markdown(books, page_number, readrang_name, testing_name, keywords):
             status = book.get("status", "")
             url = book.get("url", "")
             
-            # 同時提供 Markdown 連結與完整網址，方便手機在各種閱讀器（含純文字）下直接點擊
-            title_link = f"[{title}]({url})<br>{url}" if url else title
-            f.write(f"| {i} | {title_link} | {author} | {publisher} | {readers_range} | {status} | [詳細頁面]({url}) |\n")
+            title_html = f'<a href="{url}" target="_blank">{title}</a>' if url else title
+            status_class = 'status status-yes' if '可' in status else 'status status-no'
             
+            f.write('            <tr>\n')
+            f.write(f'                <td data-label="序號">{i}</td>\n')
+            f.write(f'                <td data-label="書名">{title_html}</td>\n')
+            f.write(f'                <td data-label="作者">{author}</td>\n')
+            f.write(f'                <td data-label="出版社">{publisher}</td>\n')
+            f.write(f'                <td data-label="適讀年段">{readers_range}</td>\n')
+            f.write(f'                <td data-label="認證狀態"><span class="{status_class}">{status}</span></td>\n')
+            f.write('            </tr>\n')
+            
+        f.write('        </tbody>\n')
+        f.write('    </table>\n')
+        f.write('</body>\n')
+        f.write('</html>\n')
+        
     print(f"\n🎉 成功將第 {page_number} 頁的書籍儲存至：\n👉 {filepath}")
     return filepath
 
@@ -310,7 +364,7 @@ def main():
         print(f"正在抓取第 {page_number} 頁...")
         books = fetch_books_by_page(session, page_number)
         if books:
-            save_to_markdown(books, page_number, readrang_name, testing_name, keywords)
+            save_to_html(books, page_number, readrang_name, testing_name, keywords)
             # 在抓取成功後，刪除暫存的驗證碼圖片檔案
             captcha_path = os.path.join(os.getcwd(), "captcha.png")
             if os.path.exists(captcha_path):

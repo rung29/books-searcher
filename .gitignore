@@ -5,7 +5,7 @@ __pycache__/
 # 爬蟲暫存檔案
 captcha.png
 captcha_*.png
-books_page_*.md
+books_page_*.html
 
 # 測試用暫存檔
 post_response.html

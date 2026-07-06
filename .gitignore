@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+
+# 爬蟲暫存檔案
+captcha.png
+captcha_*.png
+books_page_*.md
+
+# 測試用暫存檔
+post_response.html
+get_response.html
+get_bypass_response.html
+test_export.xls

@@ -41,14 +41,14 @@ def search_library_status(book_title):
 
         res = requests.get(search_url, headers=LIB_HEADERS, timeout=15, verify=False)
         if res.status_code != 200:
-            return f"連線失敗 (HTTP {res.status_code})"
+            return {"has_holding": False, "call_number": "", "status": "連線失敗"}
 
         search_soup = BeautifulSoup(res.text, "html.parser")
 
         # 檢查是否無搜尋結果
         page_text = search_soup.get_text()
         if "查無" in page_text or "0 筆" in page_text:
-            return "伸港無館藏"
+            return {"has_holding": False, "call_number": "", "status": ""}
 
         # 從搜尋結果中提取第一筆書目的 mid（content.cfm?mid=XXXXXX 的連結）
         mid = None
@@ -61,7 +61,7 @@ def search_library_status(book_title):
                     break
 
         if not mid:
-            return "伸港無館藏"
+            return {"has_holding": False, "call_number": "", "status": ""}
 
         # ===== Step 2：用正確的 mid 查詢詳細館藏 =====
         content_url = (
@@ -73,36 +73,48 @@ def search_library_status(book_title):
 
         res2 = requests.get(content_url, headers=LIB_HEADERS, timeout=15, verify=False)
         if res2.status_code != 200:
-            return f"連線失敗 (HTTP {res2.status_code})"
+            return {"has_holding": False, "call_number": "", "status": "連線失敗"}
 
         content_soup = BeautifulSoup(res2.text, "html.parser")
 
         # 方法 A：檢查「館藏地」下拉選單中是否有伸港（最可靠，不受分頁影響）
-        has_shengang_option = False
+        has_holding = False
+        call_number = ""
+        book_status = ""
+
+        # 方法 A：檢查「館藏地」下拉選單中是否有伸港
         for option in content_soup.find_all("option"):
             if "伸港" in (option.get_text(strip=True) or ""):
-                has_shengang_option = True
+                has_holding = True
                 break
 
-        if not has_shengang_option:
-            return "伸港無館藏"
+        if not has_holding:
+            return {"has_holding": False, "call_number": "", "status": ""}
 
-        # 方法 B：遍歷表格列，找伸港的在架狀態（若館藏數量少，伸港會出現在第一頁）
+        # 方法 B：遍歷表格列，找伸港的在架狀態與索書號
         for tr in content_soup.find_all("tr"):
-            row_text = tr.get_text()
-            if "伸港" in row_text:
-                if "在架" in row_text:
-                    return "伸港：有館藏 (在架)"
-                elif "借出" in row_text:
-                    return "伸港：有館藏 (已借出)"
+            tds = tr.find_all("td")
+            if len(tds) >= 6:
+                location = tds[1].get_text(strip=True)
+                if "伸港" in location:
+                    call_number = tds[3].get_text(strip=True)
+                    book_status = tds[4].get_text(strip=True)
+                    return {"has_holding": True, "call_number": call_number, "status": book_status}
 
-        # 館藏地下拉有伸港，但表格第一頁沒顯示（館藏多時分頁導致），回報有館藏
-        return "伸港：有館藏"
+        # 館藏地下拉有伸港，但在第一頁找不到伸港列（分頁問題）
+        # 試著抓取其他館的索書號作為參考，狀態設為提示文字
+        for tr in content_soup.find_all("tr"):
+            tds = tr.find_all("td")
+            if len(tds) >= 6:
+                call_number = tds[3].get_text(strip=True)
+                break
+        
+        return {"has_holding": True, "call_number": call_number, "status": "在其他分頁"}
 
     except requests.exceptions.Timeout:
-        return "查詢超時"
+        return {"has_holding": False, "call_number": "", "status": "查詢超時"}
     except Exception as e:
-        return "查詢出錯"
+        return {"has_holding": False, "call_number": "", "status": "查詢出錯"}
 
 
 def main():
@@ -117,9 +129,15 @@ def main():
 
     # 修改表頭 (Thead)
     thead_tr = soup.find("thead").find("tr")
-    if not any(th.get_text() == "伸港館藏狀態" for th in thead_tr.find_all("th")):
+    # 移除舊的伸港館藏狀態表頭(如果有的話)
+    for th in thead_tr.find_all("th"):
+        if th.get_text() in ["伸港館藏狀態", "館藏情形", "索書號", "館藏狀態"]:
+            th.decompose()
+            
+    # 新增三個表頭
+    for header in ["館藏情形", "索書號", "館藏狀態"]:
         new_th = soup.new_tag("th")
-        new_th.string = "伸港館藏狀態"
+        new_th.string = header
         thead_tr.append(new_th)
 
     # 遍歷表格每行資料
@@ -139,25 +157,45 @@ def main():
         # 前往圖書館爬取狀態
         status_result = search_library_status(book_title)
 
-        # 動態新增 <td> 欄位
-        new_td = soup.new_tag("td")
-        new_td["data-label"] = "伸港館藏狀態"
+        # 移除舊的相同欄位避免重複添加
+        for label in ["伸港館藏狀態", "館藏情形", "索書號", "館藏狀態"]:
+            old_td = row.find("td", {"data-label": label})
+            if old_td:
+                old_td.decompose()
 
-        status_span = soup.new_tag("span")
-        if "在架" in status_result:
-            status_span["class"] = "status status-yes"
+        # 1. 館藏情形
+        td_has = soup.new_tag("td")
+        td_has["data-label"] = "館藏情形"
+        span_has = soup.new_tag("span")
+        if status_result["has_holding"]:
+            span_has["class"] = "status status-yes"
+            span_has.string = "有館藏"
         else:
-            status_span["class"] = "status status-no"
-
-        status_span.string = status_result
-        new_td.append(status_span)
-
-        # 移除舊的相同欄位避免重複添加（如果重複執行此程式的話）
-        old_td = row.find("td", {"data-label": "伸港館藏狀態"})
-        if old_td:
-            old_td.decompose()
-
-        row.append(new_td)
+            span_has["class"] = "status status-no"
+            span_has.string = "無館藏"
+        td_has.append(span_has)
+        row.append(td_has)
+        
+        # 2. 索書號
+        td_call = soup.new_tag("td")
+        td_call["data-label"] = "索書號"
+        td_call.string = status_result["call_number"] if status_result["call_number"] else "-"
+        row.append(td_call)
+        
+        # 3. 館藏狀態
+        td_status = soup.new_tag("td")
+        td_status["data-label"] = "館藏狀態"
+        if status_result["status"]:
+            span_status = soup.new_tag("span")
+            if "在架" in status_result["status"]:
+                span_status["class"] = "status status-yes"
+            else:
+                span_status["class"] = "status status-no"
+            span_status.string = status_result["status"]
+            td_status.append(span_status)
+        else:
+            td_status.string = "-"
+        row.append(td_status)
 
         # 【重要安全機制】每次查詢後休息 1.5 秒，避免連線過快被圖書館防爬蟲機制封鎖 IP
         time.sleep(1.5)

@@ -51,6 +51,7 @@ def search_library_status(book_title):
         # Step 2: 確認是否有伸港館藏，有的話翻頁抓取
         items = []
         has_holding = False
+        seen_barcodes = set()
         
         for page in range(1, 10): # 最多找9頁
             content_url = (
@@ -74,20 +75,28 @@ def search_library_status(book_title):
             
             # 抓取表格
             trs = content_soup.find_all("tr")
-            found_data_row = False
+            found_new_row = False
             
             for tr in trs:
                 tds = tr.find_all("td")
                 if len(tds) >= 6:
-                    found_data_row = True
+                    barcode = tds[0].get_text(strip=True)
+                    barcode = re.sub(r'\s+', '', barcode)
+                    
+                    if barcode in seen_barcodes:
+                        continue
+                        
+                    seen_barcodes.add(barcode)
+                    found_new_row = True
+                    
                     location = tds[1].get_text(strip=True)
                     if "伸港" in location:
                         call_number = tds[3].get_text(strip=True)
                         book_status = tds[4].get_text(strip=True)
                         items.append({"call_number": call_number, "status": book_status})
             
-            # 如果這頁沒有資料行，代表已經到底了
-            if not found_data_row:
+            # 如果這頁沒有新的資料行，代表已經到底或出現重複頁面
+            if not found_new_row:
                 break
                 
             # 為了避免頻繁請求，翻頁也加上延遲

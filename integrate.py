@@ -142,8 +142,7 @@ def process_file(input_file):
         result = search_library_status(book_title)
         
         for label in ["伸港館藏狀態", "館藏情形", "索書號", "館藏狀態"]:
-            old_td = row.find("td", {"data-label": label})
-            if old_td:
+            for old_td in row.find_all("td", {"data-label": label}):
                 old_td.decompose()
                 
         # 1. 館藏情形

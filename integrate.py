@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import urllib.parse
 # pyrefly: ignore [missing-import]
@@ -6,6 +7,10 @@ from bs4 import BeautifulSoup
 import re
 import requests
 import glob
+
+# 強制使用 UTF-8 輸出，避免 Windows cp950 編碼造成罕見字元崩潰
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 # 圖書館查詢共用設定
 LIB_BASE = "https://library.toread.bocach.gov.tw/webpac_rwd"

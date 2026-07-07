@@ -1,4 +1,9 @@
 #!/bin/bash
-# 啟動圖書館館藏整合查詢
 cd "$(dirname "$0")"
+
+export PYTHONUTF8=1
+export INTEGRATE_MAX_CONTENT_PAGES="${INTEGRATE_MAX_CONTENT_PAGES:-9}"
+export INTEGRATE_PAGE_SLEEP_SECONDS="${INTEGRATE_PAGE_SLEEP_SECONDS:-1.0}"
+export INTEGRATE_BOOK_SLEEP_SECONDS="${INTEGRATE_BOOK_SLEEP_SECONDS:-1.5}"
+
 .venv/Scripts/python.exe integrate.py

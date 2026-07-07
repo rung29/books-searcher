@@ -31,3 +31,18 @@ python -m venv .venv
 ```
 
 這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，並產生對應的 `books_page_*_with_library.html`。
+
+### 效能調整
+
+如果你覺得執行太慢，可以透過環境變數調整查詢速度。`integrate.sh` 和 `integrate.bat` 已經提供預設值，你也可以在執行前自行覆蓋：
+
+```bash
+set INTEGRATE_BOOK_SLEEP_SECONDS=0
+set INTEGRATE_PAGE_SLEEP_SECONDS=0.3
+```
+
+可調參數如下：
+
+- `INTEGRATE_MAX_CONTENT_PAGES`：單筆書目最多查幾頁，預設 `9`
+- `INTEGRATE_PAGE_SLEEP_SECONDS`：同一本書的頁面之間等待秒數，預設 `1.0`
+- `INTEGRATE_BOOK_SLEEP_SECONDS`：每本書查完後等待秒數，預設 `1.5`

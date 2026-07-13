@@ -4,6 +4,7 @@ import urllib.parse
 
 os.environ.setdefault("INTEGRATE_PAGE_SLEEP_SECONDS", "0")
 os.environ.setdefault("INTEGRATE_BOOK_SLEEP_SECONDS", "0")
+os.environ.setdefault("LIB_REQUEST_TIMEOUT", "25")
 
 import requests
 from bs4 import BeautifulSoup

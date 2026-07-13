@@ -2,12 +2,16 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "maxDuration": 30
+      "maxDuration": 30,
+      "regions": [
+        "hnd1"
+      ]
     }
   },
   "env": {
     "INTEGRATE_PAGE_SLEEP_SECONDS": "0",
-    "INTEGRATE_BOOK_SLEEP_SECONDS": "0"
+    "INTEGRATE_BOOK_SLEEP_SECONDS": "0",
+    "LIB_REQUEST_TIMEOUT": "25"
   },
   "rewrites": [
     {

@@ -22,6 +22,7 @@ LIB_HEADERS = {
 MAX_CONTENT_PAGES = int(os.getenv("INTEGRATE_MAX_CONTENT_PAGES", "9"))
 PAGE_SLEEP_SECONDS = float(os.getenv("INTEGRATE_PAGE_SLEEP_SECONDS", "1.0"))
 BOOK_SLEEP_SECONDS = float(os.getenv("INTEGRATE_BOOK_SLEEP_SECONDS", "1.5"))
+LIB_REQUEST_TIMEOUT = float(os.getenv("LIB_REQUEST_TIMEOUT", "15"))
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
@@ -37,7 +38,7 @@ def search_library_status(book_title):
             f"&lc0=%E4%BC%B8%E6%B8%AF%E9%84%89%E7%AB%8B%E5%9C%96%E6%9B%B8%E9%A4%A8"
             f"&list_num=10&current_page=1"
         )
-        res = requests.get(search_url, headers=LIB_HEADERS, timeout=15, verify=False)
+        res = requests.get(search_url, headers=LIB_HEADERS, timeout=LIB_REQUEST_TIMEOUT, verify=False)
         if res.status_code != 200:
             return {"has_holding": False, "items": [], "error": "連線失敗"}
 
@@ -68,7 +69,7 @@ def search_library_status(book_title):
                 f"{LIB_BASE}/content.cfm?"
                 f"mid={mid}&contentlistcurrent_page={page}"
             )
-            res2 = requests.get(content_url, headers=LIB_HEADERS, timeout=15, verify=False)
+            res2 = requests.get(content_url, headers=LIB_HEADERS, timeout=LIB_REQUEST_TIMEOUT, verify=False)
             if res2.status_code != 200:
                 break
 
@@ -115,7 +116,8 @@ def search_library_status(book_title):
 
         return {"has_holding": has_holding, "items": items}
 
-    except Exception:
+    except Exception as exc:
+        print(f"library status lookup failed for {book_title}: {exc}", file=sys.stderr)
         return {"has_holding": False, "items": [], "error": "查詢出錯"}
 
 

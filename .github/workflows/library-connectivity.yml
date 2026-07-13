@@ -1,0 +1,46 @@
+name: Library connectivity test
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Book title to test
+        required: true
+        default: 我不是故意的
+
+jobs:
+  test-library-lookup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Test library lookup
+        env:
+          INTEGRATE_PAGE_SLEEP_SECONDS: "0"
+          INTEGRATE_BOOK_SLEEP_SECONDS: "0"
+          LIB_REQUEST_TIMEOUT: "25"
+          TEST_TITLE: ${{ inputs.title }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from integrate import search_library_status
+
+          title = os.environ["TEST_TITLE"]
+          result = search_library_status(title)
+          print(json.dumps({"title": title, "result": result}, ensure_ascii=False, indent=2))
+
+          if result.get("error"):
+              raise SystemExit(f"Library lookup failed: {result['error']}")
+          PY

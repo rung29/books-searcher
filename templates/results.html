@@ -14,13 +14,22 @@
           <h1>第 {{ page }} 頁</h1>
           <p>{{ context.readrang_name }}，{{ context.testing_name }}{% if context.keywords %}，關鍵字「{{ context.keywords }}」{% endif %}</p>
         </div>
-        <a class="secondary-action" href="{{ url_for('index') }}">新查詢</a>
+        <form method="post" action="{{ url_for('reset') }}" data-reset-search>
+          <button class="secondary-button" type="submit">重新查詢</button>
+        </form>
       </header>
 
       <nav class="pager" aria-label="分頁">
         {% if page > 1 %}
           <a href="{{ url_for('results', token=token, page=page - 1) }}">上一頁</a>
         {% endif %}
+        <form class="page-jump" method="get" action="{{ url_for('results', token=token) }}">
+          <label>
+            頁數
+            <input name="page" type="number" min="1" step="1" value="{{ page }}">
+          </label>
+          <button type="submit">前往</button>
+        </form>
         <a href="{{ url_for('results', token=token, page=page + 1) }}">下一頁</a>
       </nav>
 
@@ -37,34 +46,48 @@
       {% endif %}
 
       {% if books %}
-        <section class="book-list">
-          {% for book in books %}
-            <article class="book-card">
-              <div class="book-main">
-                <h2>
-                  {% if book.url %}
-                    <a href="{{ book.url }}" target="_blank" rel="noopener">{{ book.title }}</a>
-                  {% else %}
-                    {{ book.title }}
+        <div class="table-wrap">
+          <table class="result-table" data-cache-key="library:{{ token }}:{{ page }}">
+            <thead>
+              <tr>
+                <th>序號</th>
+                <th>書名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>適讀年段</th>
+                <th>認證狀態</th>
+                {% if context.include_library %}
+                  <th>館藏情形</th>
+                  <th>索書號</th>
+                  <th>館藏狀態</th>
+                {% endif %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for book in books %}
+                <tr {% if context.include_library %}data-library-row data-title="{{ book.title }}" data-index="{{ loop.index0 }}"{% endif %}>
+                  <td data-label="序號">{{ loop.index }}</td>
+                  <td data-label="書名">
+                    {% if book.url %}
+                      <a href="{{ book.url }}" target="_blank" rel="noopener">{{ book.title }}</a>
+                    {% else %}
+                      {{ book.title }}
+                    {% endif %}
+                  </td>
+                  <td data-label="作者">{{ book.author or "-" }}</td>
+                  <td data-label="出版社">{{ book.publisher or "-" }}</td>
+                  <td data-label="適讀年段">{{ book.range or "-" }}</td>
+                  <td data-label="認證狀態"><span class="status-pill">{{ book.status or "-" }}</span></td>
+                  {% if context.include_library %}
+                    <td data-label="館藏情形" data-library-holding><span class="status-pill muted-pill">等待查詢</span></td>
+                    <td data-label="索書號" data-library-call>-</td>
+                    <td data-label="館藏狀態" data-library-status>-</td>
                   {% endif %}
-                </h2>
-                <dl>
-                  <div><dt>作者</dt><dd>{{ book.author or "-" }}</dd></div>
-                  <div><dt>出版社</dt><dd>{{ book.publisher or "-" }}</dd></div>
-                  <div><dt>適讀年段</dt><dd>{{ book.range or "-" }}</dd></div>
-                  <div><dt>認證狀態</dt><dd><span class="badge">{{ book.status or "-" }}</span></dd></div>
-                </dl>
-              </div>
-
-              {% if context.include_library %}
-                <div class="library-box" data-library-card data-title="{{ book.title }}">
-                  <strong class="muted">等待查詢</strong>
-                  <p>排程中...</p>
-                </div>
-              {% endif %}
-            </article>
-          {% endfor %}
-        </section>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       {% else %}
         <section class="empty">
           <h2>這一頁沒有查到資料</h2>

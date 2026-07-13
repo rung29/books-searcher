@@ -15,6 +15,19 @@
           <p>輸入條件後取得驗證碼，再送出查詢。手機瀏覽器也能直接使用。</p>
         </div>
 
+        {% if active_search %}
+          <div class="resume-box">
+            <strong>已有一筆查詢結果</strong>
+            <p>{{ active_search.readrang }} / {{ active_search.testing }}{% if active_search.keywords %} / {{ active_search.keywords }}{% endif %}</p>
+            <div class="split-actions">
+              <a class="button-link" href="{{ url_for('results', token=search_token, page=active_search.initial_page or 1) }}">回到結果</a>
+              <form method="post" action="{{ url_for('reset') }}" data-reset-search>
+                <button class="secondary-button" type="submit">重新查詢</button>
+              </form>
+            </div>
+          </div>
+        {% endif %}
+
         <form class="form" method="post" action="{{ url_for('captcha') }}" data-progress-message="正在取得驗證碼...">
           <label>
             適讀年段
@@ -37,6 +50,11 @@
           <label>
             關鍵字
             <input name="keywords" value="{{ form.keywords }}" placeholder="可留空">
+          </label>
+
+          <label>
+            查詢頁數
+            <input name="initial_page" type="number" min="1" step="1" value="{{ form.initial_page }}">
           </label>
 
           <label class="check-row">

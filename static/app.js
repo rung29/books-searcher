@@ -12,15 +12,39 @@
     });
   });
 
+  document.querySelectorAll("[data-reset-search]").forEach((form) => {
+    form.addEventListener("submit", () => {
+      Object.keys(localStorage)
+        .filter((key) => key.startsWith("library:"))
+        .forEach((key) => localStorage.removeItem(key));
+    });
+  });
+
+  const table = document.querySelector("[data-cache-key]");
+  const rows = Array.from(document.querySelectorAll("[data-library-row]"));
   const progressPanel = document.querySelector("[data-library-progress]");
-  const libraryCards = Array.from(document.querySelectorAll("[data-library-card]"));
-  if (!progressPanel || libraryCards.length === 0) {
+  if (!table || !progressPanel || rows.length === 0) {
     return;
   }
 
+  const cacheKey = table.dataset.cacheKey;
   const progressTitle = progressPanel.querySelector("[data-progress-title]");
   const progressDetail = progressPanel.querySelector("[data-progress-detail]");
   const progressBar = progressPanel.querySelector("[data-progress-bar]");
+  const concurrency = 4;
+  const cache = readCache(cacheKey);
+
+  function readCache(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key) || "{}");
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function writeCache() {
+    localStorage.setItem(cacheKey, JSON.stringify(cache));
+  }
 
   function setProgress(done, total, title) {
     const percent = total === 0 ? 100 : Math.round((done / total) * 100);
@@ -28,22 +52,6 @@
     progressDetail.textContent = title
       ? `已完成 ${done}/${total}，目前：${title}`
       : `已完成 ${done}/${total}`;
-  }
-
-  function renderLibraryResult(card, result) {
-    const hasHolding = Boolean(result.has_holding);
-    const items = Array.isArray(result.items) ? result.items : [];
-    const statusClass = hasHolding ? "ok" : "muted";
-    const statusText = hasHolding ? "伸港有館藏" : "伸港無館藏";
-    const details = items.length
-      ? `<ul>${items
-          .map((item) => `<li>${escapeHtml(item.call_number || "-")} / ${escapeHtml(item.status || "-")}</li>`)
-          .join("")}</ul>`
-      : result.error
-        ? `<p>${escapeHtml(result.error)}</p>`
-        : "<p>-</p>";
-
-    card.innerHTML = `<strong class="${statusClass}">${statusText}</strong>${details}`;
   }
 
   function escapeHtml(value) {
@@ -55,38 +63,85 @@
       .replaceAll("'", "&#039;");
   }
 
-  async function queryLibraryStatus(card) {
-    const title = card.dataset.title || "";
-    card.innerHTML = '<strong class="muted">查詢中</strong><p>正在查詢館藏...</p>';
+  function statusClass(status) {
+    return status && status.includes("在架") ? "status-yes" : "status-no";
+  }
 
+  function renderResult(row, result) {
+    const holdingCell = row.querySelector("[data-library-holding]");
+    const callCell = row.querySelector("[data-library-call]");
+    const statusCell = row.querySelector("[data-library-status]");
+    const items = Array.isArray(result.items) ? result.items : [];
+
+    holdingCell.innerHTML = result.has_holding
+      ? '<span class="status-pill status-yes">有館藏</span>'
+      : '<span class="status-pill status-no">無館藏</span>';
+
+    if (items.length === 0) {
+      callCell.textContent = "-";
+      statusCell.textContent = result.error || "-";
+      return;
+    }
+
+    callCell.innerHTML = items
+      .map((item) => `<div>${escapeHtml(item.call_number || "-")}</div>`)
+      .join("");
+    statusCell.innerHTML = items
+      .map((item) => {
+        const status = item.status || "-";
+        return `<div><span class="status-pill ${statusClass(status)}">${escapeHtml(status)}</span></div>`;
+      })
+      .join("");
+  }
+
+  async function queryStatus(row) {
+    const index = row.dataset.index;
+    const title = row.dataset.title || "";
+    const cached = cache[index];
+    if (cached && cached.title === title) {
+      renderResult(row, cached.result);
+      return { title, cached: true };
+    }
+
+    row.querySelector("[data-library-holding]").innerHTML = '<span class="status-pill muted-pill">查詢中</span>';
     const response = await fetch("/api/library-status", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title }),
     });
     const result = await response.json();
-    renderLibraryResult(card, result);
-    return title;
+    cache[index] = { title, result };
+    writeCache();
+    renderResult(row, result);
+    return { title, cached: false };
   }
 
-  async function runLibraryQueue() {
-    let done = 0;
-    setProgress(done, libraryCards.length);
-
-    for (const card of libraryCards) {
-      const title = card.dataset.title || "";
-      setProgress(done, libraryCards.length, title);
+  async function worker(queue, total, state) {
+    while (queue.length > 0) {
+      const row = queue.shift();
+      const title = row.dataset.title || "";
+      setProgress(state.done, total, title);
       try {
-        await queryLibraryStatus(card);
+        await queryStatus(row);
       } catch (error) {
-        card.innerHTML = '<strong class="muted">查詢失敗</strong><p>請稍後再試。</p>';
+        renderResult(row, { has_holding: false, items: [], error: "查詢失敗" });
       }
-      done += 1;
-      setProgress(done, libraryCards.length, title);
+      state.done += 1;
+      setProgress(state.done, total, title);
     }
+  }
+
+  async function run() {
+    const queue = rows.slice();
+    const state = { done: 0 };
+    setProgress(0, rows.length);
+
+    await Promise.all(
+      Array.from({ length: Math.min(concurrency, queue.length) }, () => worker(queue, rows.length, state))
+    );
 
     progressTitle.textContent = "伸港圖書館館藏查詢完成";
   }
 
-  runLibraryQueue();
+  run();
 })();

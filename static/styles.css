@@ -112,7 +112,8 @@ select {
 }
 
 button,
-.button-link {
+.button-link,
+.secondary-button {
   border: 0;
   background: var(--accent);
   color: #fff;
@@ -126,9 +127,19 @@ button,
 }
 
 button:hover,
-.button-link:hover {
+.button-link:hover,
+.secondary-button:hover {
   background: var(--accent-dark);
   text-decoration: none;
+}
+
+.secondary-button {
+  background: #e2e8f0;
+  color: var(--text);
+}
+
+.secondary-button:hover {
+  background: #cbd5e1;
 }
 
 .check-row {
@@ -170,6 +181,27 @@ button:hover,
   color: var(--accent-dark);
   font-weight: 800;
   text-align: center;
+}
+
+.resume-box {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 14px;
+}
+
+.resume-box p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.split-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .loading-overlay {
@@ -236,6 +268,8 @@ button:hover,
 
 .pager {
   display: flex;
+  align-items: end;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 18px;
 }
@@ -247,6 +281,27 @@ button:hover,
   min-height: 42px;
   padding: 9px 14px;
   font-weight: 800;
+}
+
+.page-jump {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+.page-jump label {
+  gap: 4px;
+}
+
+.page-jump input {
+  width: 96px;
+  min-height: 42px;
+}
+
+.page-jump button {
+  width: auto;
+  min-height: 42px;
+  padding: 0 14px;
 }
 
 .progress-panel {
@@ -279,63 +334,60 @@ button:hover,
   transition: width 180ms ease;
 }
 
-.book-list {
-  display: grid;
-  gap: 14px;
-}
-
-.book-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
-  gap: 18px;
+.table-wrap {
+  overflow-x: auto;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 18px;
 }
 
-.book-card h2 {
-  margin-bottom: 14px;
+.result-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
 }
 
-dl {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 18px;
-  margin: 0;
+.result-table th,
+.result-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 11px 10px;
+  text-align: left;
+  vertical-align: top;
 }
 
-dt {
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-dd {
-  margin: 2px 0 0;
-}
-
-.badge {
-  display: inline-block;
-  background: var(--soft);
-  border-radius: 999px;
-  padding: 3px 9px;
-  color: var(--accent-dark);
+.result-table th {
+  background: var(--accent);
+  color: #fff;
   font-weight: 800;
 }
 
-.library-box {
-  border-left: 1px solid var(--line);
-  padding-left: 18px;
+.result-table tr:last-child td {
+  border-bottom: 0;
 }
 
-.library-box ul {
-  padding-left: 18px;
-  margin-bottom: 0;
+.status-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: var(--soft);
+  color: var(--accent-dark);
+  font-weight: 800;
+  font-size: 0.84rem;
 }
 
-.ok {
-  color: var(--ok);
+.status-yes {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-no {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.muted-pill {
+  background: #e2e8f0;
+  color: var(--muted);
 }
 
 .muted {
@@ -365,17 +417,48 @@ dd {
     display: grid;
   }
 
-  .book-card {
+  .split-actions {
     grid-template-columns: 1fr;
   }
 
-  .library-box {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-    padding: 14px 0 0;
+  .table-wrap {
+    overflow-x: visible;
+    background: transparent;
+    border: 0;
   }
 
-  dl {
-    grid-template-columns: 1fr;
+  .result-table,
+  .result-table thead,
+  .result-table tbody,
+  .result-table tr,
+  .result-table td {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .result-table thead {
+    display: none;
+  }
+
+  .result-table tr {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .result-table td {
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .result-table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-weight: 800;
   }
 }

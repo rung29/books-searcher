@@ -2,6 +2,9 @@ import base64
 import os
 import urllib.parse
 
+os.environ.setdefault("INTEGRATE_PAGE_SLEEP_SECONDS", "0")
+os.environ.setdefault("INTEGRATE_BOOK_SLEEP_SECONDS", "0")
+
 import requests
 from bs4 import BeautifulSoup
 from flask import Flask, abort, jsonify, redirect, render_template, request, session, url_for
@@ -101,20 +104,27 @@ def build_context(data):
         "testing_name": option_label(TESTING_OPTIONS, data["testing"]),
         "keywords": data["keywords"],
         "include_library": data["include_library"],
+        "initial_page": data.get("initial_page", 1),
     }
 
 
 @app.get("/")
 def index():
+    search_data = session.get("search_data")
+    search_token = session.get("search_token")
+    active_search = search_data if search_data and search_data.get("searched") and search_token else None
     return render_template(
         "index.html",
         readrang_options=READRANG_OPTIONS,
         testing_options=TESTING_OPTIONS,
+        active_search=active_search,
+        search_token=search_token,
         form={
             "readrang": "all",
             "testing": "all",
             "keywords": "",
             "include_library": False,
+            "initial_page": 1,
         },
     )
 
@@ -125,6 +135,10 @@ def captcha():
     testing = request.form.get("testing", "all")
     keywords = request.form.get("keywords", "").strip()
     include_library = request.form.get("include_library") == "1"
+    try:
+        initial_page = max(int(request.form.get("initial_page", "1")), 1)
+    except ValueError:
+        initial_page = 1
 
     try:
         http_session, csrf_token, captcha_src = create_search_session()
@@ -139,6 +153,7 @@ def captcha():
         "testing": testing,
         "keywords": keywords,
         "include_library": include_library,
+        "initial_page": initial_page,
         "searched": False,
     }
     session["search_token"] = token
@@ -188,7 +203,7 @@ def search(token):
     data["searched"] = True
     data["cookies"] = serialize_session(http_session)
     session["search_data"] = data
-    return redirect(url_for("results", token=token, page=1))
+    return redirect(url_for("results", token=token, page=data.get("initial_page", 1)))
 
 
 @app.get("/results/<token>")
@@ -214,6 +229,13 @@ def results(token):
         books=books,
         context=build_context(data),
     )
+
+
+@app.post("/reset")
+def reset():
+    session.pop("search_data", None)
+    session.pop("search_token", None)
+    return redirect(url_for("index"))
 
 
 @app.post("/api/library-status")

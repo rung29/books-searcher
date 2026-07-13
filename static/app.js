@@ -31,7 +31,7 @@
   const progressTitle = progressPanel.querySelector("[data-progress-title]");
   const progressDetail = progressPanel.querySelector("[data-progress-detail]");
   const progressBar = progressPanel.querySelector("[data-progress-bar]");
-  const concurrency = 4;
+  const concurrency = 1;
   const cache = readCache(cacheKey);
 
   function readCache(key) {

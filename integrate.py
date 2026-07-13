@@ -116,9 +116,18 @@ def search_library_status(book_title):
 
         return {"has_holding": has_holding, "items": items}
 
+    except requests.exceptions.ConnectTimeout as exc:
+        print(f"library status lookup failed for {book_title}: {exc}", file=sys.stderr)
+        return {"has_holding": False, "items": [], "error": "圖書館連線逾時"}
+    except requests.exceptions.Timeout as exc:
+        print(f"library status lookup failed for {book_title}: {exc}", file=sys.stderr)
+        return {"has_holding": False, "items": [], "error": "圖書館回應逾時"}
+    except requests.exceptions.RequestException as exc:
+        print(f"library status lookup failed for {book_title}: {exc}", file=sys.stderr)
+        return {"has_holding": False, "items": [], "error": "圖書館連線失敗"}
     except Exception as exc:
         print(f"library status lookup failed for {book_title}: {exc}", file=sys.stderr)
-        return {"has_holding": False, "items": [], "error": "查詢出錯"}
+        return {"has_holding": False, "items": [], "error": "館藏解析失敗"}
 
 
 def process_file(input_file):

@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
-  ],
   "functions": {
     "api/index.py": {
       "maxDuration": 30
@@ -15,10 +9,10 @@
     "INTEGRATE_PAGE_SLEEP_SECONDS": "0",
     "INTEGRATE_BOOK_SLEEP_SECONDS": "0"
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "api/index.py"
+      "source": "/(.*)",
+      "destination": "/api/index"
     }
   ]
 }

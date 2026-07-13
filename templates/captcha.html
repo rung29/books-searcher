@@ -27,7 +27,7 @@
           <p class="alert">驗證碼圖片已失效，請重新查詢。</p>
         {% endif %}
 
-        <form class="form" method="post" action="{{ url_for('search', token=token) }}">
+        <form class="form" method="post" action="{{ url_for('search', token=token) }}" data-progress-message="正在送出查詢，請稍候...">
           <label>
             驗證碼
             <input name="captcha_code" inputmode="numeric" autocomplete="off" maxlength="8" required>
@@ -37,5 +37,12 @@
         </form>
       </section>
     </main>
+    <div class="loading-overlay" data-loading-overlay hidden>
+      <div class="loading-panel">
+        <div class="spinner" aria-hidden="true"></div>
+        <p data-loading-message>處理中...</p>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>

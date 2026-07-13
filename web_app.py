@@ -1,17 +1,18 @@
 import base64
-import secrets
-import time
+import os
 import urllib.parse
 
 import requests
 from bs4 import BeautifulSoup
-from flask import Flask, abort, redirect, render_template, request, url_for
+from flask import Flask, abort, jsonify, redirect, render_template, request, session, url_for
+from requests.utils import cookiejar_from_dict, dict_from_cookiejar
 
 from crawler import fetch_books_by_page, perform_search
 from integrate import search_library_status
 
 
 app = Flask(__name__)
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "book-searcher-dev-secret")
 
 BASE_URL = "https://read.chc.edu.tw/index.php"
 HEADERS = {
@@ -38,23 +39,10 @@ TESTING_OPTIONS = [
 ]
 
 REQUEST_TIMEOUT = 15
-SEARCH_TTL_SECONDS = 30 * 60
-SEARCH_SESSIONS = {}
 
 requests.packages.urllib3.disable_warnings(
     requests.packages.urllib3.exceptions.InsecureRequestWarning
 )
-
-
-def cleanup_sessions():
-    now = time.time()
-    expired_tokens = [
-        token
-        for token, data in SEARCH_SESSIONS.items()
-        if now - data.get("created_at", now) > SEARCH_TTL_SECONDS
-    ]
-    for token in expired_tokens:
-        SEARCH_SESSIONS.pop(token, None)
 
 
 def option_label(options, value):
@@ -95,6 +83,16 @@ def create_search_session():
     return session, csrf_token, f"data:{content_type};base64,{captcha_base64}"
 
 
+def serialize_session(http_session):
+    return dict_from_cookiejar(http_session.cookies)
+
+
+def restore_session(cookies):
+    http_session = requests.Session()
+    http_session.cookies = cookiejar_from_dict(cookies or {})
+    return http_session
+
+
 def build_context(data):
     return {
         "readrang": data["readrang"],
@@ -106,18 +104,8 @@ def build_context(data):
     }
 
 
-def enrich_with_library_status(books):
-    enriched_books = []
-    for book in books:
-        enriched_book = dict(book)
-        enriched_book["library"] = search_library_status(book.get("title", ""))
-        enriched_books.append(enriched_book)
-    return enriched_books
-
-
 @app.get("/")
 def index():
-    cleanup_sessions()
     return render_template(
         "index.html",
         readrang_options=READRANG_OPTIONS,
@@ -133,21 +121,19 @@ def index():
 
 @app.post("/captcha")
 def captcha():
-    cleanup_sessions()
     readrang = request.form.get("readrang", "all")
     testing = request.form.get("testing", "all")
     keywords = request.form.get("keywords", "").strip()
     include_library = request.form.get("include_library") == "1"
 
     try:
-        session, csrf_token, captcha_src = create_search_session()
+        http_session, csrf_token, captcha_src = create_search_session()
     except Exception as exc:
         return render_template("error.html", message=str(exc)), 502
 
-    token = secrets.token_urlsafe(24)
-    SEARCH_SESSIONS[token] = {
-        "created_at": time.time(),
-        "session": session,
+    token = os.urandom(12).hex()
+    search_data = {
+        "cookies": serialize_session(http_session),
         "csrf_token": csrf_token,
         "readrang": readrang,
         "testing": testing,
@@ -155,19 +141,21 @@ def captcha():
         "include_library": include_library,
         "searched": False,
     }
+    session["search_token"] = token
+    session["search_data"] = search_data
 
     return render_template(
         "captcha.html",
         token=token,
         captcha_src=captcha_src,
-        context=build_context(SEARCH_SESSIONS[token]),
+        context=build_context(search_data),
     )
 
 
 @app.post("/search/<token>")
 def search(token):
-    data = SEARCH_SESSIONS.get(token)
-    if not data:
+    data = session.get("search_data")
+    if not data or session.get("search_token") != token:
         abort(404)
 
     captcha_code = request.form.get("captcha_code", "").strip()
@@ -180,8 +168,9 @@ def search(token):
             error="請輸入驗證碼。",
         ), 400
 
+    http_session = restore_session(data.get("cookies"))
     success = perform_search(
-        data["session"],
+        http_session,
         data["csrf_token"],
         data["readrang"],
         data["testing"],
@@ -189,20 +178,23 @@ def search(token):
         captcha_code,
     )
     if not success:
-        SEARCH_SESSIONS.pop(token, None)
+        session.pop("search_data", None)
+        session.pop("search_token", None)
         return render_template(
             "error.html",
             message="搜尋失敗，可能是驗證碼錯誤或來源網站暫時拒絕請求。請重新查詢。",
         ), 400
 
     data["searched"] = True
+    data["cookies"] = serialize_session(http_session)
+    session["search_data"] = data
     return redirect(url_for("results", token=token, page=1))
 
 
 @app.get("/results/<token>")
 def results(token):
-    data = SEARCH_SESSIONS.get(token)
-    if not data or not data.get("searched"):
+    data = session.get("search_data")
+    if not data or not data.get("searched") or session.get("search_token") != token:
         abort(404)
 
     try:
@@ -210,9 +202,10 @@ def results(token):
     except ValueError:
         page = 1
 
-    books = fetch_books_by_page(data["session"], page) or []
-    if data["include_library"] and books:
-        books = enrich_with_library_status(books)
+    http_session = restore_session(data.get("cookies"))
+    books = fetch_books_by_page(http_session, page) or []
+    data["cookies"] = serialize_session(http_session)
+    session["search_data"] = data
 
     return render_template(
         "results.html",
@@ -221,6 +214,17 @@ def results(token):
         books=books,
         context=build_context(data),
     )
+
+
+@app.post("/api/library-status")
+def library_status():
+    payload = request.get_json(silent=True) or {}
+    title = (payload.get("title") or "").strip()
+    if not title:
+        return jsonify({"has_holding": False, "items": [], "error": "缺少書名"}), 400
+
+    result = search_library_status(title)
+    return jsonify(result)
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@
           <p>輸入條件後取得驗證碼，再送出查詢。手機瀏覽器也能直接使用。</p>
         </div>
 
-        <form class="form" method="post" action="{{ url_for('captcha') }}">
+        <form class="form" method="post" action="{{ url_for('captcha') }}" data-progress-message="正在取得驗證碼...">
           <label>
             適讀年段
             <select name="readrang">
@@ -48,5 +48,12 @@
         </form>
       </section>
     </main>
+    <div class="loading-overlay" data-loading-overlay hidden>
+      <div class="loading-panel">
+        <div class="spinner" aria-hidden="true"></div>
+        <p data-loading-message>處理中...</p>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>

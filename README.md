@@ -30,6 +30,41 @@ python -m venv .venv
 .venv\Scripts\python.exe web_app.py
 ```
 
+### 本機執行 web-version
+
+如果您是從 GitHub 重新下載專案，請先切到網頁版分支：
+
+```bash
+git switch web-version
+```
+
+第一次執行請建立虛擬環境並安裝套件：
+
+```bash
+python -m venv .venv
+.venv\Scripts\pip.exe install -r requirements.txt
+```
+
+啟動網頁版：
+
+```bash
+.venv\Scripts\python.exe web_app.py
+```
+
+啟動後在電腦瀏覽器開啟：
+
+```text
+http://127.0.0.1:5000
+```
+
+如果要用手機測試，請讓手機與電腦連到同一個 Wi-Fi，然後用電腦的區網 IP 開啟，例如：
+
+```text
+http://192.168.x.x:5000
+```
+
+如果手機無法開啟，通常是 Windows 防火牆尚未允許 Python 或 `5000` port 對區網開放。
+
 網頁版支援輸入搜尋條件、驗證碼、指定頁數，並可顯示伸港鄉立圖書館的館藏情形、索書號與館藏狀態。不過實測後有以下限制：
 
 - **Vercel 部署限制**：網頁本身可以部署並開啟，但館藏查詢 API 由 Vercel Function 連線到 `library.toread.bocach.gov.tw` 時會發生 `ConnectTimeout`。即使改用東京區域 `hnd1`、延長 timeout、降低並行數，仍會逾時。推測是對方圖書館網站阻擋或無法接受 Vercel 雲端出口連線。

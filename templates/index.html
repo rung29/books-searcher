@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>書籍搜尋</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <div class="heading">
+          <p class="eyebrow">彰化閱讀線上查詢</p>
+          <h1>書籍搜尋</h1>
+          <p>輸入條件後取得驗證碼，再送出查詢。手機瀏覽器也能直接使用。</p>
+        </div>
+
+        <form class="form" method="post" action="{{ url_for('captcha') }}">
+          <label>
+            適讀年段
+            <select name="readrang">
+              {% for value, label in readrang_options %}
+                <option value="{{ value }}" {% if form.readrang == value %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </label>
+
+          <label>
+            認證狀態
+            <select name="testing">
+              {% for value, label in testing_options %}
+                <option value="{{ value }}" {% if form.testing == value %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </label>
+
+          <label>
+            關鍵字
+            <input name="keywords" value="{{ form.keywords }}" placeholder="可留空">
+          </label>
+
+          <label class="check-row">
+            <input type="checkbox" name="include_library" value="1">
+            同時查詢伸港圖書館館藏
+          </label>
+
+          <button type="submit">取得驗證碼</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

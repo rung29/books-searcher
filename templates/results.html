@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>查詢結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="results-shell">
+      <header class="results-header">
+        <div>
+          <p class="eyebrow">查詢結果</p>
+          <h1>第 {{ page }} 頁</h1>
+          <p>{{ context.readrang_name }}，{{ context.testing_name }}{% if context.keywords %}，關鍵字「{{ context.keywords }}」{% endif %}</p>
+        </div>
+        <a class="secondary-action" href="{{ url_for('index') }}">新查詢</a>
+      </header>
+
+      <nav class="pager" aria-label="分頁">
+        {% if page > 1 %}
+          <a href="{{ url_for('results', token=token, page=page - 1) }}">上一頁</a>
+        {% endif %}
+        <a href="{{ url_for('results', token=token, page=page + 1) }}">下一頁</a>
+      </nav>
+
+      {% if books %}
+        <section class="book-list">
+          {% for book in books %}
+            <article class="book-card">
+              <div class="book-main">
+                <h2>
+                  {% if book.url %}
+                    <a href="{{ book.url }}" target="_blank" rel="noopener">{{ book.title }}</a>
+                  {% else %}
+                    {{ book.title }}
+                  {% endif %}
+                </h2>
+                <dl>
+                  <div><dt>作者</dt><dd>{{ book.author or "-" }}</dd></div>
+                  <div><dt>出版社</dt><dd>{{ book.publisher or "-" }}</dd></div>
+                  <div><dt>適讀年段</dt><dd>{{ book.range or "-" }}</dd></div>
+                  <div><dt>認證狀態</dt><dd><span class="badge">{{ book.status or "-" }}</span></dd></div>
+                </dl>
+              </div>
+
+              {% if context.include_library %}
+                <div class="library-box">
+                  {% set library = book.library %}
+                  <strong class="{{ 'ok' if library.has_holding else 'muted' }}">
+                    {{ "伸港有館藏" if library.has_holding else "伸港無館藏" }}
+                  </strong>
+                  {% if library.items %}
+                    <ul>
+                      {% for item in library.items %}
+                        <li>{{ item.call_number or "-" }} / {{ item.status or "-" }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% elif library.error %}
+                    <p>{{ library.error }}</p>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </section>
+      {% else %}
+        <section class="empty">
+          <h2>這一頁沒有查到資料</h2>
+          <p>可以回上一頁，或重新設定查詢條件。</p>
+        </section>
+      {% endif %}
+    </main>
+  </body>
+</html>

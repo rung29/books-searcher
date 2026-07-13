@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>輸入驗證碼</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <div class="heading">
+          <p class="eyebrow">步驟 2</p>
+          <h1>輸入驗證碼</h1>
+          <p>{{ context.readrang_name }}，{{ context.testing_name }}{% if context.keywords %}，關鍵字「{{ context.keywords }}」{% endif %}</p>
+        </div>
+
+        {% if error %}
+          <p class="alert">{{ error }}</p>
+        {% endif %}
+
+        {% if captcha_src %}
+          <div class="captcha-box">
+            <img src="{{ captcha_src }}" alt="驗證碼圖片">
+          </div>
+        {% else %}
+          <p class="alert">驗證碼圖片已失效，請重新查詢。</p>
+        {% endif %}
+
+        <form class="form" method="post" action="{{ url_for('search', token=token) }}">
+          <label>
+            驗證碼
+            <input name="captcha_code" inputmode="numeric" autocomplete="off" maxlength="8" required>
+          </label>
+          <button type="submit">送出查詢</button>
+          <a class="secondary-action" href="{{ url_for('index') }}">重新設定條件</a>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

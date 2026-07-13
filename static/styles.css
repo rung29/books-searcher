@@ -1,0 +1,303 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7f5;
+  --panel: #ffffff;
+  --text: #1f2933;
+  --muted: #64748b;
+  --line: #d8e0dd;
+  --accent: #0f766e;
+  --accent-dark: #115e59;
+  --soft: #e6f4f1;
+  --danger: #b42318;
+  --ok: #157f3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(100%, 560px);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(28, 46, 43, 0.08);
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.15rem;
+}
+
+.heading p,
+.results-header p,
+.empty p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 8px;
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  padding: 0 12px;
+}
+
+button,
+.button-link {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  display: inline-grid;
+  place-items: center;
+  min-height: 48px;
+  border-radius: 8px;
+  padding: 0 18px;
+}
+
+button:hover,
+.button-link:hover {
+  background: var(--accent-dark);
+  text-decoration: none;
+}
+
+.check-row {
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.check-row input {
+  width: 20px;
+  min-height: 20px;
+}
+
+.captcha-box {
+  display: grid;
+  place-items: center;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.captcha-box img {
+  max-width: 100%;
+  image-rendering: auto;
+}
+
+.alert {
+  background: #fff1f0;
+  border: 1px solid #ffd1cc;
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.secondary-action {
+  color: var(--accent-dark);
+  font-weight: 800;
+  text-align: center;
+}
+
+.results-shell {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.pager {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.pager a {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 42px;
+  padding: 9px 14px;
+  font-weight: 800;
+}
+
+.book-list {
+  display: grid;
+  gap: 14px;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.book-card h2 {
+  margin-bottom: 14px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin: 0;
+}
+
+dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+dd {
+  margin: 2px 0 0;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--soft);
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+.library-box {
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+
+.library-box ul {
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.ok {
+  color: var(--ok);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.empty {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+@media (max-width: 760px) {
+  .shell,
+  .results-shell {
+    padding: 14px;
+  }
+
+  .panel,
+  .book-card,
+  .empty {
+    padding: 18px;
+  }
+
+  .results-header {
+    display: grid;
+  }
+
+  .book-card {
+    grid-template-columns: 1fr;
+  }
+
+  .library-box {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 14px 0 0;
+  }
+
+  dl {
+    grid-template-columns: 1fr;
+  }
+}

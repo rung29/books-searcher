@@ -50,9 +50,9 @@
                   <strong class="{{ 'ok' if library.has_holding else 'muted' }}">
                     {{ "伸港有館藏" if library.has_holding else "伸港無館藏" }}
                   </strong>
-                  {% if library.items %}
+                  {% if library["items"] %}
                     <ul>
-                      {% for item in library.items %}
+                      {% for item in library["items"] %}
                         <li>{{ item.call_number or "-" }} / {{ item.status or "-" }}</li>
                       {% endfor %}
                     </ul>

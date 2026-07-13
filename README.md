@@ -22,6 +22,32 @@ python -m venv .venv
 4. **輸入驗證碼**：程式會將驗證碼圖片下載至專案目錄下的 `captcha.png`，請開啟圖片查看 4 位數驗證碼並輸入
 5. **選擇頁碼**：驗證通過後可持續輸入頁碼下載，輸入 `q` 退出
 
+## 網頁版與雲端部署限制
+
+目前 `web-version` 分支提供 Flask 網頁版，可在本機或同一個區網內執行：
+
+```bash
+.venv\Scripts\python.exe web_app.py
+```
+
+網頁版支援輸入搜尋條件、驗證碼、指定頁數，並可顯示伸港鄉立圖書館的館藏情形、索書號與館藏狀態。不過實測後有以下限制：
+
+- **Vercel 部署限制**：網頁本身可以部署並開啟，但館藏查詢 API 由 Vercel Function 連線到 `library.toread.bocach.gov.tw` 時會發生 `ConnectTimeout`。即使改用東京區域 `hnd1`、延長 timeout、降低並行數，仍會逾時。推測是對方圖書館網站阻擋或無法接受 Vercel 雲端出口連線。
+- **GitHub Pages 限制**：GitHub Pages 只能提供靜態 HTML，不能執行 Flask/Python 後端，因此無法提供即時查詢、驗證碼流程與館藏查詢 API。
+- **GitHub Actions 限制**：GitHub Actions 可以用來測試或定期產生靜態結果，但不適合作為互動式即時查詢網站。
+- **Zeabur 嘗試結果**：曾嘗試改為 Zeabur 部署，但目前帳號沒有可用 server/region/credit，因此未能完成實際部署測試。
+
+因此目前最穩定的使用方式仍是：
+
+- 在本機執行命令列版 `crawler.py` + `integrate.py`
+- 或在本機/區網執行 Flask 網頁版 `web_app.py`
+
+若要公開成可用的網頁服務，建議部署到一般 VPS 或可自訂出口網路的主機，並確認該主機可以連到：
+
+```text
+https://library.toread.bocach.gov.tw
+```
+
 ### 整合圖書館館藏狀態
 
 如果您想查詢剛抓下來的書籍在「伸港鄉立圖書館」是否有館藏、索書號及借閱狀態，請在抓取完清單後執行：

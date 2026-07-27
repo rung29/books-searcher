@@ -1,8 +1,14 @@
 import os
+import re
 import sys
 import urllib.parse
 import requests
 from bs4 import BeautifulSoup
+
+
+class SourceStructureError(RuntimeError):
+    """Raised when a source page no longer has a recognized result structure."""
+
 
 def fetch_search_session():
     """
@@ -12,12 +18,12 @@ def fetch_search_session():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
-    
+
     # 關閉 SSL 憑證警告訊息
     requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
-    
+
     session = requests.Session()
-    
+
     print("1. 正在初始化網站連線，取得安全金鑰 (CSRF Token)...")
     try:
         res = session.get(base_url, params={"inter": "books", "kind": "cht"}, headers=headers, verify=False, timeout=15)
@@ -99,7 +105,7 @@ def perform_search(session, csrf_token, readrang, testing, keywords, captcha_cod
             alert_text = s.string.strip()
             print(f"\n❌ 搜尋被拒絕，伺服器訊息：{alert_text}", file=sys.stderr)
             return False
-            
+
     return True
 
 def fetch_books_by_page(session, page_number):
@@ -127,6 +133,13 @@ def fetch_books_by_page(session, page_number):
         
     soup = BeautifulSoup(response.text, "html.parser")
     book_elements = soup.select("div.book-group")
+    page_text = soup.get_text(" ", strip=True)
+    if not book_elements and not any(
+        marker in page_text for marker in ("查無", "無符合", "0 筆")
+    ):
+        raise SourceStructureError(
+            f"推薦書單第 {page_number} 頁缺少預期的書目區塊或查無結果標記"
+        )
     
     books = []
     for elem in book_elements:
@@ -173,7 +186,12 @@ def fetch_books_by_page(session, page_number):
             book_data["status"] = ""
             
         books.append(book_data)
-        
+
+    if book_elements and not books:
+        raise SourceStructureError(
+            f"推薦書單第 {page_number} 頁有結果區塊，但無法解析任何書名"
+        )
+
     return books
 
 def save_to_html(books, page_number, readrang_name, testing_name, keywords):
@@ -278,34 +296,41 @@ def main():
     print(" 讀步彰化飛閱雲端 - 書籍清單下載爬蟲")
     print("=======================================================\n")
     
-    # 選擇年段
-    print("【1】請選擇適讀年段：")
+    # 選擇年段（支援複選）
+    print("【1】請選擇適讀年段 (可複選，請以空格隔開，例如：1 2)：")
     print(" 0. 全部年段 (預設)")
     print(" 1. 國小低年級")
     print(" 2. 國小中年級")
     print(" 3. 國小高年級")
     print(" 4. 國中")
     print(" 5. 其他")
-    rang_choice = input("請選擇 (0-5)：").strip()
+    rang_input = input("請選擇 (0-5，可複選)：").strip()
     
     readrang_map = {
-        "0": "all",
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5"
-    }
-    readrang_names = {
-        "all": "全部年段",
         "1": "國小低年級",
         "2": "國小中年級",
         "3": "國小高年級",
         "4": "國中",
         "5": "其他"
     }
-    readrang = readrang_map.get(rang_choice, "all")
-    readrang_name = readrang_names[readrang]
+
+    # 解析使用者輸入的年段選項
+    raw_choices = [c for c in re.split(r'[\s,]+', rang_input) if c]
+    valid_choices = [c for c in raw_choices if c in readrang_map]
+
+    # 判斷是否為全部年段 (未輸入、包含 0、無有效選項或全選)
+    if not raw_choices or "0" in raw_choices or len(valid_choices) == 0 or len(valid_choices) == len(readrang_map):
+        server_readrang = "all"
+        selected_range_names = None
+        readrang_display_name = "全部年段"
+    elif len(valid_choices) == 1:
+        server_readrang = valid_choices[0]
+        selected_range_names = {readrang_map[valid_choices[0]]}
+        readrang_display_name = readrang_map[valid_choices[0]]
+    else:
+        server_readrang = "all"
+        selected_range_names = {readrang_map[c] for c in valid_choices}
+        readrang_display_name = "、".join([readrang_map[c] for c in valid_choices])
     
     # 選擇認證狀態
     print("\n【2】請選擇認證狀態：")
@@ -339,7 +364,7 @@ def main():
     captcha_code = input("請輸入 4 位數驗證碼：").strip()
     
     # 執行搜尋
-    success = perform_search(session, csrf_token, readrang, testing, keywords, captcha_code)
+    success = perform_search(session, csrf_token, server_readrang, testing, keywords, captcha_code)
     if not success:
         print("\n❌ 搜尋初始化失敗，程式結束。請確認驗證碼是否輸入正確，然後重新執行程式。")
         sys.exit(1)
@@ -362,9 +387,20 @@ def main():
             continue
             
         print(f"正在抓取第 {page_number} 頁...")
-        books = fetch_books_by_page(session, page_number)
+        try:
+            books = fetch_books_by_page(session, page_number)
+        except SourceStructureError as exc:
+            print(f"來源格式異常：{exc}", file=sys.stderr)
+            continue
         if books:
-            save_to_html(books, page_number, readrang_name, testing_name, keywords)
+            # 若為複選年段，在本地端進行聯集過濾
+            if selected_range_names:
+                books = [b for b in books if b.get("range", "").strip() in selected_range_names]
+
+            if books:
+                save_to_html(books, page_number, readrang_display_name, testing_name, keywords)
+            else:
+                print(f"\n第 {page_number} 頁抓取到的書籍中，沒有符合選擇年段 ({readrang_display_name}) 的項目。")
             # 在抓取成功後，刪除暫存的驗證碼圖片檔案
             captcha_path = os.path.join(os.getcwd(), "captcha.png")
             if os.path.exists(captcha_path):

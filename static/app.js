@@ -69,13 +69,23 @@
 
   function renderResult(row, result) {
     const holdingCell = row.querySelector("[data-library-holding]");
+    const matchCell = row.querySelector("[data-library-match]");
     const callCell = row.querySelector("[data-library-call]");
     const statusCell = row.querySelector("[data-library-status]");
     const items = Array.isArray(result.items) ? result.items : [];
 
-    holdingCell.innerHTML = result.has_holding
-      ? '<span class="status-pill status-yes">有館藏</span>'
-      : '<span class="status-pill status-no">無館藏</span>';
+    holdingCell.innerHTML = result.error_type === "structure"
+      ? '<span class="status-pill muted-pill">未完成</span>'
+      : result.has_holding
+        ? '<span class="status-pill status-yes">有館藏</span>'
+        : '<span class="status-pill status-no">無館藏</span>';
+
+    if (result.matched_title && result.detail_url) {
+      const note = result.match_type === "主書名" ? "（主書名匹配）" : "";
+      matchCell.innerHTML = `<a href="${escapeHtml(result.detail_url)}" target="_blank" rel="noopener">${escapeHtml(result.matched_title)}</a>${note}`;
+    } else {
+      matchCell.textContent = "-";
+    }
 
     if (items.length === 0) {
       callCell.textContent = "-";
@@ -97,6 +107,7 @@
   async function queryStatus(row) {
     const index = row.dataset.index;
     const title = row.dataset.title || "";
+    const author = row.dataset.author || "";
     const cached = cache[index];
     if (cached && cached.title === title) {
       renderResult(row, cached.result);
@@ -107,7 +118,7 @@
     const response = await fetch("/api/library-status", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title }),
+      body: JSON.stringify({ title, author }),
     });
     const result = await response.json();
     cache[index] = { title, result };
@@ -123,24 +134,47 @@
       setProgress(state.done, total, title);
       try {
         await queryStatus(row);
+        const cachedResult = cache[row.dataset.index] && cache[row.dataset.index].result;
+        if (cachedResult && cachedResult.error_type === "structure") {
+          state.consecutiveStructureErrors += 1;
+        } else {
+          state.consecutiveStructureErrors = 0;
+        }
       } catch (error) {
         renderResult(row, { has_holding: false, items: [], error: "查詢失敗" });
+        state.consecutiveStructureErrors = 0;
       }
       state.done += 1;
       setProgress(state.done, total, title);
+      if (state.consecutiveStructureErrors >= 3) {
+        queue.forEach((pendingRow) => {
+          renderResult(pendingRow, {
+            has_holding: false,
+            items: [],
+            error: "來源格式異常，未完成查詢",
+            error_type: "structure",
+          });
+        });
+        state.done += queue.length;
+        queue.length = 0;
+        setProgress(state.done, total, "");
+        state.stoppedForStructure = true;
+      }
     }
   }
 
   async function run() {
     const queue = rows.slice();
-    const state = { done: 0 };
+    const state = { done: 0, consecutiveStructureErrors: 0, stoppedForStructure: false };
     setProgress(0, rows.length);
 
     await Promise.all(
       Array.from({ length: Math.min(concurrency, queue.length) }, () => worker(queue, rows.length, state))
     );
 
-    progressTitle.textContent = "伸港圖書館館藏查詢完成";
+    progressTitle.textContent = state.stoppedForStructure
+      ? "來源格式連續異常，已停止後續查詢；先前結果已保留"
+      : "伸港圖書館館藏查詢完成";
   }
 
   run();

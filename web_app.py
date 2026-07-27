@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from flask import Flask, abort, jsonify, redirect, render_template, request, session, url_for
 from requests.utils import cookiejar_from_dict, dict_from_cookiejar
 
-from crawler import fetch_books_by_page, perform_search
+from crawler import SourceStructureError, fetch_books_by_page, perform_search
 from integrate import search_library_status
 
 
@@ -219,7 +219,10 @@ def results(token):
         page = 1
 
     http_session = restore_session(data.get("cookies"))
-    books = fetch_books_by_page(http_session, page) or []
+    try:
+        books = fetch_books_by_page(http_session, page) or []
+    except SourceStructureError as exc:
+        return render_template("error.html", message=str(exc)), 502
     data["cookies"] = serialize_session(http_session)
     session["search_data"] = data
 
@@ -243,10 +246,11 @@ def reset():
 def library_status():
     payload = request.get_json(silent=True) or {}
     title = (payload.get("title") or "").strip()
+    author = (payload.get("author") or "").strip()
     if not title:
         return jsonify({"has_holding": False, "items": [], "error": "缺少書名"}), 400
 
-    result = search_library_status(title)
+    result = search_library_status(title, author)
     return jsonify(result)
 
 

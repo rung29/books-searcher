@@ -47,7 +47,7 @@
 
       {% if books %}
         <div class="table-wrap">
-          <table class="result-table" data-cache-key="library:{{ token }}:{{ page }}">
+          <table class="result-table" data-cache-key="library:v2:{{ token }}:{{ page }}">
             <thead>
               <tr>
                 <th>序號</th>
@@ -58,6 +58,7 @@
                 <th>認證狀態</th>
                 {% if context.include_library %}
                   <th>館藏情形</th>
+                  <th>命中館藏</th>
                   <th>索書號</th>
                   <th>館藏狀態</th>
                 {% endif %}
@@ -65,7 +66,7 @@
             </thead>
             <tbody>
               {% for book in books %}
-                <tr {% if context.include_library %}data-library-row data-title="{{ book.title }}" data-index="{{ loop.index0 }}"{% endif %}>
+                <tr {% if context.include_library %}data-library-row data-title="{{ book.title }}" data-author="{{ book.author or '' }}" data-index="{{ loop.index0 }}"{% endif %}>
                   <td data-label="序號">{{ loop.index }}</td>
                   <td data-label="書名">
                     {% if book.url %}
@@ -80,6 +81,7 @@
                   <td data-label="認證狀態"><span class="status-pill">{{ book.status or "-" }}</span></td>
                   {% if context.include_library %}
                     <td data-label="館藏情形" data-library-holding><span class="status-pill muted-pill">等待查詢</span></td>
+                    <td data-label="命中館藏" data-library-match>-</td>
                     <td data-label="索書號" data-library-call>-</td>
                     <td data-label="館藏狀態" data-library-status>-</td>
                   {% endif %}

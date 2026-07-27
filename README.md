@@ -105,5 +105,6 @@ set INTEGRATE_PAGE_SLEEP_SECONDS=0.3
 可調參數如下：
 
 - `INTEGRATE_MAX_CONTENT_PAGES`：單筆書目最多查幾頁，預設 `9`
+- `INTEGRATE_MAX_SEARCH_CANDIDATES`：每本書最多檢查幾個候選版本，預設 `10`
 - `INTEGRATE_PAGE_SLEEP_SECONDS`：同一本書的頁面之間等待秒數，預設 `1.0`
 - `INTEGRATE_BOOK_SLEEP_SECONDS`：每本書查完後等待秒數，預設 `1.5`

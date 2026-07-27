@@ -1,4 +1,6 @@
 import unittest
+import tempfile
+from pathlib import Path
 from unittest.mock import patch
 
 import crawler
@@ -100,6 +102,73 @@ class LibraryLookupTests(unittest.TestCase):
         self.assertEqual(candidates[0]["title"], "實際書名")
         self.assertEqual(candidates[0]["author"], "王小明")
 
+    def test_normalizes_catalog_labels_and_rearranged_punctuation(self):
+        cases = [
+            (
+                "好品格童話2：孔雀先生的祕密",
+                "好品格童話.2,孔雀先生的祕密 [中年級認證書] /",
+            ),
+            (
+                "屁屁偵探讀本9：幸運貓落到誰手上",
+                "屁屁偵探讀本: [中年級認證書] 9,幸運貓落到誰手上! /",
+            ),
+        ]
+
+        for source_title, catalog_title in cases:
+            with self.subTest(source_title=source_title):
+                self.assertEqual(
+                    integrate._compact_text(source_title),
+                    integrate._compact_text(catalog_title),
+                )
+                self.assertEqual(
+                    integrate._title_similarity(source_title, catalog_title),
+                    1.0,
+                )
+
+    def test_normalizes_author_role_markers(self):
+        self.assertTrue(
+            integrate._author_matches(
+                "文 / 李光福  圖 / 吳若嫻",
+                "李光福,吳若嫻",
+            )
+        )
+
+    @patch("integrate.requests.get")
+    def test_finds_book_cataloged_only_by_subtitle(self, mock_get):
+        mock_get.side_effect = [
+            FakeResponse(search_html(no_results=True)),
+            FakeResponse(search_html(no_results=True)),
+            FakeResponse(search_html([("504644", "長髮小善人", "李光福,吳若嫻")])),
+            FakeResponse(content_html("伸港兒童專區")),
+        ]
+
+        result = integrate.search_library_status(
+            "美德新幹線9：長髮小善人",
+            "文 / 李光福  圖 / 吳若嫻",
+        )
+
+        self.assertTrue(result["has_holding"])
+        self.assertEqual(result["matched_title"], "長髮小善人")
+        self.assertEqual(result["match_type"], "副標題")
+
+    @patch("integrate.requests.get")
+    def test_finds_catalog_title_through_series_volume_fallback(self, mock_get):
+        catalog_title = "好品格童話.2,孔雀先生的祕密 [中年級認證書] /"
+        mock_get.side_effect = [
+            FakeResponse(search_html(no_results=True)),
+            FakeResponse(search_html(no_results=True)),
+            FakeResponse(search_html([("22", catalog_title, "賴曉珍")])),
+            FakeResponse(content_html("伸港兒童專區")),
+        ]
+
+        result = integrate.search_library_status(
+            "好品格童話2：孔雀先生的祕密", "賴曉珍"
+        )
+
+        self.assertTrue(result["has_holding"])
+        self.assertEqual(result["matched_title"], catalog_title)
+        self.assertEqual(result["match_type"], "副標題")
+
     @patch("integrate.requests.get")
     def test_uses_main_title_when_full_title_has_no_candidates(self, mock_get):
         mock_get.side_effect = [
@@ -161,6 +230,105 @@ class CrawlerStructureTests(unittest.TestCase):
 
         with self.assertRaises(crawler.SourceStructureError):
             crawler.fetch_books_by_page(session, 1)
+
+
+def source_page_html(book_count):
+    rows = []
+    for index in range(1, book_count + 1):
+        rows.append(
+            f"""
+            <tr>
+              <td data-label="序號">{index}</td>
+              <td data-label="書名"><a href="#">書籍 {index}</a></td>
+              <td data-label="作者">作者 {index}</td>
+              <td data-label="出版社">出版社</td>
+              <td data-label="適讀年段">國小</td>
+              <td data-label="認證狀態">通過</td>
+            </tr>
+            """
+        )
+    return f"""
+    <!doctype html><html><head><title>來源清單</title></head><body>
+      <h1>來源清單</h1>
+      <div class="info">查詢條件</div>
+      <table>
+        <thead><tr><th>序號</th><th>書名</th><th>作者</th><th>出版社</th>
+          <th>適讀年段</th><th>認證狀態</th></tr></thead>
+        <tbody>{''.join(rows)}</tbody>
+      </table>
+    </body></html>
+    """
+
+
+class IntegratedOutputTests(unittest.TestCase):
+    @patch("integrate.search_library_status")
+    def test_collects_only_rows_with_holdings(self, mock_search):
+        mock_search.side_effect = [
+            {
+                "has_holding": True,
+                "items": [{"call_number": "J 1", "status": "在架"}],
+                "matched_title": "書籍 1",
+                "detail_url": "https://example.test/1",
+            },
+            {"has_holding": False, "items": []},
+            {
+                "has_holding": True,
+                "items": [{"call_number": "J 3", "status": "借出"}],
+                "matched_title": "書籍 3",
+                "detail_url": "https://example.test/3",
+            },
+        ]
+        old_sleep = integrate.BOOK_SLEEP_SECONDS
+        integrate.BOOK_SLEEP_SECONDS = 0
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                source = Path(tmp) / "books_page_1.html"
+                source.write_text(source_page_html(3), encoding="utf-8")
+
+                template, rows, incomplete = integrate.collect_holding_rows([str(source)])
+        finally:
+            integrate.BOOK_SLEEP_SECONDS = old_sleep
+
+        self.assertEqual(len(rows), 2)
+        self.assertFalse(incomplete)
+        self.assertEqual(rows[0].find("td", {"data-label": "館藏情形"}).get_text(strip=True), "有館藏")
+        self.assertIsNotNone(template.find("th", string="命中館藏"))
+
+    def test_writes_three_pages_for_55_holdings_and_an_index(self):
+        source_soup = integrate.BeautifulSoup(source_page_html(55), "html.parser")
+        template = integrate._prepare_output_template(source_soup)
+        rows = source_soup.find("tbody").find_all("tr")
+        old_size = integrate.OUTPUT_PAGE_SIZE
+        integrate.OUTPUT_PAGE_SIZE = 25
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                files = integrate.write_result_pages(template, rows, tmp)
+                row_counts = []
+                first_numbers = []
+                for filename in files:
+                    page = integrate.BeautifulSoup(
+                        (Path(tmp) / filename).read_text(encoding="utf-8"),
+                        "html.parser",
+                    )
+                    page_rows = page.find("tbody").find_all("tr")
+                    row_counts.append(len(page_rows))
+                    first_numbers.append(
+                        page_rows[0].find("td", {"data-label": "序號"}).get_text(strip=True)
+                    )
+                index_html = (Path(tmp) / "books_with_library_index.html").read_text(
+                    encoding="utf-8"
+                )
+        finally:
+            integrate.OUTPUT_PAGE_SIZE = old_size
+
+        self.assertEqual(files, [
+            "books_with_library_page_1.html",
+            "books_with_library_page_2.html",
+            "books_with_library_page_3.html",
+        ])
+        self.assertEqual(row_counts, [25, 25, 5])
+        self.assertEqual(first_numbers, ["1", "26", "51"])
+        self.assertIn("books_with_library_page_3.html", index_html)
 
 
 if __name__ == "__main__":

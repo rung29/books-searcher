@@ -91,7 +91,26 @@ https://library.toread.bocach.gov.tw
 .venv\Scripts\python.exe integrate.py
 ```
 
-這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，並產生對應的 `books_page_*_with_library.html`。
+這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，只保留有館藏的書籍。結果每 25 本分成一頁，輸出為 `books_with_library_page_*.html`，並產生可切換各頁的 `books_with_library_index.html` 首頁。
+
+### 重新確認既有館藏
+
+若只要重新確認上次已找到的館藏，不重新查詢完整推薦清單，可執行：
+
+```bash
+.venv\Scripts\python.exe recheck.py
+```
+
+程式會讀取 `books_with_library_page_*.html`，優先使用既有 `mid` 更新館藏狀態，失效時才以書名與作者重新搜尋。原結果不會被覆寫；新結果會輸出為 `books_rechecked_page_*.html` 及 `books_rechecked_index.html`。查無館藏的書仍會保留並標記，連線失敗則最多重試兩次。
+
+若結果放在子目錄，可指定該目錄或首頁：
+
+```bash
+.venv\Scripts\python.exe recheck.py 中年級
+.venv\Scripts\python.exe recheck.py 中年級\books_with_library_index.html
+```
+
+可用 `RECHECK_MAX_RETRIES` 調整重試次數（預設 `2`），`RECHECK_RETRY_SECONDS` 調整重試等待秒數（預設 `1`）。
 
 ### 效能調整
 
@@ -106,5 +125,6 @@ set INTEGRATE_PAGE_SLEEP_SECONDS=0.3
 
 - `INTEGRATE_MAX_CONTENT_PAGES`：單筆書目最多查幾頁，預設 `9`
 - `INTEGRATE_MAX_SEARCH_CANDIDATES`：每本書最多檢查幾個候選版本，預設 `10`
+- `INTEGRATE_OUTPUT_PAGE_SIZE`：館藏結果每頁收入幾本書，預設 `25`
 - `INTEGRATE_PAGE_SLEEP_SECONDS`：同一本書的頁面之間等待秒數，預設 `1.0`
 - `INTEGRATE_BOOK_SLEEP_SECONDS`：每本書查完後等待秒數，預設 `1.5`

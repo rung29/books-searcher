@@ -360,51 +360,538 @@ def _ebook_page_html(records, page_number, page_count):
 def _ebook_index_html(records, page_files):
     embedded = json.dumps(records, ensure_ascii=False).replace("</", "<\\/")
     links = "\n".join(
-        f'<a class="page-link" href="{filename}">第 {index} 頁</a>'
+        f'<a class="page-link" href="{filename}"><span>📑 第 {index} 頁</span></a>'
         for index, filename in enumerate(page_files, 1)
     )
     return f"""<!doctype html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>電子書資源清單</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 1040px; margin: 0 auto; padding: 32px 20px; background: #f8f9fa; color: #263238; }}
-    main {{ display: grid; gap: 20px; }}
-    .panel {{ background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }}
-    input {{ width: 100%; min-height: 46px; padding: 0 14px; border: 1px solid #ccd6dd; border-radius: 8px; font: inherit; }}
-    .list {{ display: grid; gap: 10px; }}
-    .book {{ border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fff; }}
-    .book-title {{ font-weight: 800; color: #075985; text-decoration: none; }}
-    .meta {{ color: #64748b; font-size: .92rem; margin-top: 4px; }}
-    .resource {{ display: inline-block; margin: 6px 6px 0 0; padding: 4px 9px; border-radius: 999px; background: #ccfbf1; color: #115e59; font-weight: 700; text-decoration: none; }}
-    .pages {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }}
-    .page-link {{ display: block; padding: 16px; text-align: center; color: #fff; background: #0f766e; border-radius: 8px; text-decoration: none; font-weight: 700; }}
+    :root {{
+      --font-sans: 'Outfit', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --bg-primary: #fffaf5;
+      --bg-card: rgba(255, 255, 255, 0.92);
+      --bg-card-hover: #ffffff;
+      --bg-inner: rgba(254, 243, 235, 0.65);
+      --text-primary: #292524;
+      --text-secondary: #78716c;
+      --text-muted: #a8a29e;
+      --accent: #ea580c;
+      --accent-hover: #c2410c;
+      --accent-light: #ffedd5;
+      --accent-gradient: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      --border: rgba(254, 215, 170, 0.8);
+      --border-subtle: rgba(231, 229, 228, 0.85);
+      --border-focus: #f97316;
+      --success-bg: rgba(16, 185, 129, 0.12);
+      --success-text: #059669;
+      --success-border: rgba(16, 185, 129, 0.25);
+      --resource-bg: #fff7ed;
+      --resource-text: #c2410c;
+      --resource-border: #fed7aa;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 16px -2px rgba(234, 88, 12, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 25px -3px rgba(234, 88, 12, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+      --glass-blur: blur(14px);
+    }}
+
+    [data-theme="dark"] {{
+      --bg-primary: #14110e;
+      --bg-card: rgba(28, 25, 23, 0.92);
+      --bg-card-hover: rgba(38, 34, 31, 0.98);
+      --bg-inner: rgba(41, 37, 36, 0.65);
+      --text-primary: #fafaf9;
+      --text-secondary: #a8a29e;
+      --text-muted: #78716c;
+      --accent: #fb923c;
+      --accent-hover: #f97316;
+      --accent-light: rgba(251, 146, 60, 0.18);
+      --accent-gradient: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      --border: rgba(120, 113, 108, 0.4);
+      --border-subtle: rgba(68, 64, 60, 0.6);
+      --border-focus: #fb923c;
+      --success-bg: rgba(16, 185, 129, 0.2);
+      --success-text: #34d399;
+      --success-border: rgba(16, 185, 129, 0.35);
+      --resource-bg: rgba(251, 146, 60, 0.15);
+      --resource-text: #fdba74;
+      --resource-border: rgba(251, 146, 60, 0.3);
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
+    }}
+
+    * {{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }}
+
+    body {{
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(249, 115, 22, 0.08), transparent 30%),
+        radial-gradient(circle at 90% 90%, rgba(234, 88, 12, 0.06), transparent 35%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 24px 16px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }}
+
+    .container {{
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }}
+
+    .app-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow-md);
+    }}
+
+    .header-brand {{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }}
+
+    .brand-icon {{
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+      flex-shrink: 0;
+    }}
+
+    .header-title-group h1 {{
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }}
+
+    .header-title-group p {{
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }}
+
+    .header-actions {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }}
+
+    .btn-nav {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: var(--accent-gradient);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }}
+
+    .btn-nav:hover {{
+      transform: translateY(-1.5px);
+      box-shadow: 0 6px 18px rgba(234, 88, 12, 0.38);
+      opacity: 0.95;
+    }}
+
+    .btn-nav:active {{
+      transform: translateY(0);
+    }}
+
+    .btn-icon {{
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }}
+
+    .btn-icon:hover {{
+      transform: scale(1.05);
+      border-color: var(--accent);
+    }}
+
+    .panel {{
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }}
+
+    .panel-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }}
+
+    .panel-title {{
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }}
+
+    .search-wrapper {{
+      position: relative;
+      display: flex;
+      align-items: center;
+    }}
+
+    .search-icon {{
+      position: absolute;
+      left: 16px;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }}
+
+    .search-input {{
+      width: 100%;
+      min-height: 50px;
+      padding: 0 46px 0 46px;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-inner);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }}
+
+    .search-input:focus {{
+      border-color: var(--border-focus);
+      background: var(--bg-card-hover);
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.18);
+    }}
+
+    .search-clear-btn {{
+      position: absolute;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }}
+
+    .search-clear-btn:hover {{
+      color: var(--accent);
+      background: var(--accent-light);
+    }}
+
+    .search-meta-row {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }}
+
+    .count-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }}
+
+    .list {{
+      display: grid;
+      gap: 12px;
+    }}
+
+    .book-card {{
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }}
+
+    .book-card:hover {{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }}
+
+    .book-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }}
+
+    .book-title {{
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      line-height: 1.4;
+    }}
+
+    .book-title:hover {{
+      color: var(--accent);
+      text-decoration: underline;
+    }}
+
+    .book-meta {{
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      align-items: center;
+    }}
+
+    .book-meta-item {{
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }}
+
+    .book-matched {{
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      padding: 8px 12px;
+      background: var(--bg-inner);
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+    }}
+
+    .book-matched a {{
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }}
+
+    .book-matched a:hover {{
+      text-decoration: underline;
+    }}
+
+    .resource-list {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }}
+
+    .resource-pill {{
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--resource-bg);
+      color: var(--resource-text);
+      border: 1px solid var(--resource-border);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    }}
+
+    .resource-pill:hover {{
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.2);
+      border-color: var(--accent);
+    }}
+
+    .pages-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }}
+
+    .page-link {{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 16px;
+      text-align: center;
+      color: #ffffff;
+      background: var(--accent-gradient);
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }}
+
+    .page-link:hover {{
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+    }}
+
+    .muted-text {{
+      color: var(--text-muted);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.95rem;
+    }}
+
+    @media (max-width: 640px) {{
+      body {{
+        padding: 16px 10px 32px;
+      }}
+      .app-header {{
+        padding: 16px;
+      }}
+      .header-actions {{
+        width: 100%;
+        justify-content: space-between;
+      }}
+      .btn-nav {{
+        flex: 1;
+        justify-content: center;
+      }}
+      .panel {{
+        padding: 16px;
+      }}
+    }}
   </style>
 </head>
-<body><main>
+<body>
+<div class="container">
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-icon">🌐</div>
+      <div class="header-title-group">
+        <h1>電子書資源清單</h1>
+        <p>共找到 {len(records)} 本有網路資源的書籍，分為 {len(page_files)} 頁。</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="index.html" class="btn-nav" id="back-to-index">
+        <span>←</span>
+        <span>返回館藏查詢</span>
+      </a>
+      <button type="button" class="btn-icon" id="theme-toggle" aria-label="切換深淺色模式" title="切換深淺色模式">🌙</button>
+    </div>
+  </header>
+
   <section class="panel">
-    <h1>電子書資源清單</h1>
-    <p>共找到 {len(records)} 本有網路資源的書籍，分為 {len(page_files)} 頁。</p>
-    <input id="search-input" type="search" placeholder="輸入書名、作者、出版社或網路資源">
-    <p id="result-count">載入中...</p>
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input id="search-input" class="search-input" type="search" placeholder="輸入書名、作者、出版社或網路資源" autocomplete="off">
+      <button type="button" class="search-clear-btn" id="search-clear" aria-label="清除搜尋">&times;</button>
+    </div>
+    <div class="search-meta-row">
+      <span>即時搜尋線上電子書資源</span>
+      <span class="count-badge" id="result-count">載入中...</span>
+    </div>
   </section>
+
   <section class="panel">
-    <h2>搜尋結果</h2>
+    <div class="panel-header">
+      <h2 class="panel-title"><span>📋</span> 搜尋結果</h2>
+    </div>
     <div class="list" id="results-list"></div>
   </section>
+
   <section class="panel">
-    <h2>分頁</h2>
-    <nav class="pages">{links}</nav>
+    <div class="panel-header">
+      <h2 class="panel-title"><span>📑</span> 電子書分頁</h2>
+    </div>
+    <nav class="pages-grid">{links}</nav>
   </section>
-</main>
+</div>
+
 <script id="ebooks-data" type="application/json">{embedded}</script>
 <script>
 const searchInput = document.getElementById("search-input");
+const searchClearBtn = document.getElementById("search-clear");
 const resultCount = document.getElementById("result-count");
 const resultsList = document.getElementById("results-list");
+const themeToggleBtn = document.getElementById("theme-toggle");
 const books = JSON.parse(document.getElementById("ebooks-data").textContent || "[]");
+
+function initTheme() {{
+  const savedTheme = localStorage.getItem("books_theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  themeToggleBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+}}
+
+themeToggleBtn.addEventListener("click", () => {{
+  const current = document.documentElement.getAttribute("data-theme") || "light";
+  const next = current === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("books_theme", next);
+  themeToggleBtn.textContent = next === "dark" ? "☀️" : "🌙";
+}});
+
+initTheme();
 
 function escapeHtml(value) {{
   return String(value || "")
@@ -433,29 +920,48 @@ function matches(book, query) {{
 
 function bookHtml(book) {{
   const resources = (book.online_resources || [])
-    .map(url => `<a class="resource" href="${{escapeHtml(url)}}" target="_blank" rel="noopener">網路資源</a>`)
+    .map(url => `<a class="resource-pill" href="${{escapeHtml(url)}}" target="_blank" rel="noopener"><span>🌐</span> 網路資源</a>`)
     .join("");
-  return `<article class="book">
-    <a class="book-title" href="${{escapeHtml(book.anchor)}}">${{escapeHtml(book.title)}}</a>
-    <div class="meta">${{escapeHtml(book.author || "-")}} / ${{escapeHtml(book.publisher || "-")}} / ${{escapeHtml(book.range || "-")}}</div>
-    <div class="meta">命中館藏：${{book.matched_url ? `<a href="${{escapeHtml(book.matched_url)}}" target="_blank" rel="noopener">${{escapeHtml(book.matched_title || "-")}}</a>` : escapeHtml(book.matched_title || "-")}}</div>
-    <div>${{resources}}</div>
+  const metaItems = [
+    book.author ? `<span class="book-meta-item">✍️ ${{escapeHtml(book.author)}}</span>` : "",
+    book.publisher ? `<span class="book-meta-item">🏢 ${{escapeHtml(book.publisher)}}</span>` : "",
+    book.range ? `<span class="book-meta-item">🎓 ${{escapeHtml(book.range)}}</span>` : ""
+  ].filter(Boolean).join(" · ");
+
+  return `<article class="book-card">
+    <div class="book-header">
+      <a class="book-title" href="${{escapeHtml(book.anchor)}}">${{escapeHtml(book.title)}}</a>
+    </div>
+    <div class="book-meta">${{metaItems || "-"}}</div>
+    <div class="book-matched">
+      <strong>命中館藏：</strong>${{book.matched_url ? `<a href="${{escapeHtml(book.matched_url)}}" target="_blank" rel="noopener">${{escapeHtml(book.matched_title || "-")}}</a>` : escapeHtml(book.matched_title || "-")}}
+    </div>
+    <div class="resource-list">${{resources}}</div>
   </article>`;
 }}
 
 function render() {{
-  const query = normalize(searchInput.value);
+  const rawValue = searchInput.value;
+  searchClearBtn.style.display = rawValue ? "flex" : "none";
+  const query = normalize(rawValue);
   const filtered = books.filter(book => matches(book, query));
   resultCount.textContent = `共 ${{filtered.length}} 本有網路資源書籍`;
   resultsList.innerHTML = filtered.length
     ? filtered.map(bookHtml).join("")
-    : '<p>沒有符合條件的電子書資源。</p>';
+    : '<p class="muted-text">沒有符合條件的電子書資源。</p>';
 }}
+
+searchClearBtn.addEventListener("click", () => {{
+  searchInput.value = "";
+  searchInput.focus();
+  render();
+}});
 
 searchInput.addEventListener("input", render);
 render();
 </script>
-</body></html>
+</body>
+</html>
 """
 
 

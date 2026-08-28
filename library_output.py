@@ -229,13 +229,9 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
     with open(data_path, "w", encoding="utf-8") as f:
         json.dump(records, f, ensure_ascii=False, indent=2)
 
-    page_links = "\n".join(
-        f'<a class="page-link" href="{filename}">第 {index} 頁</a>'
-        for index, filename in enumerate(page_files, 1)
-    )
     holding_count = len(records)
     message = (
-        f"共找到 {holding_count} 本有館藏書籍，分為 {len(page_files)} 頁。"
+        f"共找到 {holding_count} 本有館藏書籍。"
         if page_files
         else "沒有找到有館藏的書籍。"
     )
@@ -262,11 +258,6 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
     input {{ width: 100%; min-height: 46px; padding: 0 14px; border: 1px solid #ccd6dd;
       border-radius: 8px; font: inherit; }}
     .muted {{ color: #64748b; }}
-    .pages {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 12px; margin-top: 16px; }}
-    .page-link {{ display: block; padding: 16px; text-align: center; color: #fff;
-      background: #007bff; border-radius: 8px; text-decoration: none; font-weight: 700; }}
-    .page-link:hover {{ background: #0056b3; }}
     .summary {{ margin-bottom: 16px; }}
     .toolbar {{ display: grid; gap: 10px; }}
     .list {{ display: grid; gap: 10px; }}
@@ -301,10 +292,6 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
   <section class="panel">
     <h2 id="results-title">搜尋結果</h2>
     <div class="list" id="results-list"></div>
-  </section>
-  <section class="panel">
-  <h2>原始分頁</h2>
-  <nav class="pages" aria-label="結果頁面">{page_links}</nav>
   </section>
 </main></body>
 <script id="books-data" type="application/json">{embedded_records}</script>
@@ -467,8 +454,9 @@ function escapeHtml(value) {{
 function bookHtml(book) {{
   const calls = (book.call_numbers || []).map(call => `<span class="pill">${{escapeHtml(call)}}</span>`).join("");
   const statuses = (book.library_statuses || []).map(status => `<span class="pill">${{escapeHtml(status)}}</span>`).join("");
+  const titleHref = book.url || book.matched_url || "#";
   return `<article class="book">
-    <a class="book-title" href="${{escapeHtml(book.anchor)}}">${{escapeHtml(book.title)}}</a>
+    <a class="book-title" href="${{escapeHtml(titleHref)}}">${{escapeHtml(book.title)}}</a>
     <div class="meta">${{escapeHtml(book.author || "-")}} / ${{escapeHtml(book.publisher || "-")}} / ${{escapeHtml(book.range || "-")}}</div>
     <div class="meta">命中館藏：${{book.matched_url ? `<a href="${{escapeHtml(book.matched_url)}}" target="_blank" rel="noopener">${{escapeHtml(book.matched_title || "-")}}</a>` : escapeHtml(book.matched_title || "-")}}</div>
     <div class="calls">${{calls || '<span class="pill">無索書號</span>'}} ${{statuses}}</div>

@@ -338,7 +338,7 @@ class IntegratedOutputTests(unittest.TestCase):
         ])
         self.assertEqual(row_counts, [25, 25, 5])
         self.assertEqual(first_numbers, ["1", "26", "51"])
-        self.assertIn("books_with_library_page_3.html", index_html)
+        self.assertNotIn('class="page-link"', index_html)
         self.assertFalse(legacy_index_exists)
         self.assertIn("books_with_library_data.json", index_html)
         self.assertEqual(len(data), 55)

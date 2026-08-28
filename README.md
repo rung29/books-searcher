@@ -77,7 +77,7 @@ http://192.168.x.x:5000
 - 在本機執行命令列版 `crawler.py` + `integrate.py`
 - 或在本機/區網執行 Flask 網頁版 `web_app.py`
 
-靜態 GitHub Pages 產物由 `library_output.py` 統一產生；`integrate.py` 與 `recheck.py` 會共用同一套 HTML、JSON 與查詢首頁輸出邏輯。
+靜態查詢首頁由 `library_output.py` 統一產生；`integrate.py` 與 `recheck.py` 會先整理本機 `books_with_library_page_*.html`，再由 `library_output.py` 轉出前端使用的 `books_with_library_data.json` 與 `index.html`。
 
 若要公開成可用的網頁服務，建議部署到一般 VPS 或可自訂出口網路的主機，並確認該主機可以連到：
 
@@ -93,7 +93,23 @@ https://library.toread.bocach.gov.tw
 .venv\Scripts\python.exe integrate.py
 ```
 
-這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，只保留有館藏的書籍。結果每 25 本分成一頁，輸出為 `books_with_library_page_*.html`，並產生可切換各頁的 `index.html` 首頁。
+這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，只保留有館藏的書籍。程式會在本機產生 `books_with_library_page_*.html` 作為整理用中間檔，並同步產生前端查詢首頁 `index.html` 與資料檔 `books_with_library_data.json`。
+
+### 整理 GitHub Pages 查詢頁
+
+如果已經有 `books_with_library_page_*.html`，只想重新整理查詢首頁與 JSON，不想重新查詢圖書館，可以執行：
+
+```bash
+.venv\Scripts\python.exe library_output.py
+```
+
+Windows 也可以直接執行：
+
+```bash
+library_output.bat
+```
+
+`library_output.py` 會讀取本機的 `books_with_library_page_*.html`，抽出書名、作者、出版社、適讀年段、命中館藏、索書號與館藏狀態，轉成 `books_with_library_data.json`，再產生給 GitHub Pages 使用的 `index.html` 查詢頁。部署到 GitHub Pages 時，前端主要讀取 JSON 顯示搜尋結果，因此 `books_with_library_page_*.html` 可視為本機中間產物，不需要提交到 Git。
 
 ### 產生電子書資源清單
 

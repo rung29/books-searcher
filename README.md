@@ -95,6 +95,30 @@ https://library.toread.bocach.gov.tw
 
 這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，只保留有館藏的書籍。結果每 25 本分成一頁，輸出為 `books_with_library_page_*.html`，並產生可切換各頁的 `index.html` 首頁。
 
+### 產生電子書資源清單
+
+如果只想找「網路資源」欄位有資料的電子書，可以執行獨立的電子書搜尋流程：
+
+```bash
+.venv\Scripts\python.exe ebook_finder.py
+```
+
+Windows 也可以直接執行：
+
+```bash
+ebook_finder.bat
+```
+
+`ebook_finder.py` 會讀取 `crawler.py` 產出的 `books_page_*.html`，使用不限定館藏地的圖書館關鍵字搜尋，並只解析搜尋結果列表中的 `網路資源` 欄位。有找到網路資源的書才會收入電子書清單；它不會進入館藏詳細頁逐頁檢查伸港館藏，因此用途與 `integrate.py` 分開，執行成本也比較低。
+
+電子書清單會輸出為：
+
+- `ebooks_index.html`：電子書搜尋首頁
+- `ebooks_data.json`：電子書資料 JSON
+- `ebooks_page_*.html`：電子書分頁
+
+可用 `EBOOK_OUTPUT_PAGE_SIZE` 調整電子書結果每頁收入幾本書，預設 `25`。
+
 ### 重新確認既有館藏
 
 若只要重新確認上次已找到的館藏，不重新查詢完整推薦清單，可執行：

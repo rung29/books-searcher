@@ -1,11 +1,13 @@
 import tempfile
 import unittest
+import json
 from pathlib import Path
 from unittest.mock import patch
 
 import requests
 
 import integrate
+import library_output
 import recheck
 
 
@@ -77,7 +79,7 @@ class RecheckOutputTests(unittest.TestCase):
                     previous_results_html(1),
                     encoding="utf-8",
                 )
-            (root / "books_with_library_index.html").write_text(
+            (root / "index.html").write_text(
                 """
                 <a href="books_with_library_page_1.html">第 1 頁</a>
                 <a href="books_with_library_page_2.html">第 2 頁</a>
@@ -93,7 +95,7 @@ class RecheckOutputTests(unittest.TestCase):
         )
 
     @patch("recheck.recheck_book")
-    def test_retains_every_row_and_updates_status_classification(self, mock_recheck):
+    def test_keeps_only_rows_that_still_have_holdings(self, mock_recheck):
         mock_recheck.side_effect = [
             {
                 "outcome": "holding",
@@ -119,18 +121,14 @@ class RecheckOutputTests(unittest.TestCase):
         finally:
             recheck.BOOK_SLEEP_SECONDS = old_sleep
 
-        self.assertEqual(len(updated), 3)
+        self.assertEqual(len(updated), 1)
         self.assertEqual(stats["holding"], 1)
         self.assertEqual(stats["available"], 1)
         self.assertEqual(stats["unconfirmed"], 1)
         self.assertEqual(stats["failed"], 1)
         self.assertEqual(
-            updated[0].find("td", {"data-label": "狀態變化"}).get_text(strip=True),
-            "借出 → 在架",
-        )
-        self.assertIn(
-            "本次未確認到館藏",
-            updated[1].find("td", {"data-label": "館藏情形"}).get_text(strip=True),
+            updated[0].find("td", {"data-label": "館藏狀態"}).get_text(strip=True),
+            "在架",
         )
 
     def test_writes_rechecked_pages_and_statistics_index(self):
@@ -145,29 +143,40 @@ class RecheckOutputTests(unittest.TestCase):
             "unconfirmed": 4,
             "failed": 2,
         }
-        old_size = recheck.OUTPUT_PAGE_SIZE
-        recheck.OUTPUT_PAGE_SIZE = 25
+        old_size = library_output.OUTPUT_PAGE_SIZE
+        library_output.OUTPUT_PAGE_SIZE = 25
         try:
             with tempfile.TemporaryDirectory() as tmp:
+                stale_page = Path(tmp) / "books_with_library_page_99.html"
+                stale_page.write_text("stale", encoding="utf-8")
+                legacy_index = Path(tmp) / "books_with_library_index.html"
+                legacy_index.write_text("stale", encoding="utf-8")
                 files = recheck.write_rechecked_pages(
                     template, rows, stats, tmp, "2026-07-27 14:30"
                 )
-                index = (Path(tmp) / "books_rechecked_index.html").read_text(
+                index = (Path(tmp) / "index.html").read_text(
                     encoding="utf-8"
+                )
+                data = json.loads(
+                    (Path(tmp) / "books_with_library_data.json").read_text(
+                        encoding="utf-8"
+                    )
                 )
                 second_page = integrate.BeautifulSoup(
                     (Path(tmp) / files[1]).read_text(encoding="utf-8"),
                     "html.parser",
                 )
         finally:
-            recheck.OUTPUT_PAGE_SIZE = old_size
+            library_output.OUTPUT_PAGE_SIZE = old_size
 
         self.assertEqual(
             files,
-            ["books_rechecked_page_1.html", "books_rechecked_page_2.html"],
+            ["books_with_library_page_1.html", "books_with_library_page_2.html"],
         )
-        self.assertIn("2026-07-27 14:30", index)
-        self.assertIn(">12<", index)
+        self.assertIn("books_with_library_data.json", index)
+        self.assertFalse(stale_page.exists())
+        self.assertFalse(legacy_index.exists())
+        self.assertEqual(len(data), 26)
         self.assertEqual(len(second_page.find("tbody").find_all("tr")), 1)
 
 

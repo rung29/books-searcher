@@ -31,8 +31,14 @@
   const progressTitle = progressPanel.querySelector("[data-progress-title]");
   const progressDetail = progressPanel.querySelector("[data-progress-detail]");
   const progressBar = progressPanel.querySelector("[data-progress-bar]");
+  const emptyPanel = document.querySelector("[data-library-empty]");
+  const tableWrap = table.closest(".table-wrap");
   const concurrency = 1;
   const cache = readCache(cacheKey);
+
+  rows.forEach((row) => {
+    row.hidden = true;
+  });
 
   function readCache(key) {
     try {
@@ -67,7 +73,41 @@
     return status && status.includes("在架") ? "status-yes" : "status-no";
   }
 
+  function renumberVisibleRows() {
+    let visibleIndex = 1;
+    Array.from(table.querySelectorAll("tbody tr")).forEach((row) => {
+      if (row.hidden) {
+        return;
+      }
+      const numberCell = row.querySelector('td[data-label="序號"]');
+      if (numberCell) {
+        numberCell.textContent = visibleIndex;
+      }
+      visibleIndex += 1;
+    });
+  }
+
+  function updateEmptyPanel(done, total, holdingCount) {
+    const isEmpty = done >= total && holdingCount === 0;
+    if (!emptyPanel) {
+      if (tableWrap) {
+        tableWrap.hidden = isEmpty;
+      }
+      return;
+    }
+    emptyPanel.hidden = !isEmpty;
+    if (tableWrap) {
+      tableWrap.hidden = isEmpty;
+    }
+  }
+
   function renderResult(row, result) {
+    if (!result.has_holding) {
+      row.remove();
+      return false;
+    }
+
+    row.hidden = false;
     const holdingCell = row.querySelector("[data-library-holding]");
     const matchCell = row.querySelector("[data-library-match]");
     const callCell = row.querySelector("[data-library-call]");
@@ -90,7 +130,8 @@
     if (items.length === 0) {
       callCell.textContent = "-";
       statusCell.textContent = result.error || "-";
-      return;
+      renumberVisibleRows();
+      return true;
     }
 
     callCell.innerHTML = items
@@ -102,6 +143,8 @@
         return `<div><span class="status-pill ${statusClass(status)}">${escapeHtml(status)}</span></div>`;
       })
       .join("");
+    renumberVisibleRows();
+    return true;
   }
 
   async function queryStatus(row) {
@@ -110,8 +153,8 @@
     const author = row.dataset.author || "";
     const cached = cache[index];
     if (cached && cached.title === title) {
-      renderResult(row, cached.result);
-      return { title, cached: true };
+      const hasHolding = renderResult(row, cached.result);
+      return { title, cached: true, result: cached.result, hasHolding };
     }
 
     row.querySelector("[data-library-holding]").innerHTML = '<span class="status-pill muted-pill">查詢中</span>';
@@ -123,8 +166,8 @@
     const result = await response.json();
     cache[index] = { title, result };
     writeCache();
-    renderResult(row, result);
-    return { title, cached: false };
+    const hasHolding = renderResult(row, result);
+    return { title, cached: false, result, hasHolding };
   }
 
   async function worker(queue, total, state) {
@@ -133,9 +176,11 @@
       const title = row.dataset.title || "";
       setProgress(state.done, total, title);
       try {
-        await queryStatus(row);
-        const cachedResult = cache[row.dataset.index] && cache[row.dataset.index].result;
-        if (cachedResult && cachedResult.error_type === "structure") {
+        const outcome = await queryStatus(row);
+        if (outcome.hasHolding) {
+          state.holdingCount += 1;
+        }
+        if (outcome.result && outcome.result.error_type === "structure") {
           state.consecutiveStructureErrors += 1;
         } else {
           state.consecutiveStructureErrors = 0;
@@ -146,6 +191,7 @@
       }
       state.done += 1;
       setProgress(state.done, total, title);
+      updateEmptyPanel(state.done, total, state.holdingCount);
       if (state.consecutiveStructureErrors >= 3) {
         queue.forEach((pendingRow) => {
           renderResult(pendingRow, {
@@ -158,6 +204,7 @@
         state.done += queue.length;
         queue.length = 0;
         setProgress(state.done, total, "");
+        updateEmptyPanel(state.done, total, state.holdingCount);
         state.stoppedForStructure = true;
       }
     }
@@ -165,8 +212,14 @@
 
   async function run() {
     const queue = rows.slice();
-    const state = { done: 0, consecutiveStructureErrors: 0, stoppedForStructure: false };
+    const state = {
+      done: 0,
+      holdingCount: 0,
+      consecutiveStructureErrors: 0,
+      stoppedForStructure: false,
+    };
     setProgress(0, rows.length);
+    updateEmptyPanel(0, rows.length, 0);
 
     await Promise.all(
       Array.from({ length: Math.min(concurrency, queue.length) }, () => worker(queue, rows.length, state))
@@ -174,7 +227,7 @@
 
     progressTitle.textContent = state.stoppedForStructure
       ? "來源格式連續異常，已停止後續查詢；先前結果已保留"
-      : "伸港圖書館館藏查詢完成";
+      : `伸港圖書館館藏查詢完成，共 ${state.holdingCount} 本有館藏`;
   }
 
   run();

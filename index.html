@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伸港圖書館館藏結果</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 1040px; margin: 0 auto; padding: 32px 20px; background: #f8f9fa; color: #263238; }
+    main { display: grid; gap: 20px; }
+    .panel { background: #fff; padding: 24px; border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    h1, h2, p { margin-top: 0; }
+    h2 { font-size: 1.15rem; }
+    input { width: 100%; min-height: 46px; padding: 0 14px; border: 1px solid #ccd6dd;
+      border-radius: 8px; font: inherit; }
+    .muted { color: #64748b; }
+    .pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px; margin-top: 16px; }
+    .page-link { display: block; padding: 16px; text-align: center; color: #fff;
+      background: #007bff; border-radius: 8px; text-decoration: none; font-weight: 700; }
+    .page-link:hover { background: #0056b3; }
+    .summary { margin-bottom: 16px; }
+    .toolbar { display: grid; gap: 10px; }
+    .list { display: grid; gap: 10px; }
+    .group, .book { border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fff; }
+    .group button { width: 100%; border: 0; background: transparent; padding: 0;
+      color: #0056b3; cursor: pointer; text-align: left; font: inherit; font-weight: 800; }
+    .group-items { display: grid; gap: 8px; margin-top: 12px; }
+    .book-title { font-weight: 800; color: #0056b3; text-decoration: none; }
+    .book-title:hover { text-decoration: underline; }
+    .meta { color: #64748b; font-size: .92rem; margin-top: 4px; }
+    .calls { margin-top: 6px; }
+    .pill { display: inline-block; margin: 2px 4px 2px 0; padding: 3px 8px;
+      border-radius: 999px; background: #e6f4f1; color: #115e59; font-size: .85rem; font-weight: 700; }
+    .hidden { display: none; }
+    .warning { padding: 12px; background: #fff3cd; border-left: 4px solid #ffc107; }
+  </style>
+</head>
+<body><main>
+  <section class="panel">
+  <h1>伸港圖書館館藏結果</h1>
+  <p class="summary">共找到 13 本有館藏書籍，分為 1 頁。</p>
+  
+  <div class="toolbar">
+    <input id="search-input" type="search" placeholder="輸入書名、命中館藏、作者、出版社或索書號，例如：屁屁偵探、859.61、低年級 & 859* 1">
+    <p class="muted" id="result-count">資料讀取中...</p>
+  </div>
+  </section>
+  <section class="panel" id="groups-section">
+    <h2>相似書名群組</h2>
+    <div class="list" id="groups-list"></div>
+  </section>
+  <section class="panel">
+    <h2 id="results-title">搜尋結果</h2>
+    <div class="list" id="results-list"></div>
+  </section>
+  <section class="panel">
+  <h2>原始分頁</h2>
+  <nav class="pages" aria-label="結果頁面"><a class="page-link" href="books_with_library_page_1.html">第 1 頁</a></nav>
+  </section>
+</main></body>
+<script id="books-data" type="application/json">[{"id": "book-1", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-1", "number": "1", "title": "我不是故意的", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42036", "author": "鶴見安卓雅", "publisher": "小天下", "range": "國小低年級", "certification": "可認證", "matched_title": "我不是故意的", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=374091", "call_numbers": ["J 859.6 4704 96"], "library_statuses": ["借出2026/09/13"]}, {"id": "book-2", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-2", "number": "2", "title": "小雞到外婆家", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42098", "author": "文‧圖 / 工藤紀子", "publisher": "小魯文化", "range": "國小低年級", "certification": "可認證", "matched_title": "小雞到外婆家 /", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=806761", "call_numbers": ["J 861.59 1421 2017"], "library_statuses": ["借出2026/09/02"]}, {"id": "book-3", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-3", "number": "3", "title": "小不點大夢想：史蒂芬‧霍金", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42135", "author": "文 / 瑪麗亞‧伊莎貝爾‧桑切斯‧維格拉  圖 / 麥特‧亨特", "publisher": "小康軒", "range": "國小低年級", "certification": "可認證", "matched_title": "史蒂芬.霍金 /", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=849434", "call_numbers": ["J 784.18 2045 2021"], "library_statuses": ["預約保留"]}, {"id": "book-4", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-4", "number": "4", "title": "小不點大夢想：蒙特梭利", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42172", "author": "文 / 瑪麗亞‧伊莎貝爾‧桑切斯‧維格拉  圖 / 拉蔻兒‧馬汀", "publisher": "小康軒", "range": "國小低年級", "certification": "可認證", "matched_title": "蒙特梭利 /", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=849433", "call_numbers": ["J 784.58 2045 2021"], "library_statuses": ["借出2026/09/08"]}, {"id": "book-5", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-5", "number": "5", "title": "如果不洗手", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42009", "author": "文 / 黃小衡 圖 / 棉花糖", "publisher": "小悅讀", "range": "國小低年級", "certification": "可認證", "matched_title": "如果不洗手 / [低年級認證書]", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=743605", "call_numbers": ["J 863.59 4492 2020"], "library_statuses": ["借出2026/09/02"]}, {"id": "book-6", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-6", "number": "6", "title": "屁屁偵探讀本8：被怪盜盯上的新娘", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42112", "author": "文‧圖 / Troll", "publisher": "遠流", "range": "國小中年級", "certification": "可認證", "matched_title": "屁屁偵探讀本: [中年級認證書] 8, 被怪盜盯上的新娘 / （副標題匹配）", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=800703", "call_numbers": ["J 861.59 6571 2020 v.8"], "library_statuses": ["借出2026/09/02"]}, {"id": "book-7", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-7", "number": "7", "title": "君偉上小學7：君偉的節日報告", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42115", "author": "文 / 王淑芬 圖 / 賴馬", "publisher": "親子天下", "range": "國小中年級", "certification": "可認證", "matched_title": "君偉的節日報告 / [中年級認證書] （副標題匹配）", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=748231", "call_numbers": ["J 863.59 1034 2020"], "library_statuses": ["送回原館藏地"]}, {"id": "book-8", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-8", "number": "8", "title": "屁屁偵探讀本番外篇：咖哩香料事件", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42122", "author": "文‧圖 / Troll", "publisher": "遠流", "range": "國小中年級", "certification": "可認證", "matched_title": "屁屁偵探讀本番外篇 :咖哩香料事件 / [中年級認證書]", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=808579", "call_numbers": ["J 861.59 6571 2020", "J 861.59 6571 2020 c.1"], "library_statuses": ["借出2026/09/15", "借出2026/09/12", "借出2026/09/02"]}, {"id": "book-9", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-9", "number": "9", "title": "屁屁偵探讀本9：幸運貓落到誰手上！", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42123", "author": "文‧圖 / Troll", "publisher": "遠流", "range": "國小中年級", "certification": "可認證", "matched_title": "屁屁偵探讀本: [中年級認證書] 9,幸運貓落到誰手上! / （系列集數匹配）", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=779815", "call_numbers": ["J 861.599 6571 2020"], "library_statuses": ["借出2026/09/13"]}, {"id": "book-10", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-10", "number": "10", "title": "賣火柴的小女孩", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42166", "author": "原著 / 漢斯‧克里斯蒂安‧安徒生  改編 / 柳谷圭子  圖 / 町田尚子", "publisher": "大穎文化", "range": "國小低年級", "certification": "可認證", "matched_title": "賣火柴的小女孩", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=230116", "call_numbers": ["881.5 3022 79"], "library_statuses": ["在架"]}, {"id": "book-11", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-11", "number": "11", "title": "前面還有什麼車？", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42175", "author": "文 / 哲也  圖 / 劉貞秀", "publisher": "小魯文化", "range": "國小低年級", "certification": "可認證", "matched_title": "前面還有什麼車? /", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=642912", "call_numbers": ["++ 859.6 5244 102", "J 859.6 5244 102"], "library_statuses": ["在架"]}, {"id": "book-12", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-12", "number": "12", "title": "怪老頭來了", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42434", "author": "文‧圖 / 朴淵澈", "publisher": "三之三", "range": "國小中年級", "certification": "可認證", "matched_title": "怪老頭來了 / [中年級認證書]", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=753466", "call_numbers": ["J 862.59 4333 2020"], "library_statuses": ["等待轉送其他館藏地"]}, {"id": "book-13", "page": "books_with_library_page_1.html", "anchor": "books_with_library_page_1.html#book-13", "number": "13", "title": "快樂王子", "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42180", "author": "原著 / 奧斯卡‧王爾德  改編 / 間所壽子  圖 / 小峰由蘭", "publisher": "大穎文化", "range": "國小中年級", "certification": "可認證", "matched_title": "快樂王子", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=375475", "call_numbers": ["J 873.59 1012 2008", "C 947.41 1021 2008"], "library_statuses": ["在架"]}]</script>
+<script>
+const DATA_URL = "books_with_library_data.json";
+const searchInput = document.getElementById("search-input");
+const resultCount = document.getElementById("result-count");
+const groupsSection = document.getElementById("groups-section");
+const groupsList = document.getElementById("groups-list");
+const resultsTitle = document.getElementById("results-title");
+const resultsList = document.getElementById("results-list");
+let books = [];
+
+function normalize(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}*]+/gu, "");
+}
+
+function searchableFields(book, query) {
+  const callNumberLike = /^[0-9*]+$/.test(query) && /[0-9]/.test(query);
+  const values = callNumberLike
+    ? (book.call_numbers || [])
+    : [
+        book.title,
+        book.matched_title,
+        book.author,
+        book.publisher,
+        book.range,
+        book.certification,
+        ...(book.call_numbers || []),
+        ...(book.library_statuses || [])
+      ];
+  return values.map(normalize).filter(Boolean);
+}
+
+function normalizeCallPart(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}*]+/gu, "");
+}
+
+function callNumberTokens(callNumber) {
+  return String(callNumber || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .split(/\s+/)
+    .map(normalizeCallPart)
+    .filter(part => /\d/.test(part));
+}
+
+function wildcardRegex(query) {
+  const escaped = query
+    .split("*")
+    .map(part => part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join(".*");
+  return new RegExp(escaped);
+}
+
+function wildcardPrefixRegex(query) {
+  const escaped = query
+    .split("*")
+    .map(part => part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join(".*");
+  return new RegExp(`^${escaped}`);
+}
+
+function callQueryParts(rawQuery, normalizedQuery) {
+  const spacedParts = String(rawQuery || "")
+    .normalize("NFKC")
+    .trim()
+    .split(/\s+/)
+    .map(normalizeCallPart)
+    .filter(Boolean);
+  if (spacedParts.length > 1) {
+    return spacedParts;
+  }
+  const compactMatch = normalizedQuery.match(/^(\d+)\*(\d+)$/);
+  if (compactMatch) {
+    return [`${compactMatch[1]}*`, compactMatch[2]];
+  }
+  return [];
+}
+
+function matchesCallNumber(book, rawQuery, normalizedQuery) {
+  const parts = callQueryParts(rawQuery, normalizedQuery);
+  if (parts.length > 0) {
+    return (book.call_numbers || []).some(callNumber => {
+      const tokens = callNumberTokens(callNumber);
+      if (tokens.length < parts.length) {
+        return false;
+      }
+      const firstMatcher = wildcardPrefixRegex(parts[0]);
+      for (let start = 0; start <= tokens.length - parts.length; start += 1) {
+        if (!firstMatcher.test(tokens[start])) {
+          continue;
+        }
+        const restMatches = parts.slice(1).every((part, offset) =>
+          wildcardPrefixRegex(part.includes("*") ? part : `${part}*`).test(tokens[start + offset + 1])
+        );
+        if (restMatches) {
+          return true;
+        }
+      }
+      return false;
+    });
+  }
+
+  const fields = (book.call_numbers || []).map(normalize).filter(Boolean);
+  if (normalizedQuery.includes("*")) {
+    const matcher = wildcardRegex(normalizedQuery);
+    return fields.some(field => matcher.test(field));
+  }
+  return fields.some(field => field.includes(normalizedQuery));
+}
+
+function matchesSearch(book, rawQuery) {
+  const query = normalize(rawQuery);
+  if (!query) {
+    return true;
+  }
+  if (/^[0-9*]+$/.test(query) && /[0-9]/.test(query)) {
+    return matchesCallNumber(book, rawQuery, query);
+  }
+  const fields = searchableFields(book, query);
+  if (query.includes("*")) {
+    const matcher = wildcardRegex(query);
+    return fields.some(field => matcher.test(field));
+  }
+  return fields.some(field => field.includes(query));
+}
+
+function searchConditions(value) {
+  return String(value || "")
+    .split("&")
+    .map(part => part.trim())
+    .filter(Boolean);
+}
+
+function seriesKey(title) {
+  let value = String(title || "").normalize("NFKC");
+  value = value.replace(/[《》「」『』【】\[\]()（）]/g, " ");
+  value = value.split(/[：:]/)[0];
+  value = value.replace(/\s*(第\s*)?[0-9０-９一二三四五六七八九十]+\s*(集|冊|卷|本)?\s*$/u, "");
+  value = value.replace(/\s+/g, " ").trim();
+  return value || title;
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function bookHtml(book) {
+  const calls = (book.call_numbers || []).map(call => `<span class="pill">${escapeHtml(call)}</span>`).join("");
+  const statuses = (book.library_statuses || []).map(status => `<span class="pill">${escapeHtml(status)}</span>`).join("");
+  return `<article class="book">
+    <a class="book-title" href="${escapeHtml(book.anchor)}">${escapeHtml(book.title)}</a>
+    <div class="meta">${escapeHtml(book.author || "-")} / ${escapeHtml(book.publisher || "-")} / ${escapeHtml(book.range || "-")}</div>
+    <div class="meta">命中館藏：${book.matched_url ? `<a href="${escapeHtml(book.matched_url)}" target="_blank" rel="noopener">${escapeHtml(book.matched_title || "-")}</a>` : escapeHtml(book.matched_title || "-")}</div>
+    <div class="calls">${calls || '<span class="pill">無索書號</span>'} ${statuses}</div>
+  </article>`;
+}
+
+function renderResults(items, title = "搜尋結果") {
+  resultsTitle.textContent = title;
+  resultCount.textContent = `共 ${items.length} 本有館藏書籍`;
+  resultsList.innerHTML = items.length
+    ? items.map(bookHtml).join("")
+    : '<p class="muted">沒有符合條件的館藏書籍。</p>';
+}
+
+function renderGroups() {
+  const groups = new Map();
+  books.forEach(book => {
+    const key = seriesKey(book.title);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(book);
+  });
+  const grouped = Array.from(groups.entries())
+    .filter(([, items]) => items.length > 1)
+    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "zh-Hant"));
+
+  groupsSection.classList.toggle("hidden", grouped.length === 0);
+  groupsList.innerHTML = grouped.map(([key, items], index) => `
+    <article class="group">
+      <button type="button" data-group-index="${index}">${escapeHtml(key)}（${items.length} 本）</button>
+      <div class="group-items hidden" id="group-${index}">
+        ${items.map(bookHtml).join("")}
+      </div>
+    </article>
+  `).join("");
+  groupsList.querySelectorAll("button[data-group-index]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById(`group-${button.dataset.groupIndex}`).classList.toggle("hidden");
+    });
+  });
+}
+
+function applySearch() {
+  const conditions = searchConditions(searchInput.value);
+  if (conditions.length === 0) {
+    renderResults(books, "全部館藏");
+    groupsSection.classList.remove("hidden");
+    return;
+  }
+  groupsSection.classList.add("hidden");
+  renderResults(
+    books.filter(book => conditions.every(condition => matchesSearch(book, condition))),
+    "搜尋結果"
+  );
+}
+
+function initializeBooks(data) {
+  books = Array.isArray(data) ? data : [];
+  renderGroups();
+  applySearch();
+}
+
+function embeddedBooks() {
+  const element = document.getElementById("books-data");
+  if (!element) {
+    return null;
+  }
+  try {
+    const data = JSON.parse(element.textContent || "[]");
+    return Array.isArray(data) ? data : null;
+  } catch {
+    return null;
+  }
+}
+
+const initialBooks = embeddedBooks();
+if (initialBooks) {
+  initializeBooks(initialBooks);
+} else {
+  fetch(DATA_URL)
+    .then(response => response.json())
+    .then(initializeBooks)
+    .catch(() => {
+      resultCount.textContent = "無法讀取 books_with_library_data.json。請確認檔案與首頁放在同一個目錄。";
+    });
+}
+
+searchInput.addEventListener("input", applySearch);
+</script>
+</html>

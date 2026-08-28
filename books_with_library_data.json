@@ -1,0 +1,267 @@
+[
+  {
+    "id": "book-1",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-1",
+    "number": "1",
+    "title": "我不是故意的",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42036",
+    "author": "鶴見安卓雅",
+    "publisher": "小天下",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "我不是故意的",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=374091",
+    "call_numbers": [
+      "J 859.6 4704 96"
+    ],
+    "library_statuses": [
+      "借出2026/09/13"
+    ]
+  },
+  {
+    "id": "book-2",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-2",
+    "number": "2",
+    "title": "小雞到外婆家",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42098",
+    "author": "文‧圖 / 工藤紀子",
+    "publisher": "小魯文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小雞到外婆家 /",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=806761",
+    "call_numbers": [
+      "J 861.59 1421 2017"
+    ],
+    "library_statuses": [
+      "借出2026/09/02"
+    ]
+  },
+  {
+    "id": "book-3",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-3",
+    "number": "3",
+    "title": "小不點大夢想：史蒂芬‧霍金",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42135",
+    "author": "文 / 瑪麗亞‧伊莎貝爾‧桑切斯‧維格拉  圖 / 麥特‧亨特",
+    "publisher": "小康軒",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "史蒂芬.霍金 /",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=849434",
+    "call_numbers": [
+      "J 784.18 2045 2021"
+    ],
+    "library_statuses": [
+      "預約保留"
+    ]
+  },
+  {
+    "id": "book-4",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-4",
+    "number": "4",
+    "title": "小不點大夢想：蒙特梭利",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42172",
+    "author": "文 / 瑪麗亞‧伊莎貝爾‧桑切斯‧維格拉  圖 / 拉蔻兒‧馬汀",
+    "publisher": "小康軒",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "蒙特梭利 /",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=849433",
+    "call_numbers": [
+      "J 784.58 2045 2021"
+    ],
+    "library_statuses": [
+      "借出2026/09/08"
+    ]
+  },
+  {
+    "id": "book-5",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-5",
+    "number": "5",
+    "title": "如果不洗手",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42009",
+    "author": "文 / 黃小衡 圖 / 棉花糖",
+    "publisher": "小悅讀",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "如果不洗手 / [低年級認證書]",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=743605",
+    "call_numbers": [
+      "J 863.59 4492 2020"
+    ],
+    "library_statuses": [
+      "借出2026/09/02"
+    ]
+  },
+  {
+    "id": "book-6",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-6",
+    "number": "6",
+    "title": "屁屁偵探讀本8：被怪盜盯上的新娘",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42112",
+    "author": "文‧圖 / Troll",
+    "publisher": "遠流",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "屁屁偵探讀本: [中年級認證書] 8, 被怪盜盯上的新娘 / （副標題匹配）",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=800703",
+    "call_numbers": [
+      "J 861.59 6571 2020 v.8"
+    ],
+    "library_statuses": [
+      "借出2026/09/02"
+    ]
+  },
+  {
+    "id": "book-7",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-7",
+    "number": "7",
+    "title": "君偉上小學7：君偉的節日報告",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42115",
+    "author": "文 / 王淑芬 圖 / 賴馬",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "君偉的節日報告 / [中年級認證書] （副標題匹配）",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=748231",
+    "call_numbers": [
+      "J 863.59 1034 2020"
+    ],
+    "library_statuses": [
+      "送回原館藏地"
+    ]
+  },
+  {
+    "id": "book-8",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-8",
+    "number": "8",
+    "title": "屁屁偵探讀本番外篇：咖哩香料事件",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42122",
+    "author": "文‧圖 / Troll",
+    "publisher": "遠流",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "屁屁偵探讀本番外篇 :咖哩香料事件 / [中年級認證書]",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=808579",
+    "call_numbers": [
+      "J 861.59 6571 2020",
+      "J 861.59 6571 2020 c.1"
+    ],
+    "library_statuses": [
+      "借出2026/09/15",
+      "借出2026/09/12",
+      "借出2026/09/02"
+    ]
+  },
+  {
+    "id": "book-9",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-9",
+    "number": "9",
+    "title": "屁屁偵探讀本9：幸運貓落到誰手上！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42123",
+    "author": "文‧圖 / Troll",
+    "publisher": "遠流",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "屁屁偵探讀本: [中年級認證書] 9,幸運貓落到誰手上! / （系列集數匹配）",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=779815",
+    "call_numbers": [
+      "J 861.599 6571 2020"
+    ],
+    "library_statuses": [
+      "借出2026/09/13"
+    ]
+  },
+  {
+    "id": "book-10",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-10",
+    "number": "10",
+    "title": "賣火柴的小女孩",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42166",
+    "author": "原著 / 漢斯‧克里斯蒂安‧安徒生  改編 / 柳谷圭子  圖 / 町田尚子",
+    "publisher": "大穎文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "賣火柴的小女孩",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=230116",
+    "call_numbers": [
+      "881.5 3022 79"
+    ],
+    "library_statuses": [
+      "在架"
+    ]
+  },
+  {
+    "id": "book-11",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-11",
+    "number": "11",
+    "title": "前面還有什麼車？",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42175",
+    "author": "文 / 哲也  圖 / 劉貞秀",
+    "publisher": "小魯文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "前面還有什麼車? /",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=642912",
+    "call_numbers": [
+      "++ 859.6 5244 102",
+      "J 859.6 5244 102"
+    ],
+    "library_statuses": [
+      "在架"
+    ]
+  },
+  {
+    "id": "book-12",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-12",
+    "number": "12",
+    "title": "怪老頭來了",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42434",
+    "author": "文‧圖 / 朴淵澈",
+    "publisher": "三之三",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "怪老頭來了 / [中年級認證書]",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=753466",
+    "call_numbers": [
+      "J 862.59 4333 2020"
+    ],
+    "library_statuses": [
+      "等待轉送其他館藏地"
+    ]
+  },
+  {
+    "id": "book-13",
+    "page": "books_with_library_page_1.html",
+    "anchor": "books_with_library_page_1.html#book-13",
+    "number": "13",
+    "title": "快樂王子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42180",
+    "author": "原著 / 奧斯卡‧王爾德  改編 / 間所壽子  圖 / 小峰由蘭",
+    "publisher": "大穎文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "快樂王子",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=375475",
+    "call_numbers": [
+      "J 873.59 1012 2008",
+      "C 947.41 1021 2008"
+    ],
+    "library_statuses": [
+      "在架"
+    ]
+  }
+]

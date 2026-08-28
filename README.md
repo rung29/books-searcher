@@ -77,6 +77,8 @@ http://192.168.x.x:5000
 - 在本機執行命令列版 `crawler.py` + `integrate.py`
 - 或在本機/區網執行 Flask 網頁版 `web_app.py`
 
+靜態 GitHub Pages 產物由 `library_output.py` 統一產生；`integrate.py` 與 `recheck.py` 會共用同一套 HTML、JSON 與查詢首頁輸出邏輯。
+
 若要公開成可用的網頁服務，建議部署到一般 VPS 或可自訂出口網路的主機，並確認該主機可以連到：
 
 ```text
@@ -91,7 +93,7 @@ https://library.toread.bocach.gov.tw
 .venv\Scripts\python.exe integrate.py
 ```
 
-這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，只保留有館藏的書籍。結果每 25 本分成一頁，輸出為 `books_with_library_page_*.html`，並產生可切換各頁的 `books_with_library_index.html` 首頁。
+這會自動掃描目錄下所有的 `books_page_*.html`，為每本書向圖書館系統查詢，只保留有館藏的書籍。結果每 25 本分成一頁，輸出為 `books_with_library_page_*.html`，並產生可切換各頁的 `index.html` 首頁。
 
 ### 重新確認既有館藏
 
@@ -101,13 +103,13 @@ https://library.toread.bocach.gov.tw
 .venv\Scripts\python.exe recheck.py
 ```
 
-程式會讀取 `books_with_library_page_*.html`，優先使用既有 `mid` 更新館藏狀態，失效時才以書名與作者重新搜尋。原結果不會被覆寫；新結果會輸出為 `books_rechecked_page_*.html` 及 `books_rechecked_index.html`。查無館藏的書仍會保留並標記，連線失敗則最多重試兩次。
+程式會讀取 `books_with_library_page_*.html`，優先使用既有 `mid` 更新館藏狀態，失效時才以書名與作者重新搜尋。重新確認後會覆寫目前的 `books_with_library_page_*.html`、`index.html`，並同步更新 `books_with_library_data.json`。本次查無館藏或查詢失敗的書會從結果中移除，讓 `books_with_library_*` 永遠代表目前確認有館藏的清單。
 
 若結果放在子目錄，可指定該目錄或首頁：
 
 ```bash
 .venv\Scripts\python.exe recheck.py 中年級
-.venv\Scripts\python.exe recheck.py 中年級\books_with_library_index.html
+.venv\Scripts\python.exe recheck.py 中年級\index.html
 ```
 
 可用 `RECHECK_MAX_RETRIES` 調整重試次數（預設 `2`），`RECHECK_RETRY_SECONDS` 調整重試等待秒數（預設 `1`）。

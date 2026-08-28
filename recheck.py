@@ -12,11 +12,14 @@ from bs4 import BeautifulSoup
 
 from integrate import (
     BOOK_SLEEP_SECONDS,
-    LibraryStructureError,
-    OUTPUT_PAGE_SIZE,
-    _append_holding_cells,
     _lookup_candidate,
     search_library_status,
+)
+from library_output import (
+    LibraryStructureError,
+    _append_holding_cells,
+    _prepare_output_template,
+    write_result_pages,
 )
 
 
@@ -31,8 +34,13 @@ def _page_number(path):
 
 
 def discover_input_files(script_dir):
-    index_path = os.path.join(script_dir, "books_with_library_index.html")
-    if os.path.exists(index_path):
+    index_paths = [
+        os.path.join(script_dir, "index.html"),
+        os.path.join(script_dir, "books_with_library_index.html"),
+    ]
+    for index_path in index_paths:
+        if not os.path.exists(index_path):
+            continue
         with open(index_path, "r", encoding="utf-8") as f:
             index_soup = BeautifulSoup(f.read(), "html.parser")
         linked_files = []
@@ -152,53 +160,8 @@ def recheck_book(mid, matched_title, title, author):
     }
 
 
-def _replace_nonholding_cells(soup, row, label):
-    for field in ["館藏情形", "索書號", "館藏狀態"]:
-        for cell in row.find_all("td", {"data-label": field}):
-            cell.decompose()
-
-    holding_cell = soup.new_tag("td")
-    holding_cell["data-label"] = "館藏情形"
-    pill = soup.new_tag("span")
-    pill["class"] = "status status-no"
-    pill.string = label
-    holding_cell.append(pill)
-    row.append(holding_cell)
-
-    call_cell = soup.new_tag("td")
-    call_cell["data-label"] = "索書號"
-    call_cell.string = "-"
-    row.append(call_cell)
-
-    status_cell = soup.new_tag("td")
-    status_cell["data-label"] = "館藏狀態"
-    status_cell.string = label
-    row.append(status_cell)
-
-
-def _append_change_cell(soup, row, text):
-    for cell in row.find_all("td", {"data-label": "狀態變化"}):
-        cell.decompose()
-    change_cell = soup.new_tag("td")
-    change_cell["data-label"] = "狀態變化"
-    change_cell.string = text
-    row.append(change_cell)
-
-
 def _prepare_template(source_soup):
-    template = deepcopy(source_soup)
-    tbody = template.find("tbody")
-    header_row = template.find("thead").find("tr") if template.find("thead") else None
-    if not tbody or not header_row:
-        raise LibraryStructureError("重新查詢來源缺少預期表格")
-    for th in header_row.find_all("th"):
-        if th.get_text(strip=True) == "狀態變化":
-            th.decompose()
-    th = template.new_tag("th")
-    th.string = "狀態變化"
-    header_row.append(th)
-    tbody.clear()
-    return template
+    return _prepare_output_template(source_soup)
 
 
 def load_previous_rows(input_files):
@@ -219,7 +182,7 @@ def load_previous_rows(input_files):
 
 
 def recheck_rows(rows):
-    updated_rows = []
+    holding_rows = []
     stats = {
         "total": len(rows),
         "holding": 0,
@@ -234,7 +197,6 @@ def recheck_rows(rows):
         author = _cell_text(row, "作者")
         matched_title = _cell_text(row, "命中館藏")
         mid = _extract_mid(row)
-        old_values = _status_values(row)
         print(f"[{index}/{len(rows)}] 重新確認: {title}...")
 
         result = recheck_book(mid, matched_title, title, author)
@@ -248,126 +210,38 @@ def recheck_rows(rows):
             else:
                 stats["other"] += 1
         elif outcome == "unconfirmed":
-            _replace_nonholding_cells(
-                BeautifulSoup("", "html.parser"),
-                row,
-                "本次未確認到館藏",
-            )
-            new_values = []
             stats["unconfirmed"] += 1
         else:
-            _replace_nonholding_cells(
-                BeautifulSoup("", "html.parser"),
-                row,
-                "查詢失敗",
-            )
-            new_values = []
             stats["failed"] += 1
 
-        _append_change_cell(
-            BeautifulSoup("", "html.parser"),
-            row,
-            _status_change(old_values, new_values, outcome),
-        )
-        updated_rows.append(row)
+        if outcome == "holding":
+            holding_rows.append(row)
         if BOOK_SLEEP_SECONDS > 0:
             time.sleep(BOOK_SLEEP_SECONDS)
 
-    return updated_rows, stats
-
-
-def _add_navigation(soup, current_page, page_count):
-    table = soup.find("table")
-    if not table:
-        return
-    nav = soup.new_tag("div")
-    nav["class"] = "info"
-    home = soup.new_tag("a", href="books_rechecked_index.html")
-    home.string = "重新確認首頁"
-    nav.append(home)
-    nav.append("　")
-    for page_number in range(1, page_count + 1):
-        if page_number == current_page:
-            current = soup.new_tag("strong")
-            current.string = f"第 {page_number} 頁"
-            nav.append(current)
-        else:
-            link = soup.new_tag("a", href=f"books_rechecked_page_{page_number}.html")
-            link.string = f"第 {page_number} 頁"
-            nav.append(link)
-        if page_number < page_count:
-            nav.append("　")
-    table.insert_before(nav)
+    return holding_rows, stats
 
 
 def write_rechecked_pages(template, rows, stats, output_dir, checked_at):
-    page_count = (len(rows) + OUTPUT_PAGE_SIZE - 1) // OUTPUT_PAGE_SIZE if rows else 0
-    page_files = []
-    for page_number in range(1, page_count + 1):
-        soup = deepcopy(template)
-        if soup.title:
-            soup.title.string = f"館藏重新確認 - 第 {page_number} 頁"
-        heading = soup.find("h1")
-        if heading:
-            heading.string = f"館藏重新確認（第 {page_number}/{page_count} 頁）"
-        tbody = soup.find("tbody")
-        start = (page_number - 1) * OUTPUT_PAGE_SIZE
-        for offset, row in enumerate(rows[start:start + OUTPUT_PAGE_SIZE], 1):
-            output_row = deepcopy(row)
-            number_cell = output_row.find("td", {"data-label": "序號"})
-            if number_cell:
-                number_cell.string = str(start + offset)
-            tbody.append(output_row)
-        _add_navigation(soup, page_number, page_count)
-
-        filename = f"books_rechecked_page_{page_number}.html"
-        with open(os.path.join(output_dir, filename), "w", encoding="utf-8") as f:
-            f.write(str(soup))
-        page_files.append(filename)
-        print(f"已產生重新確認第 {page_number} 頁：{filename}")
-
-    write_rechecked_index(output_dir, page_files, stats, checked_at)
+    _remove_existing_result_pages(output_dir)
+    page_files = write_result_pages(
+        template,
+        rows,
+        output_dir,
+        incomplete=stats["failed"] > 0,
+    )
+    print(
+        "重新確認完成："
+        f"{stats['holding']} 本仍有館藏，"
+        f"{stats['unconfirmed']} 本已移除，"
+        f"{stats['failed']} 本查詢失敗未保留。"
+    )
     return page_files
 
 
-def write_rechecked_index(output_dir, page_files, stats, checked_at):
-    links = "\n".join(
-        f'<a class="page-link" href="{filename}">第 {index} 頁</a>'
-        for index, filename in enumerate(page_files, 1)
-    )
-    html = f"""<!doctype html>
-<html lang="zh-TW"><head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>館藏重新確認結果</title>
-  <style>
-    body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 900px; margin: 0 auto; padding: 36px 20px; background: #f4f6f8; color: #263238; }}
-    main {{ background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 16px #0002; }}
-    .stats {{ display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 12px; }}
-    .stat {{ padding: 16px; border-radius: 8px; background: #eef4ff; }}
-    .stat strong {{ display: block; font-size: 1.7rem; }}
-    .pages {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }}
-    .page-link {{ padding: 12px 18px; color: white; background: #007bff;
-      border-radius: 8px; text-decoration: none; font-weight: 700; }}
-  </style>
-</head><body><main>
-  <h1>館藏重新確認結果</h1>
-  <p>最後重新確認時間：{checked_at}</p>
-  <section class="stats">
-    <div class="stat"><strong>{stats['holding']}</strong>仍有館藏</div>
-    <div class="stat"><strong>{stats['available']}</strong>目前有在架館藏</div>
-    <div class="stat"><strong>{stats['other']}</strong>全部借出或其他狀態</div>
-    <div class="stat"><strong>{stats['unconfirmed']}</strong>本次未確認到館藏</div>
-    <div class="stat"><strong>{stats['failed']}</strong>查詢失敗</div>
-  </section>
-  <nav class="pages" aria-label="重新確認結果頁面">{links}</nav>
-</main></body></html>
-"""
-    index_path = os.path.join(output_dir, "books_rechecked_index.html")
-    with open(index_path, "w", encoding="utf-8") as f:
-        f.write(html)
-    print(f"重新確認首頁已生成：{index_path}")
+def _remove_existing_result_pages(output_dir):
+    for path in glob.glob(os.path.join(output_dir, "books_with_library_page_*.html")):
+        os.remove(path)
 
 
 def _parse_args():
@@ -377,7 +251,7 @@ def _parse_args():
     parser.add_argument(
         "source",
         nargs="?",
-        help="結果目錄或 books_with_library_index.html；預設為程式所在目錄",
+        help="結果目錄或 index.html；預設為程式所在目錄",
     )
     return parser.parse_args()
 

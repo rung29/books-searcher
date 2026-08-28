@@ -46,6 +46,12 @@
       {% endif %}
 
       {% if books %}
+        {% if context.include_library %}
+          <section class="empty" data-library-empty hidden>
+            <h2>這一頁沒有伸港館藏</h2>
+            <p>可以前往下一頁，或重新設定查詢條件。</p>
+          </section>
+        {% endif %}
         <div class="table-wrap">
           <table class="result-table" data-cache-key="library:v2:{{ token }}:{{ page }}">
             <thead>

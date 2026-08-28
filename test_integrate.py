@@ -1,10 +1,12 @@
 import unittest
 import tempfile
+import json
 from pathlib import Path
 from unittest.mock import patch
 
 import crawler
 import integrate
+import library_output
 import web_app
 
 
@@ -296,13 +298,13 @@ class IntegratedOutputTests(unittest.TestCase):
 
     def test_writes_three_pages_for_55_holdings_and_an_index(self):
         source_soup = integrate.BeautifulSoup(source_page_html(55), "html.parser")
-        template = integrate._prepare_output_template(source_soup)
+        template = library_output._prepare_output_template(source_soup)
         rows = source_soup.find("tbody").find_all("tr")
-        old_size = integrate.OUTPUT_PAGE_SIZE
-        integrate.OUTPUT_PAGE_SIZE = 25
+        old_size = library_output.OUTPUT_PAGE_SIZE
+        library_output.OUTPUT_PAGE_SIZE = 25
         try:
             with tempfile.TemporaryDirectory() as tmp:
-                files = integrate.write_result_pages(template, rows, tmp)
+                files = library_output.write_result_pages(template, rows, tmp)
                 row_counts = []
                 first_numbers = []
                 for filename in files:
@@ -315,11 +317,19 @@ class IntegratedOutputTests(unittest.TestCase):
                     first_numbers.append(
                         page_rows[0].find("td", {"data-label": "序號"}).get_text(strip=True)
                     )
-                index_html = (Path(tmp) / "books_with_library_index.html").read_text(
+                index_html = (Path(tmp) / "index.html").read_text(
                     encoding="utf-8"
                 )
+                legacy_index_exists = (
+                    Path(tmp) / "books_with_library_index.html"
+                ).exists()
+                data = json.loads(
+                    (Path(tmp) / "books_with_library_data.json").read_text(
+                        encoding="utf-8"
+                    )
+                )
         finally:
-            integrate.OUTPUT_PAGE_SIZE = old_size
+            library_output.OUTPUT_PAGE_SIZE = old_size
 
         self.assertEqual(files, [
             "books_with_library_page_1.html",
@@ -329,6 +339,11 @@ class IntegratedOutputTests(unittest.TestCase):
         self.assertEqual(row_counts, [25, 25, 5])
         self.assertEqual(first_numbers, ["1", "26", "51"])
         self.assertIn("books_with_library_page_3.html", index_html)
+        self.assertFalse(legacy_index_exists)
+        self.assertIn("books_with_library_data.json", index_html)
+        self.assertEqual(len(data), 55)
+        self.assertEqual(data[0]["anchor"], "books_with_library_page_1.html#book-1")
+        self.assertEqual(data[25]["anchor"], "books_with_library_page_2.html#book-26")
 
 
 if __name__ == "__main__":

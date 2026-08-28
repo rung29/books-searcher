@@ -1,0 +1,59 @@
+[
+  {
+    "number": "3",
+    "title": "帶象爺爺回家",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=74&kind=cht&search=1&id=26073",
+    "author": "文：多娜  圖：大尉",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "帶象爺爺回家",
+    "matched_author": "多娜,大尉,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525962&m=ss&k0=%E5%B8%B6%E8%B1%A1%E7%88%BA%E7%88%BA%E5%9B%9E%E5%AE%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20235"
+    ],
+    "output_number": 1,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-1"
+  },
+  {
+    "number": "8",
+    "title": "北極熊王子流浪記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=74&kind=cht&search=1&id=32988",
+    "author": "文：姜子安  圖：蔡兆倫",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "北極熊王子流浪記",
+    "matched_author": "姜子安,蔡兆倫,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525959&m=ss&k0=%E5%8C%97%E6%A5%B5%E7%86%8A%E7%8E%8B%E5%AD%90%E6%B5%81%E6%B5%AA%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20232"
+    ],
+    "output_number": 2,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-2"
+  },
+  {
+    "number": "13",
+    "title": "神犬奇兵",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=74&kind=cht&search=1&id=38111",
+    "author": "文：廖炳焜 圖：達姆",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "神犬奇兵",
+    "matched_author": "廖炳焜,達姆",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=438388&m=ss&k0=%E7%A5%9E%E7%8A%AC%E5%A5%87%E5%85%B5&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/22896"
+    ],
+    "output_number": 3,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-3"
+  }
+]

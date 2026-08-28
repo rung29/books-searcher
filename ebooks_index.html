@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>電子書資源清單</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 1040px; margin: 0 auto; padding: 32px 20px; background: #f8f9fa; color: #263238; }
+    main { display: grid; gap: 20px; }
+    .panel { background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    input { width: 100%; min-height: 46px; padding: 0 14px; border: 1px solid #ccd6dd; border-radius: 8px; font: inherit; }
+    .list { display: grid; gap: 10px; }
+    .book { border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fff; }
+    .book-title { font-weight: 800; color: #075985; text-decoration: none; }
+    .meta { color: #64748b; font-size: .92rem; margin-top: 4px; }
+    .resource { display: inline-block; margin: 6px 6px 0 0; padding: 4px 9px; border-radius: 999px; background: #ccfbf1; color: #115e59; font-weight: 700; text-decoration: none; }
+    .pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+    .page-link { display: block; padding: 16px; text-align: center; color: #fff; background: #0f766e; border-radius: 8px; text-decoration: none; font-weight: 700; }
+  </style>
+</head>
+<body><main>
+  <section class="panel">
+    <h1>電子書資源清單</h1>
+    <p>共找到 3 本有網路資源的書籍，分為 1 頁。</p>
+    <input id="search-input" type="search" placeholder="輸入書名、作者、出版社或網路資源">
+    <p id="result-count">載入中...</p>
+  </section>
+  <section class="panel">
+    <h2>搜尋結果</h2>
+    <div class="list" id="results-list"></div>
+  </section>
+  <section class="panel">
+    <h2>分頁</h2>
+    <nav class="pages"><a class="page-link" href="ebooks_page_1.html">第 1 頁</a></nav>
+  </section>
+</main>
+<script id="ebooks-data" type="application/json">[{"number": "3", "title": "帶象爺爺回家", "url": "https://read.chc.edu.tw/index.php?inter=books&page=74&kind=cht&search=1&id=26073", "author": "文：多娜  圖：大尉", "publisher": "小兵", "range": "國小低年級", "certification": "可認證", "matched_title": "帶象爺爺回家", "matched_author": "多娜,大尉,凌網科技股份有限公司", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525962&m=ss&k0=%E5%B8%B6%E8%B1%A1%E7%88%BA%E7%88%BA%E5%9B%9E%E5%AE%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=", "match_type": "完整書名", "online_resources": ["http://ebook.nlpi.edu.tw/bookdetail/20235"], "output_number": 1, "page": "ebooks_page_1.html", "anchor": "ebooks_page_1.html#ebook-1"}, {"number": "8", "title": "北極熊王子流浪記", "url": "https://read.chc.edu.tw/index.php?inter=books&page=74&kind=cht&search=1&id=32988", "author": "文：姜子安  圖：蔡兆倫", "publisher": "小兵", "range": "國小低年級", "certification": "可認證", "matched_title": "北極熊王子流浪記", "matched_author": "姜子安,蔡兆倫,凌網科技股份有限公司", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525959&m=ss&k0=%E5%8C%97%E6%A5%B5%E7%86%8A%E7%8E%8B%E5%AD%90%E6%B5%81%E6%B5%AA%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=", "match_type": "完整書名", "online_resources": ["http://ebook.nlpi.edu.tw/bookdetail/20232"], "output_number": 2, "page": "ebooks_page_1.html", "anchor": "ebooks_page_1.html#ebook-2"}, {"number": "13", "title": "神犬奇兵", "url": "https://read.chc.edu.tw/index.php?inter=books&page=74&kind=cht&search=1&id=38111", "author": "文：廖炳焜 圖：達姆", "publisher": "小兵", "range": "國小低年級", "certification": "可認證", "matched_title": "神犬奇兵", "matched_author": "廖炳焜,達姆", "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=438388&m=ss&k0=%E7%A5%9E%E7%8A%AC%E5%A5%87%E5%85%B5&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=", "match_type": "完整書名", "online_resources": ["https://ebook.nlpi.edu.tw/bookdetail/22896"], "output_number": 3, "page": "ebooks_page_1.html", "anchor": "ebooks_page_1.html#ebook-3"}]</script>
+<script>
+const searchInput = document.getElementById("search-input");
+const resultCount = document.getElementById("result-count");
+const resultsList = document.getElementById("results-list");
+const books = JSON.parse(document.getElementById("ebooks-data").textContent || "[]");
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function normalize(value) {
+  return String(value || "").normalize("NFKC").toLowerCase();
+}
+
+function matches(book, query) {
+  if (!query) return true;
+  return [
+    book.title,
+    book.matched_title,
+    book.author,
+    book.publisher,
+    book.range,
+    ...(book.online_resources || [])
+  ].some(value => normalize(value).includes(query));
+}
+
+function bookHtml(book) {
+  const resources = (book.online_resources || [])
+    .map(url => `<a class="resource" href="${escapeHtml(url)}" target="_blank" rel="noopener">網路資源</a>`)
+    .join("");
+  return `<article class="book">
+    <a class="book-title" href="${escapeHtml(book.anchor)}">${escapeHtml(book.title)}</a>
+    <div class="meta">${escapeHtml(book.author || "-")} / ${escapeHtml(book.publisher || "-")} / ${escapeHtml(book.range || "-")}</div>
+    <div class="meta">命中館藏：${book.matched_url ? `<a href="${escapeHtml(book.matched_url)}" target="_blank" rel="noopener">${escapeHtml(book.matched_title || "-")}</a>` : escapeHtml(book.matched_title || "-")}</div>
+    <div>${resources}</div>
+  </article>`;
+}
+
+function render() {
+  const query = normalize(searchInput.value);
+  const filtered = books.filter(book => matches(book, query));
+  resultCount.textContent = `共 ${filtered.length} 本有網路資源書籍`;
+  resultsList.innerHTML = filtered.length
+    ? filtered.map(bookHtml).join("")
+    : '<p>沒有符合條件的電子書資源。</p>';
+}
+
+searchInput.addEventListener("input", render);
+render();
+</script>
+</body></html>

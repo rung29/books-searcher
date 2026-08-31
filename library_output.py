@@ -588,6 +588,14 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
       font-size: 0.88rem;
     }}
 
+    .results-toolbar-group {{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      flex-wrap: wrap;
+    }}
+
     .page-size-select {{
       min-height: 38px;
       padding: 0 34px 0 12px;
@@ -607,6 +615,10 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
       align-items: center;
       gap: 12px;
       margin-top: 16px;
+    }}
+
+    .pagination-top {{
+      margin-top: 0;
     }}
 
     .page-btn {{
@@ -864,7 +876,8 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
         flex-direction: column;
         gap: 12px;
       }}
-      .results-toolbar {{
+      .results-toolbar,
+      .results-toolbar-group {{
         width: 100%;
         justify-content: space-between;
       }}
@@ -913,14 +926,21 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
   <section class="panel">
     <div class="panel-header">
       <h2 class="panel-title" id="results-title"><span>📋</span> 全部館藏</h2>
-      <label class="results-toolbar" for="page-size">
-        <span>每頁顯示</span>
-        <select class="page-size-select" id="page-size">
-          <option value="20" selected>20</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
-      </label>
+      <div class="results-toolbar-group">
+        <div class="pagination pagination-top hidden" id="pagination-top">
+          <button type="button" class="page-btn" id="prev-page-top" aria-label="上一頁">‹</button>
+          <span class="page-info" id="page-info-top">第 1 / 1 頁</span>
+          <button type="button" class="page-btn" id="next-page-top" aria-label="下一頁">›</button>
+        </div>
+        <label class="results-toolbar" for="page-size">
+          <span>每頁顯示</span>
+          <select class="page-size-select" id="page-size">
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+      </div>
     </div>
     <div class="list" id="results-list"></div>
     <div class="pagination hidden" id="pagination">
@@ -945,13 +965,33 @@ const themeToggleBtn = document.getElementById("theme-toggle");
 const voiceSearchBtn = document.getElementById("voice-search");
 const pageSizeSelect = document.getElementById("page-size");
 const pagination = document.getElementById("pagination");
+const paginationTop = document.getElementById("pagination-top");
 const prevPageBtn = document.getElementById("prev-page");
+const prevPageTopBtn = document.getElementById("prev-page-top");
 const nextPageBtn = document.getElementById("next-page");
+const nextPageTopBtn = document.getElementById("next-page-top");
 const pageInfo = document.getElementById("page-info");
+const pageInfoTop = document.getElementById("page-info-top");
 let books = [];
 let filteredBooks = [];
 let currentPage = 1;
 let pageSize = 20;
+
+function resultsHeadingText() {{
+  return resultsTitle.textContent.replace(/^📋\s*/, "") || "搜尋結果";
+}}
+
+function syncPagination(totalPages) {{
+  const shouldShow = filteredBooks.length > pageSize;
+  pagination.classList.toggle("hidden", !shouldShow);
+  paginationTop.classList.toggle("hidden", !shouldShow);
+  pageInfo.textContent = `第 ${{currentPage}} / ${{totalPages}} 頁`;
+  pageInfoTop.textContent = pageInfo.textContent;
+  prevPageBtn.disabled = currentPage === 1;
+  prevPageTopBtn.disabled = currentPage === 1;
+  nextPageBtn.disabled = currentPage === totalPages;
+  nextPageTopBtn.disabled = currentPage === totalPages;
+}}
 
 function initTheme() {{
   const savedTheme = localStorage.getItem("books_theme") ||
@@ -1153,10 +1193,7 @@ function renderResults(items, title = "搜尋結果") {{
   resultsList.innerHTML = pageItems.length
     ? pageItems.map(bookHtml).join("")
     : '<p class="muted-text">沒有符合條件的館藏書籍。</p>';
-  pagination.classList.toggle("hidden", filteredBooks.length <= pageSize);
-  pageInfo.textContent = `第 ${{currentPage}} / ${{totalPages}} 頁`;
-  prevPageBtn.disabled = currentPage === 1;
-  nextPageBtn.disabled = currentPage === totalPages;
+  syncPagination(totalPages);
 }}
 
 function renderGroups() {{
@@ -1263,25 +1300,30 @@ if (SpeechRecognition && voiceSearchBtn) {{
 pageSizeSelect.addEventListener("change", () => {{
   pageSize = Number(pageSizeSelect.value) || 20;
   currentPage = 1;
-  renderResults(filteredBooks, resultsTitle.textContent.replace(/^📋\\s*/, "") || "搜尋結果");
+  renderResults(filteredBooks, resultsHeadingText());
 }});
 
-prevPageBtn.addEventListener("click", () => {{
+function goToPreviousPage() {{
   if (currentPage > 1) {{
     currentPage -= 1;
-    renderResults(filteredBooks, resultsTitle.textContent.replace(/^📋\\s*/, "") || "搜尋結果");
+    renderResults(filteredBooks, resultsHeadingText());
     resultsTitle.scrollIntoView({{ behavior: "smooth", block: "start" }});
   }}
-}});
+}}
 
-nextPageBtn.addEventListener("click", () => {{
+function goToNextPage() {{
   const totalPages = Math.ceil(filteredBooks.length / pageSize);
   if (currentPage < totalPages) {{
     currentPage += 1;
-    renderResults(filteredBooks, resultsTitle.textContent.replace(/^📋\\s*/, "") || "搜尋結果");
+    renderResults(filteredBooks, resultsHeadingText());
     resultsTitle.scrollIntoView({{ behavior: "smooth", block: "start" }});
   }}
-}});
+}}
+
+prevPageBtn.addEventListener("click", goToPreviousPage);
+prevPageTopBtn.addEventListener("click", goToPreviousPage);
+nextPageBtn.addEventListener("click", goToNextPage);
+nextPageTopBtn.addEventListener("click", goToNextPage);
 
 function initializeBooks(data) {{
   books = Array.isArray(data) ? data : [];

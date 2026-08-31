@@ -336,6 +336,8 @@ def _ebook_page_html(records, page_number, page_count):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>電子書資源 - 第 {page_number} 頁</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="icon.svg" type="image/svg+xml">
   <style>
     body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f8f9fa; color: #263238; }}
     main {{ max-width: 1200px; margin: 0 auto; padding: 28px 16px; }}
@@ -369,6 +371,8 @@ def _ebook_index_html(records, page_files):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>電子書資源清單</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">

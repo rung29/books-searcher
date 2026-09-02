@@ -199,18 +199,24 @@ def _search_ebook_candidates(query_title):
 def _ebook_title_variants(title):
     variants = []
     normalized = re.sub(r"\s+", " ", (title or "").strip())
-    if normalized:
-        variants.append((normalized, "完整書名"))
+
+    colon_parts = re.split(r"\s*[:：]\s*", normalized, maxsplit=1)
+    search_base = normalized
+    if len(colon_parts) == 2 and colon_parts[1].strip():
+        search_base = colon_parts[1].strip()
+
+    if search_base:
+        variants.append((search_base, "完整書名"))
 
     punctuation_spaced = re.sub(
-        r"[^\w\u4e00-\u9fff]+", " ", normalized
+        r"[^\w\u4e00-\u9fff]+", " ", search_base
     )
     punctuation_spaced = re.sub(r"\s+", " ", punctuation_spaced).strip()
-    if punctuation_spaced and punctuation_spaced != normalized:
+    if punctuation_spaced and punctuation_spaced != search_base:
         variants.append((punctuation_spaced, "標準化書名"))
 
-    main = re.split(r"[:：,，]", normalized, maxsplit=1)[0].strip()
-    if main and main != normalized:
+    main = re.split(r"\s*[,，]\s*", search_base, maxsplit=1)[0].strip()
+    if main and main != search_base:
         variants.append((main, "主書名"))
 
     unique = []
@@ -227,7 +233,15 @@ def search_ebook_status(book_title, book_author=""):
     try:
         checked_mids = set()
         for query_title, match_type in _ebook_title_variants(book_title):
-            candidates = _search_ebook_candidates(query_title)
+            try:
+                candidates = _search_ebook_candidates(query_title)
+            except LibraryStructureError as exc:
+                print(
+                    f"ebook lookup structure changed for {book_title} "
+                    f"(variant: {query_title}): {exc}",
+                    file=sys.stderr,
+                )
+                continue
             if not candidates:
                 continue
             candidates.sort(
@@ -262,16 +276,7 @@ def search_ebook_status(book_title, book_author=""):
     except requests.exceptions.RequestException as exc:
         print(f"ebook lookup failed for {book_title}: {exc}", file=sys.stderr)
         return {"has_online_resource": False, "online_resources": [], "error": "圖書館連線失敗"}
-    except LibraryStructureError as exc:
-        print(f"ebook lookup structure changed for {book_title}: {exc}", file=sys.stderr)
-        return {
-            "has_online_resource": False,
-            "online_resources": [],
-            "error": "頁面格式異常",
-            "error_type": "structure",
-        }
-
-
+    
 def collect_ebooks(html_files):
     source_books = _extract_source_books(html_files)
     ebooks = []

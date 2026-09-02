@@ -97,11 +97,12 @@ class EbookFinderTests(unittest.TestCase):
             records = ebook_finder.collect_ebooks([str(source)])
             files = ebook_finder.write_ebook_pages(records, tmp)
 
-            self.assertEqual(files, ["ebooks_page_1.html"])
+            self.assertEqual(files, [])
             self.assertTrue((Path(tmp) / "ebooks_index.html").exists())
             self.assertTrue((Path(tmp) / "ebooks_data.json").exists())
+            self.assertFalse((Path(tmp) / "ebooks_page_1.html").exists())
             self.assertIn(
-                "https://ebook.nlpi.edu.tw/bookdetail/22896",
+                "ebooks_data.json",
                 (Path(tmp) / "ebooks_index.html").read_text(encoding="utf-8"),
             )
 

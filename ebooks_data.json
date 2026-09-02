@@ -1,5 +1,2538 @@
 [
   {
+    "number": "12",
+    "title": "君偉上小學7：君偉的節日報告",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=1&kind=cht&search=1&id=42115",
+    "author": "文 / 王淑芬 圖 / 賴馬",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "君偉的節日報告 / [中年級認證書]",
+    "matched_author": "王淑芬,1961-,賴馬",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=748231&m=ss&k0=%E5%90%9B%E5%81%89%E7%9A%84%E7%AF%80%E6%97%A5%E5%A0%B1%E5%91%8A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/44626"
+    ],
+    "output_number": 1,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-1"
+  },
+  {
+    "number": "4",
+    "title": "用點心學校10：皇家金布丁",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=2&kind=cht&search=1&id=41815",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 10,皇家金布丁 /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=711127&m=ss&k0=%E7%9A%87%E5%AE%B6%E9%87%91%E5%B8%83%E4%B8%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/53844"
+    ],
+    "output_number": 2,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-2"
+  },
+  {
+    "number": "19",
+    "title": "用點心學校9：紅白大對抗",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=2&kind=cht&search=1&id=41763",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 9,紅白大對抗 /",
+    "matched_author": "林哲璋,BO2,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=932744&m=ss&k0=%E7%B4%85%E7%99%BD%E5%A4%A7%E5%B0%8D%E6%8A%97&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/53851"
+    ],
+    "output_number": 3,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-3"
+  },
+  {
+    "number": "12",
+    "title": "貓巧可3：貓巧可真快樂",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=3&kind=cht&search=1&id=42167",
+    "author": "文 / 王淑芬  圖 / 尤淑瑜",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "貓巧可真快樂 [中年級認證書] /",
+    "matched_author": "王淑芬,尤淑瑜",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=730995&m=ss&k0=%E8%B2%93%E5%B7%A7%E5%8F%AF%E7%9C%9F%E5%BF%AB%E6%A8%82&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49926"
+    ],
+    "output_number": 4,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-4"
+  },
+  {
+    "number": "2",
+    "title": "用點心學校8：包在我身上",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=4&kind=cht&search=1&id=41764",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.8,包在我身上 [中年級認證書]  /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=933775&m=ss&k0=%E5%8C%85%E5%9C%A8%E6%88%91%E8%BA%AB%E4%B8%8A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/53850"
+    ],
+    "output_number": 5,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-5"
+  },
+  {
+    "number": "10",
+    "title": "聖誕老婆婆",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=4&kind=cht&search=1&id=42079",
+    "author": "文：李光福  圖：徐建國",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "聖誕老婆婆 [中年級認證書] /",
+    "matched_author": "李光福,徐建國",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=664607&m=ss&k0=%E8%81%96%E8%AA%95%E8%80%81%E5%A9%86%E5%A9%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/39549"
+    ],
+    "output_number": 6,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-6"
+  },
+  {
+    "number": "18",
+    "title": "生活教育學習繪本：一塊錢‧買一個夢",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=4&kind=cht&search=1&id=42168",
+    "author": "文 / 張晉霖  圖 / 洪毅霖、林恩發",
+    "publisher": "巧育文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "一塊錢、買一個夢 : 夢想與實際的體認",
+    "matched_author": "張晉霖,洪毅霖,林恩發",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=341838&m=ss&k0=%E4%B8%80%E5%A1%8A%E9%8C%A2%E2%80%A7%E8%B2%B7%E4%B8%80%E5%80%8B%E5%A4%A2&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/3425"
+    ],
+    "output_number": 7,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-7"
+  },
+  {
+    "number": "4",
+    "title": "大熊醫生粉絲團",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=6&kind=cht&search=1&id=41887",
+    "author": "文 / 劉思源  圖 / 嚴凱信",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "Doctor大熊醫生粉絲團 /",
+    "matched_author": "劉思源,嚴凱信",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=737832&m=ss&k0=%E5%A4%A7%E7%86%8A%E9%86%AB%E7%94%9F%E7%B2%89%E7%B5%B2%E5%9C%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/39400"
+    ],
+    "output_number": 8,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-8"
+  },
+  {
+    "number": "11",
+    "title": "時鐘國王",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=6&kind=cht&search=1&id=41949",
+    "author": "文 / 小杉早苗  圖 / 立本倫子",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "時鐘國王 /",
+    "matched_author": "小杉早苗,1971-,蘇懿禎,立本倫子",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=936049&m=ss&k0=%E6%99%82%E9%90%98%E5%9C%8B%E7%8E%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/55651"
+    ],
+    "output_number": 9,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-9"
+  },
+  {
+    "number": "16",
+    "title": "用點心學校7：酸溜溜魔術",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=6&kind=cht&search=1&id=39927",
+    "author": "文 / 林哲璋 圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 7, 酸溜溜魔術 /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=636365&m=ss&k0=%E9%85%B8%E6%BA%9C%E6%BA%9C%E9%AD%94%E8%A1%93&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/53852"
+    ],
+    "output_number": 10,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-10"
+  },
+  {
+    "number": "19",
+    "title": "雪人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=6&kind=cht&search=1&id=41995",
+    "author": "雷蒙‧布力格",
+    "publisher": "上誼文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "雪人",
+    "matched_author": "奈斯博(Nesbo, Jo),NesboJo,林立仁",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=500948&m=ss&k0=%E9%9B%AA%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33682"
+    ],
+    "output_number": 11,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-11"
+  },
+  {
+    "number": "3",
+    "title": "小恐龍繪本：愛發脾氣的三角龍",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=7&kind=cht&search=1&id=37927",
+    "author": "Manisa Palakawong",
+    "publisher": "人類文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "愛發脾氣的三角龍",
+    "matched_author": "巴拉卡昂吉(Palakawong,Manisa),HongwisuthikulRatimai",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=442652&m=ss&k0=%E6%84%9B%E7%99%BC%E8%84%BE%E6%B0%A3%E7%9A%84%E4%B8%89%E8%A7%92%E9%BE%8D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/11488"
+    ],
+    "output_number": 12,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-12"
+  },
+  {
+    "number": "13",
+    "title": "小恐龍繪本：愛哭的雷龍",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=7&kind=cht&search=1&id=25921",
+    "author": "Manisa Palakawong",
+    "publisher": "人類文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "愛哭的雷龍",
+    "matched_author": "20100506d2010 cd y0chiy50 e,洪格威斯寇(Hongwisuthikul, Ratimai),柏勒廣(Palakawong, Manisa),凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=498861&m=ss&k0=%E6%84%9B%E5%93%AD%E7%9A%84%E9%9B%B7%E9%BE%8D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/11487"
+    ],
+    "output_number": 13,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-13"
+  },
+  {
+    "number": "1",
+    "title": "小熊兄妹的點子屋1：點子屋新開張！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=9&kind=cht&search=1&id=41362",
+    "author": "文 / 哲也  圖 / 水腦",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "點子屋新開張! /",
+    "matched_author": "哲也,水腦",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=735691&m=ss&k0=%E9%BB%9E%E5%AD%90%E5%B1%8B%E6%96%B0%E9%96%8B%E5%BC%B5%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49935"
+    ],
+    "output_number": 14,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-14"
+  },
+  {
+    "number": "3",
+    "title": "用點心學校6：神氣白米飯",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=10&kind=cht&search=1&id=39663",
+    "author": "文 / 林哲璋 圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 6, 神氣白米飯 /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=636364&m=ss&k0=%E7%A5%9E%E6%B0%A3%E7%99%BD%E7%B1%B3%E9%A3%AF&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/53849"
+    ],
+    "output_number": 15,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-15"
+  },
+  {
+    "number": "7",
+    "title": "小企鵝闖天下",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=10&kind=cht&search=1&id=41729",
+    "author": "文 / 瑪格麗特‧雷伊  圖 / H.A.雷伊",
+    "publisher": "臺灣麥克",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "小企鵝闖天下",
+    "matched_author": "雷伊瑪格莉特,洪翠娥",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=355993&m=ss&k0=%E5%B0%8F%E4%BC%81%E9%B5%9D%E9%97%96%E5%A4%A9%E4%B8%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267729-1.jpg",
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267729-2.jpg"
+    ],
+    "output_number": 16,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-16"
+  },
+  {
+    "number": "8",
+    "title": "媽媽變魔術",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=11&kind=cht&search=1&id=37164",
+    "author": "文‧圖 / 童嘉",
+    "publisher": "親子天下",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "媽媽變魔術",
+    "matched_author": "童嘉",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=556969&m=ss&k0=%E5%AA%BD%E5%AA%BD%E8%AE%8A%E9%AD%94%E8%A1%93&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/29460"
+    ],
+    "output_number": 17,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-17"
+  },
+  {
+    "number": "11",
+    "title": "星期天的保健室",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=12&kind=cht&search=1&id=41816",
+    "author": "文 / 村上詩子  圖 / 田中六大",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "星期天的保健室 /",
+    "matched_author": "村上詩子,田中六大,張桂娥",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=883274&m=ss&k0=%E6%98%9F%E6%9C%9F%E5%A4%A9%E7%9A%84%E4%BF%9D%E5%81%A5%E5%AE%A4&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54482"
+    ],
+    "output_number": 18,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-18"
+  },
+  {
+    "number": "12",
+    "title": "星期天的體育館",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=12&kind=cht&search=1&id=41819",
+    "author": "文 / 村上詩子  圖 / 田中六大",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "星期天的體育館 /",
+    "matched_author": "村上詩子,張桂娥,田中六大",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=922245&m=ss&k0=%E6%98%9F%E6%9C%9F%E5%A4%A9%E7%9A%84%E9%AB%94%E8%82%B2%E9%A4%A8&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54486"
+    ],
+    "output_number": 19,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-19"
+  },
+  {
+    "number": "14",
+    "title": "用點心學校5：香蕉不要皮",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=12&kind=cht&search=1&id=37986",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 5, 香蕉不要皮",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=550251&m=ss&k0=%E9%A6%99%E8%95%89%E4%B8%8D%E8%A6%81%E7%9A%AE&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/53848"
+    ],
+    "output_number": 20,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-20"
+  },
+  {
+    "number": "12",
+    "title": "工作大未來：獸醫黑嚕嚕的醫院",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=13&kind=cht&search=1&id=40828",
+    "author": "文 / 陳默默  圖 / 陳怡今",
+    "publisher": "聯經",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "獸醫黑嚕嚕的醫院",
+    "matched_author": "陳默默,陳怡今",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=581034&m=ss&k0=%E7%8D%B8%E9%86%AB%E9%BB%91%E5%9A%95%E5%9A%95%E7%9A%84%E9%86%AB%E9%99%A2&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/30486"
+    ],
+    "output_number": 21,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-21"
+  },
+  {
+    "number": "13",
+    "title": "老虎先生",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=13&kind=cht&search=1&id=38013",
+    "author": "彼得‧布朗",
+    "publisher": "小天下",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "老虎先生 /",
+    "matched_author": "布朗(Brown, Peter),劉清彥",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=881406&m=ss&k0=%E8%80%81%E8%99%8E%E5%85%88%E7%94%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/57036"
+    ],
+    "output_number": 22,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-22"
+  },
+  {
+    "number": "15",
+    "title": "愛哭公主",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=13&kind=cht&search=1&id=38014",
+    "author": "文‧圖 / 賴馬",
+    "publisher": "天下雜誌",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "愛哭公主",
+    "matched_author": "賴馬",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=581270&m=ss&k0=%E6%84%9B%E5%93%AD%E5%85%AC%E4%B8%BB&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33584"
+    ],
+    "output_number": 23,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-23"
+  },
+  {
+    "number": "10",
+    "title": "小東西",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=14&kind=cht&search=1&id=38059",
+    "author": "文 / 哲也  圖 / 林小杯等",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "小東西 /",
+    "matched_author": "哲也,,林小杯,",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=863624&m=ss&k0=%E5%B0%8F%E6%9D%B1%E8%A5%BF&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/39147"
+    ],
+    "output_number": 24,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-24"
+  },
+  {
+    "number": "1",
+    "title": "經典傳奇故事：夜裡來的老虎",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=16&kind=cht&search=1&id=40684",
+    "author": "文 / 謝武彰  圖 / 徐進",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "夜裡來的老虎 /",
+    "matched_author": "謝武彰,徐進",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=717991&m=ss&k0=%E5%A4%9C%E8%A3%A1%E4%BE%86%E7%9A%84%E8%80%81%E8%99%8E&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/42950"
+    ],
+    "output_number": 25,
+    "page": "ebooks_page_1.html",
+    "anchor": "ebooks_page_1.html#ebook-25"
+  },
+  {
+    "number": "3",
+    "title": "神奇樹屋49：星光下的戰馬",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=16&kind=cht&search=1&id=39410",
+    "author": "文 / 瑪麗‧波‧奧斯本  圖 / 吳健豐",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "神奇樹屋.49,星光下的戰馬 /",
+    "matched_author": "奧斯本(Osborne, Mary Pope),張毓如,吳健豐",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764198&m=ss&k0=%E6%98%9F%E5%85%89%E4%B8%8B%E7%9A%84%E6%88%B0%E9%A6%AC&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49451"
+    ],
+    "output_number": 26,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-26"
+  },
+  {
+    "number": "2",
+    "title": "都是珍奶惹的禍",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=17&kind=cht&search=1&id=32278",
+    "author": "文 / 李光福  圖 / 綠豆芃",
+    "publisher": "超邁文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "都是珍奶惹的禍",
+    "matched_author": "李光福,綠豆芃",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=554896&m=ss&k0=%E9%83%BD%E6%98%AF%E7%8F%8D%E5%A5%B6%E6%83%B9%E7%9A%84%E7%A6%8D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/25422"
+    ],
+    "output_number": 27,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-27"
+  },
+  {
+    "number": "4",
+    "title": "用點心學校4：學生真有料",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=17&kind=cht&search=1&id=37399",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 4,學生真有料 /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=652958&m=ss&k0=%E5%AD%B8%E7%94%9F%E7%9C%9F%E6%9C%89%E6%96%99&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54202"
+    ],
+    "output_number": 28,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-28"
+  },
+  {
+    "number": "6",
+    "title": "媽媽在哪裡？",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=17&kind=cht&search=1&id=41752",
+    "author": "文‧圖 / 王春子",
+    "publisher": "遠流",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "媽媽在哪裡? /",
+    "matched_author": "榮波(Lomp, Stephan),王鈺婷",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=839046&m=ss&k0=%E5%AA%BD%E5%AA%BD%E5%9C%A8%E5%93%AA%E8%A3%A1%EF%BC%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://www.ebookservice.tw/chc/search?q=媽媽在哪裡&scope=title"
+    ],
+    "output_number": 29,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-29"
+  },
+  {
+    "number": "8",
+    "title": "排骨湯之戀",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=18&kind=cht&search=1&id=35625",
+    "author": "文 / 管家琪  圖 / 劉婷",
+    "publisher": "幼獅文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "排骨湯之戀",
+    "matched_author": "管家琪,劉婷,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525996&m=ss&k0=%E6%8E%92%E9%AA%A8%E6%B9%AF%E4%B9%8B%E6%88%80&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20270"
+    ],
+    "output_number": 30,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-30"
+  },
+  {
+    "number": "4",
+    "title": "好習慣一級棒6：沒問題先生",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=20&kind=cht&search=1&id=38477",
+    "author": "文 / 徐瑞蓮  圖 / 起士茄子",
+    "publisher": "小螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "沒問題先生",
+    "matched_author": "徐瑞蓮,起士茄子",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=518628&m=ss&k0=%E6%B2%92%E5%95%8F%E9%A1%8C%E5%85%88%E7%94%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/30757"
+    ],
+    "output_number": 31,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-31"
+  },
+  {
+    "number": "8",
+    "title": "文具精靈國",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=21&kind=cht&search=1&id=37995",
+    "author": "文 / 郭恆祺  繪 / 謝金芳、妮蒂亞",
+    "publisher": "水滴文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "文具精靈國. 請你讓我幫幫忙! / 3,",
+    "matched_author": "郭恆祺,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=752471&m=ss&k0=%E6%96%87%E5%85%B7%E7%B2%BE%E9%9D%88%E5%9C%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/44250"
+    ],
+    "output_number": 32,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-32"
+  },
+  {
+    "number": "9",
+    "title": "天使的約定",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=22&kind=cht&search=1&id=41597",
+    "author": "文：林翔  圖：法蘭克",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "天使的約定 /",
+    "matched_author": "林翔,法蘭克",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=803959&m=ss&k0=%E5%A4%A9%E4%BD%BF%E7%9A%84%E7%B4%84%E5%AE%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/48862"
+    ],
+    "output_number": 33,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-33"
+  },
+  {
+    "number": "9",
+    "title": "我不要午睡",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=23&kind=cht&search=1&id=38802",
+    "author": "文 / 管家琪  圖 / 吳嘉鴻",
+    "publisher": "幼獅文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "我不要午睡",
+    "matched_author": "管家琪,吳嘉鴻,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525705&m=ss&k0=%E6%88%91%E4%B8%8D%E8%A6%81%E5%8D%88%E7%9D%A1&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/19706"
+    ],
+    "output_number": 34,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-34"
+  },
+  {
+    "number": "12",
+    "title": "席洛一定做得到",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=23&kind=cht&search=1&id=38804",
+    "author": "文 / 汪淑玲  圖 / CT",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "席洛一定做得到",
+    "matched_author": "汪淑玲,CT",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=518559&m=ss&k0=%E5%B8%AD%E6%B4%9B%E4%B8%80%E5%AE%9A%E5%81%9A%E5%BE%97%E5%88%B0&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20269"
+    ],
+    "output_number": 35,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-35"
+  },
+  {
+    "number": "14",
+    "title": "綠野蛛蹤",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=23&kind=cht&search=1&id=37272",
+    "author": "文 / 楊維晟  圖 / 黃麗珍",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "蟲小看世界1：綠野蛛蹤 /",
+    "matched_author": "楊維晟,黃麗珍",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=845122&m=ss&k0=%E7%B6%A0%E9%87%8E%E8%9B%9B%E8%B9%A4&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://bocach.ebook.hyread.com.tw/bookDetail.jsp?id=280268",
+      "https://bocach.ebook.hyread.com.tw/bookDetail.jsp?id=408401"
+    ],
+    "output_number": 36,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-36"
+  },
+  {
+    "number": "9",
+    "title": "雪兒Share",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=24&kind=cht&search=1&id=39082",
+    "author": "文 / 嚴淑女  圖 / 林柏廷",
+    "publisher": "幼獅文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "雪兒 = Share",
+    "matched_author": "嚴淑女,林柏廷,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525997&m=ss&k0=%E9%9B%AA%E5%85%92Share&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20271"
+    ],
+    "output_number": 37,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-37"
+  },
+  {
+    "number": "8",
+    "title": "蟲小練武功",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=25&kind=cht&search=1&id=38342",
+    "author": "文‧攝影 / 楊維晟  圖 / 林芷蔚",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "蟲小看世界3：蟲小練武功 /",
+    "matched_author": "楊維晟,林芷蔚",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=845120&m=ss&k0=%E8%9F%B2%E5%B0%8F%E7%B7%B4%E6%AD%A6%E5%8A%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://bocach.ebook.hyread.com.tw/bookDetail.jsp?id=280270",
+      "https://bocach.ebook.hyread.com.tw/bookDetail.jsp?id=408403"
+    ],
+    "output_number": 38,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-38"
+  },
+  {
+    "number": "12",
+    "title": "小四愛作怪之孟子駕到",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=25&kind=cht&search=1&id=32207",
+    "author": "文：阿德蝸  圖：任華斌",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "小四愛作怪之孟子駕到",
+    "matched_author": "阿德蝸,任華斌",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=515856&m=ss&k0=%E5%B0%8F%E5%9B%9B%E6%84%9B%E4%BD%9C%E6%80%AA%E4%B9%8B%E5%AD%9F%E5%AD%90%E9%A7%95%E5%88%B0&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/23403"
+    ],
+    "output_number": 39,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-39"
+  },
+  {
+    "number": "6",
+    "title": "找不到系列3：找不到校長",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=27&kind=cht&search=1&id=34030",
+    "author": "文 / 岑澎維 圖 / 林小杯",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "找不到校長 /",
+    "matched_author": "岑澎維,林小杯",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=748216&m=ss&k0=%E6%89%BE%E4%B8%8D%E5%88%B0%E6%A0%A1%E9%95%B7&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/38442"
+    ],
+    "output_number": 40,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-40"
+  },
+  {
+    "number": "8",
+    "title": "稻草人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=27&kind=cht&search=1&id=35569",
+    "author": "文 / 林秀穗  圖 / 廖健宏",
+    "publisher": "國語日報",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "稻草人",
+    "matched_author": "林良,鄭明進",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=59885&m=ss&k0=%E7%A8%BB%E8%8D%89%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/51915"
+    ],
+    "output_number": 41,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-41"
+  },
+  {
+    "number": "6",
+    "title": "美德新幹線8：教練 加油！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=28&kind=cht&search=1&id=37381",
+    "author": "文 / 李光福  圖 / 法蘭克",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "教練加油!",
+    "matched_author": "李光福,法蘭克",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=501983&m=ss&k0=%E6%95%99%E7%B7%B4%20%E5%8A%A0%E6%B2%B9%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/17989"
+    ],
+    "output_number": 42,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-42"
+  },
+  {
+    "number": "8",
+    "title": "美德新幹線9：長髮小善人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=28&kind=cht&search=1&id=37382",
+    "author": "文 / 李光福  圖 / 吳若嫻",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "長髮小善人",
+    "matched_author": "李光福,吳若嫻",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=504644&m=ss&k0=%E9%95%B7%E9%AB%AE%E5%B0%8F%E5%96%84%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/17971"
+    ],
+    "output_number": 43,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-43"
+  },
+  {
+    "number": "9",
+    "title": "美德新幹線10：我的鄰居是組頭",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=28&kind=cht&search=1&id=37383",
+    "author": "文 / 李光福  圖 / 卓昆峰",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我的鄰居是組頭",
+    "matched_author": "李光福,卓昆峰",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=501984&m=ss&k0=%E6%88%91%E7%9A%84%E9%84%B0%E5%B1%85%E6%98%AF%E7%B5%84%E9%A0%AD&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/17962"
+    ],
+    "output_number": 44,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-44"
+  },
+  {
+    "number": "11",
+    "title": "黑貓魯道夫1：魯道夫與可多樂",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=29&kind=cht&search=1&id=31263",
+    "author": "文 / 齊藤洋  圖 / 杉浦範茂",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "黑貓魯道夫. 1, 魯道夫與可多樂 /",
+    "matched_author": "齊藤洋,杉浦範茂,王蘊潔",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=907407&m=ss&k0=%E9%AD%AF%E9%81%93%E5%A4%AB%E8%88%87%E5%8F%AF%E5%A4%9A%E6%A8%82&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://bocach.ebook.hyread.com.tw/bookDetail.jsp?id=339112"
+    ],
+    "output_number": 45,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-45"
+  },
+  {
+    "number": "15",
+    "title": "小四愛作怪之挑戰孔夫子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=30&kind=cht&search=1&id=32040",
+    "author": "文：阿德蝸  圖：任華斌",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "小四愛作怪之挑戰孔夫子",
+    "matched_author": "阿德蝸,任華斌",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=501383&m=ss&k0=%E5%B0%8F%E5%9B%9B%E6%84%9B%E4%BD%9C%E6%80%AA%E4%B9%8B%E6%8C%91%E6%88%B0%E5%AD%94%E5%A4%AB%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/22496"
+    ],
+    "output_number": 46,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-46"
+  },
+  {
+    "number": "6",
+    "title": "君偉上小學2：二年級問題多",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=31&kind=cht&search=1&id=26415",
+    "author": "文 / 王淑芬  圖 / 賴馬",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "2年級問題多 /",
+    "matched_author": "王淑芬,1961-,賴馬,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764027&m=ss&k0=%E4%BA%8C%E5%B9%B4%E7%B4%9A%E5%95%8F%E9%A1%8C%E5%A4%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18427"
+    ],
+    "output_number": 47,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-47"
+  },
+  {
+    "number": "7",
+    "title": "奇幻蛇郎與紅花",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=31&kind=cht&search=1&id=42031",
+    "author": "文 / 劉思源 圖 / 林芷蔚",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "奇幻蛇郎與紅花",
+    "matched_author": "劉思源,林芷蔚",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=511518&m=ss&k0=%E5%A5%87%E5%B9%BB%E8%9B%87%E9%83%8E%E8%88%87%E7%B4%85%E8%8A%B1&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33748"
+    ],
+    "output_number": 48,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-48"
+  },
+  {
+    "number": "2",
+    "title": "噓！這是祕密",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=32&kind=cht&search=1&id=38469",
+    "author": "文 / 方素珍  圖 / 施佩吟",
+    "publisher": "上人文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "噓!這是祕密! /",
+    "matched_author": "維諾(Vigneault, Mylen),巫芷玲,侯桀(Roegiers, Maud)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=807976&m=ss&k0=%E5%99%93%EF%BC%81%E9%80%99%E6%98%AF%E7%A5%95%E5%AF%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/47304"
+    ],
+    "output_number": 49,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-49"
+  },
+  {
+    "number": "9",
+    "title": "不一樣的晚餐",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=32&kind=cht&search=1&id=39257",
+    "author": "文：徐瑞蓮  圖：陳又凌",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "不一樣的晚餐",
+    "matched_author": "徐瑞蓮,陳又凌",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=511111&m=ss&k0=%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E6%99%9A%E9%A4%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/23964"
+    ],
+    "output_number": 50,
+    "page": "ebooks_page_2.html",
+    "anchor": "ebooks_page_2.html#ebook-50"
+  },
+  {
+    "number": "10",
+    "title": "星期天的音樂教室",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=32&kind=cht&search=1&id=41817",
+    "author": "文 / 村上詩子  圖 / 田中六大",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "星期天的音樂教室 /",
+    "matched_author": "村上詩子,張桂娥,田中六大",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=922246&m=ss&k0=%E6%98%9F%E6%9C%9F%E5%A4%A9%E7%9A%84%E9%9F%B3%E6%A8%82%E6%95%99%E5%AE%A4&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54483"
+    ],
+    "output_number": 51,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-51"
+  },
+  {
+    "number": "12",
+    "title": "星期天的自然教室",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=32&kind=cht&search=1&id=41818",
+    "author": "文 / 村上詩子  圖 / 田中六大",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "星期天的自然教室 /",
+    "matched_author": "村上詩子,田中六大,張桂娥",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=922224&m=ss&k0=%E6%98%9F%E6%9C%9F%E5%A4%A9%E7%9A%84%E8%87%AA%E7%84%B6%E6%95%99%E5%AE%A4&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54481"
+    ],
+    "output_number": 52,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-52"
+  },
+  {
+    "number": "6",
+    "title": "松鼠下山",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=33&kind=cht&search=1&id=38753",
+    "author": "文 / 馮輝岳  圖 / 曹俊彥",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "松鼠下山",
+    "matched_author": "馮輝岳,曹俊彥,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526004&m=ss&k0=%E6%9D%BE%E9%BC%A0%E4%B8%8B%E5%B1%B1&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20278"
+    ],
+    "output_number": 53,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-53"
+  },
+  {
+    "number": "7",
+    "title": "看不見",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=34&kind=cht&search=1&id=37490",
+    "author": "文‧圖：蔡兆倫",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "看不見",
+    "matched_author": "蔡兆倫",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=600143&m=ss&k0=%E7%9C%8B%E4%B8%8D%E8%A6%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49945"
+    ],
+    "output_number": 54,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-54"
+  },
+  {
+    "number": "8",
+    "title": "愛是什麼",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=34&kind=cht&search=1&id=38515",
+    "author": "文 / 李驥  圖 / 張茹雲",
+    "publisher": "大好書屋",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "愛是什麼? /",
+    "matched_author": "巴奈特(Barnett, Mac),藍依勤,Ellis, Carson,艾莉絲(Ellis, Carson),Barnett, Mac",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=965458&m=ss&k0=%E6%84%9B%E6%98%AF%E4%BB%80%E9%BA%BC&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://www.ebookservice.tw/chc/search?q=愛是什麼&scope=title"
+    ],
+    "output_number": 55,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-55"
+  },
+  {
+    "number": "13",
+    "title": "抱著老母雞逃難",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=34&kind=cht&search=1&id=38777",
+    "author": "文 / 馬景賢  圖 / 吳嘉鴻",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "抱著老母雞逃難",
+    "matched_author": "馬景賢,吳嘉鴻,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526003&m=ss&k0=%E6%8A%B1%E8%91%97%E8%80%81%E6%AF%8D%E9%9B%9E%E9%80%83%E9%9B%A3&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20277"
+    ],
+    "output_number": 56,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-56"
+  },
+  {
+    "number": "17",
+    "title": "我家在哪裡？",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=34&kind=cht&search=1&id=36991",
+    "author": "李光福",
+    "publisher": "新苗文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我家在哪裡?",
+    "matched_author": "李光福",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=501986&m=ss&k0=%E6%88%91%E5%AE%B6%E5%9C%A8%E5%93%AA%E8%A3%A1%EF%BC%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/25421"
+    ],
+    "output_number": 57,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-57"
+  },
+  {
+    "number": "19",
+    "title": "貓先生愛釣魚",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=34&kind=cht&search=1&id=38784",
+    "author": "文‧圖 / 施政廷",
+    "publisher": "幼獅文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "貓先生愛釣魚",
+    "matched_author": "施政廷,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525708&m=ss&k0=%E8%B2%93%E5%85%88%E7%94%9F%E6%84%9B%E9%87%A3%E9%AD%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/19703"
+    ],
+    "output_number": 58,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-58"
+  },
+  {
+    "number": "3",
+    "title": "新猴王",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=35&kind=cht&search=1&id=38785",
+    "author": "文 / 陳正治  圖 / 蔡嘉驊",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "新猴王",
+    "matched_author": "陳正治,蔡嘉驊,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526006&m=ss&k0=%E6%96%B0%E7%8C%B4%E7%8E%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20280"
+    ],
+    "output_number": 59,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-59"
+  },
+  {
+    "number": "8",
+    "title": "停電了！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=35&kind=cht&search=1&id=38532",
+    "author": "文‧圖 / 約翰‧洛可",
+    "publisher": "小天下",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "停電了! /",
+    "matched_author": "洛可,郭恩惠",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=884059&m=ss&k0=%E5%81%9C%E9%9B%BB%E4%BA%86%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54369"
+    ],
+    "output_number": 60,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-60"
+  },
+  {
+    "number": "1",
+    "title": "鮭魚大王",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=36&kind=cht&search=1&id=38542",
+    "author": "文‧圖：施政廷",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "鮭魚大王 /",
+    "matched_author": "施政廷,1960-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=827963&m=ss&k0=%E9%AE%AD%E9%AD%9A%E5%A4%A7%E7%8E%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/48856"
+    ],
+    "output_number": 61,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-61"
+  },
+  {
+    "number": "2",
+    "title": "貓頭鷹的預言",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=36&kind=cht&search=1&id=38798",
+    "author": "文 / 陳正治  圖 / 林傳宗",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "貓頭鷹的預言",
+    "matched_author": "陳正治,林傳宗,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525709&m=ss&k0=%E8%B2%93%E9%A0%AD%E9%B7%B9%E7%9A%84%E9%A0%90%E8%A8%80&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/19379"
+    ],
+    "output_number": 62,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-62"
+  },
+  {
+    "number": "15",
+    "title": "黑貓魯道夫2：魯道夫‧一個人的旅行",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=36&kind=cht&search=1&id=37274",
+    "author": "文 / 齊藤洋  圖 / 杉浦範茂",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "黑貓魯道夫. 2, 魯道夫.一個人的旅行 /",
+    "matched_author": "齊藤洋,杉浦範茂,王蘊潔",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=907408&m=ss&k0=%E9%AD%AF%E9%81%93%E5%A4%AB%20%E4%B8%80%E5%80%8B%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "https://bocach.ebook.hyread.com.tw/bookDetail.jsp?id=339113"
+    ],
+    "output_number": 63,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-63"
+  },
+  {
+    "number": "4",
+    "title": "如果有一天",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=37&kind=cht&search=1&id=31392",
+    "author": "文 / 勞拉‧路克  圖 / 馬克‧布塔方",
+    "publisher": "典藏藝術家庭",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "如果有一天 我們都沒有東西吃...... /",
+    "matched_author": "琴塔(Quintart, Natalie),古森斯(Goossens, Philippe),謝靜雯",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=668619&m=ss&k0=%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/38168"
+    ],
+    "output_number": 64,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-64"
+  },
+  {
+    "number": "7",
+    "title": "蛀牙蟲家族大搬家",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=37&kind=cht&search=1&id=11939",
+    "author": "文‧圖 / 西本康子",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "蛀牙蟲家族大搬家 /",
+    "matched_author": "西本康子,游珮芸",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=716223&m=ss&k0=%E8%9B%80%E7%89%99%E8%9F%B2%E5%AE%B6%E6%97%8F%E5%A4%A7%E6%90%AC%E5%AE%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/50082"
+    ],
+    "output_number": 65,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-65"
+  },
+  {
+    "number": "13",
+    "title": "我不要打針",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=37&kind=cht&search=1&id=31399",
+    "author": "文‧圖 / 石麗蓉",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "我不要打針",
+    "matched_author": "石麗蓉,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526515&m=ss&k0=%E6%88%91%E4%B8%8D%E8%A6%81%E6%89%93%E9%87%9D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20792"
+    ],
+    "output_number": 66,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-66"
+  },
+  {
+    "number": "7",
+    "title": "君偉上小學3：三年級花樣多",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=38&kind=cht&search=1&id=38323",
+    "author": "文 / 王淑芬  圖 / 賴馬",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "3年級花樣多 /",
+    "matched_author": "王淑芬,1961-,賴馬,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764028&m=ss&k0=%E4%B8%89%E5%B9%B4%E7%B4%9A%E8%8A%B1%E6%A8%A3%E5%A4%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18430"
+    ],
+    "output_number": 67,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-67"
+  },
+  {
+    "number": "10",
+    "title": "君偉上小學4：四年級煩惱多",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=38&kind=cht&search=1&id=38324",
+    "author": "文 / 王淑芬  圖 / 賴馬",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "4年級煩惱多 /",
+    "matched_author": "王淑芬,1961-,賴馬,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764029&m=ss&k0=%E5%9B%9B%E5%B9%B4%E7%B4%9A%E7%85%A9%E6%83%B1%E5%A4%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18439"
+    ],
+    "output_number": 68,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-68"
+  },
+  {
+    "number": "11",
+    "title": "屁屁超人與充屁式救生艇",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=38&kind=cht&search=1&id=38580",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "屁屁超人與充屁式救生艇 /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=677794&m=ss&k0=%E5%B1%81%E5%B1%81%E8%B6%85%E4%BA%BA%E8%88%87%E5%85%85%E5%B1%81%E5%BC%8F%E6%95%91%E7%94%9F%E8%89%87&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49892"
+    ],
+    "output_number": 69,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-69"
+  },
+  {
+    "number": "2",
+    "title": "用點心學校3：老師有夠辣",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=39&kind=cht&search=1&id=25787",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 老師有夠辣3,",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=600035&m=ss&k0=%E8%80%81%E5%B8%AB%E6%9C%89%E5%A4%A0%E8%BE%A3&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54201"
+    ],
+    "output_number": 70,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-70"
+  },
+  {
+    "number": "9",
+    "title": "君偉上小學1：一年級鮮事多",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=40&kind=cht&search=1&id=38105",
+    "author": "文 / 王淑芬  圖 / 賴馬",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "1年級鮮事多 /",
+    "matched_author": "王淑芬,1961-,賴馬,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764026&m=ss&k0=%E4%B8%80%E5%B9%B4%E7%B4%9A%E9%AE%AE%E4%BA%8B%E5%A4%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18426"
+    ],
+    "output_number": 71,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-71"
+  },
+  {
+    "number": "10",
+    "title": "經典傳奇故事：魔瓶",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=40&kind=cht&search=1&id=34012",
+    "author": "文 / 謝武彰  圖 / 徐進",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "魔瓶",
+    "matched_author": "謝武彰,徐進,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526507&m=ss&k0=%E9%AD%94%E7%93%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20784"
+    ],
+    "output_number": 72,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-72"
+  },
+  {
+    "number": "15",
+    "title": "美德新幹線2：血癌小黑",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=40&kind=cht&search=1&id=37344",
+    "author": "文 / 李光福  圖 / 杜小爾",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "血癌小黑",
+    "matched_author": "李光福,杜小爾",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=504526&m=ss&k0=%E8%A1%80%E7%99%8C%E5%B0%8F%E9%BB%91&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/17959"
+    ],
+    "output_number": 73,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-73"
+  },
+  {
+    "number": "3",
+    "title": "無奇不有魔法學校2：王大嘴有對長耳朵",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=41&kind=cht&search=1&id=39909",
+    "author": "文 / 王文華  圖 / 麻三斤",
+    "publisher": "小螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "王大嘴有對長耳朵",
+    "matched_author": "王文華,麻三斤",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=504985&m=ss&k0=%E7%8E%8B%E5%A4%A7%E5%98%B4%E6%9C%89%E5%B0%8D%E9%95%B7%E8%80%B3%E6%9C%B5&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/32251"
+    ],
+    "output_number": 74,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-74"
+  },
+  {
+    "number": "6",
+    "title": "愛是什麼？",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=42&kind=cht&search=1&id=38132",
+    "author": "文 / 大衛‧卡利  圖 / 安娜蘿拉‧坎東",
+    "publisher": "遠流",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "愛是什麼? /",
+    "matched_author": "巴奈特(Barnett, Mac),藍依勤,Ellis, Carson,艾莉絲(Ellis, Carson),Barnett, Mac",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=965458&m=ss&k0=%E6%84%9B%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://www.ebookservice.tw/chc/search?q=愛是什麼&scope=title"
+    ],
+    "output_number": 75,
+    "page": "ebooks_page_3.html",
+    "anchor": "ebooks_page_3.html#ebook-75"
+  },
+  {
+    "number": "10",
+    "title": "短耳兔考0分",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=43&kind=cht&search=1&id=26900",
+    "author": "文 / 達文茜  圖 / 唐唐",
+    "publisher": "親子天下",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "短耳兔考0分",
+    "matched_author": "達文茜,唐唐",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=472690&m=ss&k0=%E7%9F%AD%E8%80%B3%E5%85%94%E8%80%830%E5%88%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/19923"
+    ],
+    "output_number": 76,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-76"
+  },
+  {
+    "number": "13",
+    "title": "媽媽的愛，有幾斤？",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=43&kind=cht&search=1&id=25629",
+    "author": "文：花格子  圖：鰻魚蛋",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "爸爸媽媽的愛 : 忌妒",
+    "matched_author": "張晉霖,蔣惠玲,漢唐出版設計製作群",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=449127&m=ss&k0=%E5%AA%BD%E5%AA%BD%E7%9A%84%E6%84%9B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "主書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18064"
+    ],
+    "output_number": 77,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-77"
+  },
+  {
+    "number": "5",
+    "title": "魔法阿默拉",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=44&kind=cht&search=1&id=42021",
+    "author": "文 /  陳肇宜  圖 / 徐至宏",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "魔法阿默拉",
+    "matched_author": "陳肇宜,徐至宏",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=485446&m=ss&k0=%E9%AD%94%E6%B3%95%E9%98%BF%E9%BB%98%E6%8B%89&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33936"
+    ],
+    "output_number": 78,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-78"
+  },
+  {
+    "number": "3",
+    "title": "我不喜歡你這樣對我！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=45&kind=cht&search=1&id=25906",
+    "author": "文 / 史蒂芬‧柯洛  圖 / 文生‧阮",
+    "publisher": "大穎文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "我不喜歡你這樣對我 :遠離言語傷害、肢體暴力、網路攻擊與威脅的校園霸凌 /",
+    "matched_author": "盧慶實,李炫周,林建豪",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=856645&m=ss&k0=%E6%88%91%E4%B8%8D%E5%96%9C%E6%AD%A1%E4%BD%A0%E9%80%99%E6%A8%A3%E5%B0%8D%E6%88%91%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://www.ebookservice.tw/chc/search?q=我不喜歡你這樣對我&scope=title"
+    ],
+    "output_number": 79,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-79"
+  },
+  {
+    "number": "8",
+    "title": "愛甲蟲的大男孩：達爾文",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=45&kind=cht&search=1&id=53",
+    "author": "滿貫編輯部",
+    "publisher": "滿貫",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "達爾文",
+    "matched_author": "達爾文,林樹嶺",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=636413&m=ss&k0=%E9%81%94%E7%88%BE%E6%96%87&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://netcity2.web.hinet.net/UserData/kuangten/"
+    ],
+    "output_number": 80,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-80"
+  },
+  {
+    "number": "3",
+    "title": "笑島人童話集",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=46&kind=cht&search=1&id=38459",
+    "author": "文 / 哲也  圖 / BO2",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "笑島人童話集",
+    "matched_author": "哲也,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=479670&m=ss&k0=%E7%AC%91%E5%B3%B6%E4%BA%BA%E7%AB%A5%E8%A9%B1%E9%9B%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/19922"
+    ],
+    "output_number": 81,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-81"
+  },
+  {
+    "number": "15",
+    "title": "兩列小火車",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=46&kind=cht&search=1&id=41295",
+    "author": "文 / 瑪格莉特‧懷茲‧布朗  圖 / 李奧、黛安‧迪倫",
+    "publisher": "臺灣麥克",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "兩列小火車",
+    "matched_author": "懷茲.布朗瑪格莉特,譚海澄",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=355974&m=ss&k0=%E5%85%A9%E5%88%97%E5%B0%8F%E7%81%AB%E8%BB%8A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267728-1.jpg",
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267728-2.jpg"
+    ],
+    "output_number": 82,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-82"
+  },
+  {
+    "number": "2",
+    "title": "哇！貓頭鷹說",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=47&kind=cht&search=1&id=41553",
+    "author": "文‧圖 / 提姆‧霍普古德",
+    "publisher": "小魯文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "貓頭鷹說故事",
+    "matched_author": "溫小平,蔡錦文,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526013&m=ss&k0=%E5%93%87%20%E8%B2%93%E9%A0%AD%E9%B7%B9%E8%AA%AA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20287"
+    ],
+    "output_number": 83,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-83"
+  },
+  {
+    "number": "1",
+    "title": "老鷹爸爸",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=48&kind=cht&search=1&id=37475",
+    "author": "文 / 陳正治  圖 / 曹俊彥",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "老鷹爸爸",
+    "matched_author": "陳正治,曹俊彥,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525704&m=ss&k0=%E8%80%81%E9%B7%B9%E7%88%B8%E7%88%B8&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/18614"
+    ],
+    "output_number": 84,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-84"
+  },
+  {
+    "number": "9",
+    "title": "走出城堡的公主：南丁格爾",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=48&kind=cht&search=1&id=11887",
+    "author": "滿貫編輯部",
+    "publisher": "滿貫",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "南丁格爾",
+    "matched_author": "南丁格爾,陳文德",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=636407&m=ss&k0=%E5%8D%97%E4%B8%81%E6%A0%BC%E7%88%BE&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://netcity2.web.hinet.net/UserData/kuangten/"
+    ],
+    "output_number": 85,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-85"
+  },
+  {
+    "number": "14",
+    "title": "吹牛",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=48&kind=cht&search=1&id=38256",
+    "author": "文‧圖 / 黃志民",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "吹牛",
+    "matched_author": "黃志民(兒童文學),凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526502&m=ss&k0=%E5%90%B9%E7%89%9B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20779"
+    ],
+    "output_number": 86,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-86"
+  },
+  {
+    "number": "3",
+    "title": "阿里愛動物",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=49&kind=cht&search=1&id=33141",
+    "author": "文 / 黃麗凰  圖 / 黃志民",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "阿里愛動物",
+    "matched_author": "黃麗凰,黃志民,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526499&m=ss&k0=%E9%98%BF%E9%87%8C%E6%84%9B%E5%8B%95%E7%89%A9&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20776"
+    ],
+    "output_number": 87,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-87"
+  },
+  {
+    "number": "5",
+    "title": "大毛怪",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=49&kind=cht&search=1&id=25974",
+    "author": "王宇欣",
+    "publisher": "國立台灣藝術教育館",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "大毛怪",
+    "matched_author": "王宇欣",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=482153&m=ss&k0=%E5%A4%A7%E6%AF%9B%E6%80%AA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/21449"
+    ],
+    "output_number": 88,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-88"
+  },
+  {
+    "number": "8",
+    "title": "我的朋友，兔子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=49&kind=cht&search=1&id=42102",
+    "author": "文‧圖 / 艾瑞克‧羅曼",
+    "publisher": "小魯文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "做我的朋友 /",
+    "matched_author": "蔡文玲",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=638831&m=ss&k0=%E6%88%91%E7%9A%84%E6%9C%8B%E5%8F%8B%20%E5%85%94%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/57485"
+    ],
+    "output_number": 89,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-89"
+  },
+  {
+    "number": "12",
+    "title": "藍跑鞋笑了",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=49&kind=cht&search=1&id=38265",
+    "author": "文 / 李光福  圖 / 董丹昭",
+    "publisher": "新苗文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "藍跑鞋笑了",
+    "matched_author": "李光福",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=477869&m=ss&k0=%E8%97%8D%E8%B7%91%E9%9E%8B%E7%AC%91%E4%BA%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14849"
+    ],
+    "output_number": 90,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-90"
+  },
+  {
+    "number": "16",
+    "title": "我的爸爸是流氓",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=49&kind=cht&search=1&id=25981",
+    "author": "文 / 張友漁  圖 / 吳孟芸",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我的爸爸是流氓",
+    "matched_author": "張友漁,吳孟芸",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=482702&m=ss&k0=%E6%88%91%E7%9A%84%E7%88%B8%E7%88%B8%E6%98%AF%E6%B5%81%E6%B0%93&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18447"
+    ],
+    "output_number": 91,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-91"
+  },
+  {
+    "number": "13",
+    "title": "我家有個遊樂園",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=50&kind=cht&search=1&id=37260",
+    "author": "文‧圖 / 童嘉",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我家有個遊樂園 /",
+    "matched_author": "童嘉",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=666157&m=ss&k0=%E6%88%91%E5%AE%B6%E6%9C%89%E5%80%8B%E9%81%8A%E6%A8%82%E5%9C%92&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49898"
+    ],
+    "output_number": 92,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-92"
+  },
+  {
+    "number": "3",
+    "title": "童話搜神記3：媽祖不見了",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=51&kind=cht&search=1&id=26512",
+    "author": "文 / 李儀婷  圖 / 吉娜兒",
+    "publisher": "四也",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "媽祖不見了 /",
+    "matched_author": "李儀婷,吉娜兒",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=856619&m=ss&k0=%E5%AA%BD%E7%A5%96%E4%B8%8D%E8%A6%8B%E4%BA%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/50252"
+    ],
+    "output_number": 93,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-93"
+  },
+  {
+    "number": "4",
+    "title": "可能小學的愛台灣任務2：鄭荷大戰",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=51&kind=cht&search=1&id=27280",
+    "author": "文 / 王文華  圖 / 徐至宏",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "鄭荷大戰 /",
+    "matched_author": "王文華,,徐至宏,",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=890831&m=ss&k0=%E9%84%AD%E8%8D%B7%E5%A4%A7%E6%88%B0&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/57512"
+    ],
+    "output_number": 94,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-94"
+  },
+  {
+    "number": "13",
+    "title": "經典傳奇故事：小黑猴",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=51&kind=cht&search=1&id=26264",
+    "author": "文 / 謝武彰  圖 / 石麗蓉",
+    "publisher": "小熊",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "小黑猴",
+    "matched_author": "謝武彰,石麗蓉(繪畫, 1962-),凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526501&m=ss&k0=%E5%B0%8F%E9%BB%91%E7%8C%B4&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20778"
+    ],
+    "output_number": 95,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-95"
+  },
+  {
+    "number": "4",
+    "title": "玉山的新外套",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=52&kind=cht&search=1&id=26523",
+    "author": "文：鄭宗弦  圖：劉旭恭",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "玉山的新外套",
+    "matched_author": "鄭宗弦,劉旭恭",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=536216&m=ss&k0=%E7%8E%89%E5%B1%B1%E7%9A%84%E6%96%B0%E5%A4%96%E5%A5%97&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/23206"
+    ],
+    "output_number": 96,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-96"
+  },
+  {
+    "number": "10",
+    "title": "親愛的小魚",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=52&kind=cht&search=1&id=38046",
+    "author": "文‧圖 / 安德魯‧德翰",
+    "publisher": "臺灣麥克",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "親愛的小魚",
+    "matched_author": "德翰(Dahan, Andr'e),余治瑩",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=355972&m=ss&k0=%E8%A6%AA%E6%84%9B%E7%9A%84%E5%B0%8F%E9%AD%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267739-1.jpg",
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267739-2.jpg"
+    ],
+    "output_number": 97,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-97"
+  },
+  {
+    "number": "16",
+    "title": "溼巴答王國",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=52&kind=cht&search=1&id=38564",
+    "author": "文 / 岑澎維  圖 / 張倩華",
+    "publisher": "小熊",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "溼巴答王國",
+    "matched_author": "岑澎維,張倩華",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=499332&m=ss&k0=%E6%BA%BC%E5%B7%B4%E7%AD%94%E7%8E%8B%E5%9C%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/21312"
+    ],
+    "output_number": 98,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-98"
+  },
+  {
+    "number": "5",
+    "title": "怪怪作文大驚奇",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=53&kind=cht&search=1&id=39081",
+    "author": "文：謝鴻文  圖：大尉",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "怪怪作文大驚奇",
+    "matched_author": "謝鴻文,大尉,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525697&m=ss&k0=%E6%80%AA%E6%80%AA%E4%BD%9C%E6%96%87%E5%A4%A7%E9%A9%9A%E5%A5%87&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14507"
+    ],
+    "output_number": 99,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-99"
+  },
+  {
+    "number": "10",
+    "title": "我家有個花‧果‧菜‧園",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=54&kind=cht&search=1&id=32189",
+    "author": "文‧圖 / 童嘉",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我家有個花. 果. 菜. 園 /",
+    "matched_author": "童嘉",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=668545&m=ss&k0=%E6%88%91%E5%AE%B6%E6%9C%89%E5%80%8B%E8%8A%B1%E2%80%A7%E6%9E%9C%E2%80%A7%E8%8F%9C%E2%80%A7%E5%9C%92&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49897"
+    ],
+    "output_number": 100,
+    "page": "ebooks_page_4.html",
+    "anchor": "ebooks_page_4.html#ebook-100"
+  },
+  {
+    "number": "11",
+    "title": "用點心學校2：好新鮮教室",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=54&kind=cht&search=1&id=11968",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校.[中年級認證書] 好新鮮教室2,",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=600034&m=ss&k0=%E5%A5%BD%E6%96%B0%E9%AE%AE%E6%95%99%E5%AE%A4&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54200"
+    ],
+    "output_number": 101,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-101"
+  },
+  {
+    "number": "5",
+    "title": "猜一猜童話：變色羊不吃青菜",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=55&kind=cht&search=1&id=39119",
+    "author": "文 / 顏志豪  圖 / 劉旭恭",
+    "publisher": "小熊",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "猜一猜童話 : 變色羊不吃青菜",
+    "matched_author": "顏志豪,劉旭恭",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=499822&m=ss&k0=%E8%AE%8A%E8%89%B2%E7%BE%8A%E4%B8%8D%E5%90%83%E9%9D%92%E8%8F%9C&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/21313"
+    ],
+    "output_number": 102,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-102"
+  },
+  {
+    "number": "9",
+    "title": "Mini漢湘繪本館：叫我第一名",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=57&kind=cht&search=1&id=39668",
+    "author": "文 / Rattana Khodchanat  圖 / Vinit Yeesman",
+    "publisher": "漢湘文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "叫我第一名 : 智慧成語填空遊戲 /",
+    "matched_author": "陳奕明",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=763111&m=ss&k0=%E5%8F%AB%E6%88%91%E7%AC%AC%E4%B8%80%E5%90%8D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/43854"
+    ],
+    "output_number": 103,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-103"
+  },
+  {
+    "number": "4",
+    "title": "艾瑪的毯子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=58&kind=cht&search=1&id=37368",
+    "author": "愛倫‧賽伊",
+    "publisher": "台灣麥克",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "艾瑪的毯子",
+    "matched_author": "賽伊(Say, Allen),宋珮",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=355994&m=ss&k0=%E8%89%BE%E7%91%AA%E7%9A%84%E6%AF%AF%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267738-1.jpg",
+      "http://lib.yzu.edu.tw/Cover/Cover26/P267738-2.jpg"
+    ],
+    "output_number": 104,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-104"
+  },
+  {
+    "number": "5",
+    "title": "魯班與阿奇",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=58&kind=cht&search=1&id=32250",
+    "author": "文 / 朱顏  圖 / 黃志民",
+    "publisher": "小熊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "魯班與阿奇 : 最美好的禮物",
+    "matched_author": "朱顏,黃志民,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526513&m=ss&k0=%E9%AD%AF%E7%8F%AD%E8%88%87%E9%98%BF%E5%A5%87&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20790"
+    ],
+    "output_number": 105,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-105"
+  },
+  {
+    "number": "8",
+    "title": "校園智囊團文庫01：班寶阿漢",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=58&kind=cht&search=1&id=12028",
+    "author": "文 / 李光福  圖 / 莊河源",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "班寶阿漢",
+    "matched_author": "李光福,莊河源",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=476228&m=ss&k0=%E7%8F%AD%E5%AF%B6%E9%98%BF%E6%BC%A2&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/17348"
+    ],
+    "output_number": 106,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-106"
+  },
+  {
+    "number": "13",
+    "title": "發現美洲新大陸的航海家：哥倫布",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=58&kind=cht&search=1&id=38656",
+    "author": "Gerry Bailey、Karen Foster",
+    "publisher": "元將文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "哥倫布",
+    "matched_author": "哥倫布,陳文德",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=636456&m=ss&k0=%E5%93%A5%E5%80%AB%E5%B8%83&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://netcity2.web.hinet.net/UserData/kuangten/"
+    ],
+    "output_number": 107,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-107"
+  },
+  {
+    "number": "4",
+    "title": "找不到系列2：找不到山上",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=59&kind=cht&search=1&id=26885",
+    "author": "文 / 岑澎維 圖 / 林小杯",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "找不到山上 /",
+    "matched_author": "岑澎維,林小杯",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=748215&m=ss&k0=%E6%89%BE%E4%B8%8D%E5%88%B0%E5%B1%B1%E4%B8%8A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49888"
+    ],
+    "output_number": 108,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-108"
+  },
+  {
+    "number": "14",
+    "title": "美德易開罐04：第一千顆星星",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=59&kind=cht&search=1&id=39183",
+    "author": "文 / 李光福  圖 / 法蘭克",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "第一千顆星星",
+    "matched_author": "李光福,法蘭克",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=450590&m=ss&k0=%E7%AC%AC%E4%B8%80%E5%8D%83%E9%A1%86%E6%98%9F%E6%98%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14649"
+    ],
+    "output_number": 109,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-109"
+  },
+  {
+    "number": "4",
+    "title": "他的字典裡沒有難字：拿破崙",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=60&kind=cht&search=1&id=38677",
+    "author": "Gerry Bailey、Karen Foster",
+    "publisher": "元將文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "拿破崙",
+    "matched_author": "拿破崙,胡建昇",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=636400&m=ss&k0=%E6%8B%BF%E7%A0%B4%E5%B4%99&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://netcity2.web.hinet.net/UserData/kuangten/"
+    ],
+    "output_number": 110,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-110"
+  },
+  {
+    "number": "4",
+    "title": "土地婆婆不在家",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=61&kind=cht&search=1&id=26404",
+    "author": "文：姜子安  圖：大尉",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "土地婆婆不在家",
+    "matched_author": "姜子安,大尉,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525694&m=ss&k0=%E5%9C%9F%E5%9C%B0%E5%A9%86%E5%A9%86%E4%B8%8D%E5%9C%A8%E5%AE%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14251"
+    ],
+    "output_number": 111,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-111"
+  },
+  {
+    "number": "14",
+    "title": "林良作品集4：我要一個家",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=61&kind=cht&search=1&id=39219",
+    "author": "文 / 林良  圖 / 張化瑋",
+    "publisher": "聯經",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "我要一個家",
+    "matched_author": "林良,鄭明進",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=465020&m=ss&k0=%E6%88%91%E8%A6%81%E4%B8%80%E5%80%8B%E5%AE%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14512"
+    ],
+    "output_number": 112,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-112"
+  },
+  {
+    "number": "1",
+    "title": "臭豆腐女孩",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=63&kind=cht&search=1&id=38728",
+    "author": "文：李光福 圖：九子",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "臭豆腐女孩",
+    "matched_author": "李光福,九子",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=448210&m=ss&k0=%E8%87%AD%E8%B1%86%E8%85%90%E5%A5%B3%E5%AD%A9&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14618"
+    ],
+    "output_number": 113,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-113"
+  },
+  {
+    "number": "10",
+    "title": "美德易開罐09：聖誕女孩",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=63&kind=cht&search=1&id=31313",
+    "author": "文 / 李光福  圖 / 吳文錫",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "聖誕女孩",
+    "matched_author": "李光福,吳文錫",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=450595&m=ss&k0=%E8%81%96%E8%AA%95%E5%A5%B3%E5%AD%A9&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14743"
+    ],
+    "output_number": 114,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-114"
+  },
+  {
+    "number": "12",
+    "title": "美德易開罐11：變色的第一名",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=63&kind=cht&search=1&id=31314",
+    "author": "文 / 李光福  圖 / 鍾易真",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "變色的第一名",
+    "matched_author": "李光福,鐘易真",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=445930&m=ss&k0=%E8%AE%8A%E8%89%B2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%90%8D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14872"
+    ],
+    "output_number": 115,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-115"
+  },
+  {
+    "number": "13",
+    "title": "美德易開罐12：我不想當班長",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=63&kind=cht&search=1&id=31315",
+    "author": "文 / 李光福  圖 / 黃麗珍",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我不想當班長",
+    "matched_author": "李光福,黃麗珍",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=450599&m=ss&k0=%E6%88%91%E4%B8%8D%E6%83%B3%E7%95%B6%E7%8F%AD%E9%95%B7&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14453"
+    ],
+    "output_number": 116,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-116"
+  },
+  {
+    "number": "17",
+    "title": "美德易開罐13：叔叔的接力賽",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=63&kind=cht&search=1&id=31316",
+    "author": "文 / 李光福  圖 / 法蘭克",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "叔叔的接力賽",
+    "matched_author": "李光福,法蘭克",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=447574&m=ss&k0=%E5%8F%94%E5%8F%94%E7%9A%84%E6%8E%A5%E5%8A%9B%E8%B3%BD&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14492"
+    ],
+    "output_number": 117,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-117"
+  },
+  {
+    "number": "6",
+    "title": "我不要",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=64&kind=cht&search=1&id=38743",
+    "author": "文：可可亞  圖：徐建國",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "我不要!",
+    "matched_author": "可可亞,徐建國,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525695&m=ss&k0=%E6%88%91%E4%B8%8D%E8%A6%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14452"
+    ],
+    "output_number": 118,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-118"
+  },
+  {
+    "number": "7",
+    "title": "我要金手指",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=64&kind=cht&search=1&id=38744",
+    "author": "文：子魚  圖：蔡兆倫",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我要金手指",
+    "matched_author": "子魚,蔡兆倫,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525696&m=ss&k0=%E6%88%91%E8%A6%81%E9%87%91%E6%89%8B%E6%8C%87&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14469"
+    ],
+    "output_number": 119,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-119"
+  },
+  {
+    "number": "13",
+    "title": "美德易開罐07：她其實不差",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=65&kind=cht&search=1&id=31335",
+    "author": "文 / 李光福  圖 / 徐建國",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "她其實不差",
+    "matched_author": "李光福,徐建國",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=450593&m=ss&k0=%E5%A5%B9%E5%85%B6%E5%AF%A6%E4%B8%8D%E5%B7%AE&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14405"
+    ],
+    "output_number": 120,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-120"
+  },
+  {
+    "number": "19",
+    "title": "美德易開罐14：我家有個老學生",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=66&kind=cht&search=1&id=26483",
+    "author": "文 / 李光福  圖 / 卓昆峰",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我家有個老學生",
+    "matched_author": "李光福,卓昆峰",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=447606&m=ss&k0=%E6%88%91%E5%AE%B6%E6%9C%89%E5%80%8B%E8%80%81%E5%AD%B8%E7%94%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14471"
+    ],
+    "output_number": 121,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-121"
+  },
+  {
+    "number": "6",
+    "title": "不愛說話的嘟嘟",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=67&kind=cht&search=1&id=32123",
+    "author": "文 / 梁慧佳  圖 / Astrid",
+    "publisher": "新苗文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "不愛說話的嘟嘟",
+    "matched_author": "20110221d2010 cd y0chiy50 e,Astrid,梁,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=499435&m=ss&k0=%E4%B8%8D%E6%84%9B%E8%AA%AA%E8%A9%B1%E7%9A%84%E5%98%9F%E5%98%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/15928"
+    ],
+    "output_number": 122,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-122"
+  },
+  {
+    "number": "9",
+    "title": "再來仙島夏令營",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=67&kind=cht&search=1&id=26495",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "仙島小學.2,再來仙島夏令營 /",
+    "matched_author": "林哲璋,BO2,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=964958&m=ss&k0=%E5%86%8D%E4%BE%86%E4%BB%99%E5%B3%B6%E5%A4%8F%E4%BB%A4%E7%87%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/54198"
+    ],
+    "output_number": 123,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-123"
+  },
+  {
+    "number": "2",
+    "title": "妙妙公主徵婚記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=68&kind=cht&search=1&id=25992",
+    "author": "文：王洛夫、賴玉敏  圖：巫伊",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "妙妙公主徵婚記",
+    "matched_author": "王洛夫,巫伊",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=436041&m=ss&k0=%E5%A6%99%E5%A6%99%E5%85%AC%E4%B8%BB%E5%BE%B5%E5%A9%9A%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/23202"
+    ],
+    "output_number": 124,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-124"
+  },
+  {
+    "number": "15",
+    "title": "熊熊睡不著",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=68&kind=cht&search=1&id=38801",
+    "author": "文：王文華  圖：徐建國",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "熊熊睡不著",
+    "matched_author": "王文華,徐建國,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525966&m=ss&k0=%E7%86%8A%E7%86%8A%E7%9D%A1%E4%B8%8D%E8%91%97&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20239"
+    ],
+    "output_number": 125,
+    "page": "ebooks_page_5.html",
+    "anchor": "ebooks_page_5.html#ebook-125"
+  },
+  {
+    "number": "5",
+    "title": "蟲來沒看過",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=69&kind=cht&search=1&id=38549",
+    "author": "文‧攝影 / 楊維晟  圖 / 蔡其典",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "蟲來沒看過",
+    "matched_author": "楊維晟(攝影, 1975-),蔡其典(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=392768&m=ss&k0=%E8%9F%B2%E4%BE%86%E6%B2%92%E7%9C%8B%E9%81%8E&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/21021"
+    ],
+    "output_number": 126,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-126"
+  },
+  {
+    "number": "3",
+    "title": "小四愛作怪之無敵三十六計",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=70&kind=cht&search=1&id=39072",
+    "author": "文：阿德蝸  圖：任華斌",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "小四愛作怪之無敵三十六計",
+    "matched_author": "阿德蝸,任華斌,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525958&m=ss&k0=%E5%B0%8F%E5%9B%9B%E6%84%9B%E4%BD%9C%E6%80%AA%E4%B9%8B%E7%84%A1%E6%95%B5%E4%B8%89%E5%8D%81%E5%85%AD%E8%A8%88&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20231"
+    ],
+    "output_number": 127,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-127"
+  },
+  {
+    "number": "5",
+    "title": "狗屋裡的外星人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=70&kind=cht&search=1&id=31649",
+    "author": "文：黃文輝  圖：任華斌",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "狗屋裡的外星人",
+    "matched_author": "黃文輝,任華斌,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525961&m=ss&k0=%E7%8B%97%E5%B1%8B%E8%A3%A1%E7%9A%84%E5%A4%96%E6%98%9F%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20234"
+    ],
+    "output_number": 128,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-128"
+  },
+  {
+    "number": "9",
+    "title": "屁屁超人與直升機神犬",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=71&kind=cht&search=1&id=37300",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "親子天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "屁屁超人與直升機神犬 /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=710367&m=ss&k0=%E5%B1%81%E5%B1%81%E8%B6%85%E4%BA%BA%E8%88%87%E7%9B%B4%E5%8D%87%E6%A9%9F%E7%A5%9E%E7%8A%AC&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49894"
+    ],
+    "output_number": 129,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-129"
+  },
+  {
+    "number": "3",
+    "title": "美德易開罐06：你們全都欺負我",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=72&kind=cht&search=1&id=36798",
+    "author": "文 / 李光福  圖 / 沈麗香",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "你們全都欺負我",
+    "matched_author": "李光福,沈麗香",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=450592&m=ss&k0=%E4%BD%A0%E5%80%91%E5%85%A8%E9%83%BD%E6%AC%BA%E8%B2%A0%E6%88%91&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14435"
+    ],
+    "output_number": 130,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-130"
+  },
+  {
+    "number": "16",
+    "title": "名字離家",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=72&kind=cht&search=1&id=37320",
+    "author": "文 ：陳昇群  圖：徐建國",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "名字離家",
+    "matched_author": "陳昇群,徐建國,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525960&m=ss&k0=%E5%90%8D%E5%AD%97%E9%9B%A2%E5%AE%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20233"
+    ],
+    "output_number": 131,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-131"
+  },
+  {
+    "number": "19",
+    "title": "生活智慧教育創作繪本：小兔子的願望",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=72&kind=cht&search=1&id=25290",
+    "author": "張秋生 / 原著  李美華 / 改編   陳珮瑋 / 圖",
+    "publisher": "巧育文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小兔子的願望 : 自助自立的精神",
+    "matched_author": "張秋生,陳珮瑋,李美華",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=442422&m=ss&k0=%E5%B0%8F%E5%85%94%E5%AD%90%E7%9A%84%E9%A1%98%E6%9C%9B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14256"
+    ],
+    "output_number": 132,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-132"
+  },
+  {
+    "number": "8",
+    "title": "愛閱讀21：淘氣吉利丁6~叫我考試王",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=73&kind=cht&search=1&id=38349",
+    "author": "文 / 張嘉文  圖 / 嚴凱信",
+    "publisher": "文房文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "淘氣吉利丁.6 : 叫我考試王",
+    "matched_author": "張嘉文,嚴凱信",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=485389&m=ss&k0=%E6%B7%98%E6%B0%A3%E5%90%89%E5%88%A9%E4%B8%816~%E5%8F%AB%E6%88%91%E8%80%83%E8%A9%A6%E7%8E%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/15323"
+    ],
+    "output_number": 133,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-133"
+  },
+  {
     "number": "3",
     "title": "帶象爺爺回家",
     "url": "https://read.chc.edu.tw/index.php?inter=books&page=74&kind=cht&search=1&id=26073",
@@ -14,9 +2547,9 @@
     "online_resources": [
       "http://ebook.nlpi.edu.tw/bookdetail/20235"
     ],
-    "output_number": 1,
-    "page": "ebooks_page_1.html",
-    "anchor": "ebooks_page_1.html#ebook-1"
+    "output_number": 134,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-134"
   },
   {
     "number": "8",
@@ -33,9 +2566,9 @@
     "online_resources": [
       "http://ebook.nlpi.edu.tw/bookdetail/20232"
     ],
-    "output_number": 2,
-    "page": "ebooks_page_1.html",
-    "anchor": "ebooks_page_1.html#ebook-2"
+    "output_number": 135,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-135"
   },
   {
     "number": "13",
@@ -52,8 +2585,2025 @@
     "online_resources": [
       "https://ebook.nlpi.edu.tw/bookdetail/22896"
     ],
-    "output_number": 3,
-    "page": "ebooks_page_1.html",
-    "anchor": "ebooks_page_1.html#ebook-3"
+    "output_number": 136,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-136"
+  },
+  {
+    "number": "2",
+    "title": "EQ學習創作繪本4：屋頂",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=75&kind=cht&search=1&id=26339",
+    "author": "文 / 沈詠惠  圖 / 張  山",
+    "publisher": "巧育文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "屋頂",
+    "matched_author": "20110919d2010 k y0chiy09 e,鄭慧荷,李,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=498889&m=ss&k0=%E5%B1%8B%E9%A0%82&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/11752"
+    ],
+    "output_number": 137,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-137"
+  },
+  {
+    "number": "9",
+    "title": "美德易開罐10：誰是小霸王",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=75&kind=cht&search=1&id=31206",
+    "author": "文 / 李光福  圖 / 張麗真",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "誰是小霸王",
+    "matched_author": "李光福,張麗真",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=445929&m=ss&k0=%E8%AA%B0%E6%98%AF%E5%B0%8F%E9%9C%B8%E7%8E%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14822"
+    ],
+    "output_number": 138,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-138"
+  },
+  {
+    "number": "10",
+    "title": "美德易開罐08：一人球隊",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=75&kind=cht&search=1&id=31207",
+    "author": "文 / 李光福  圖 / 思怜",
+    "publisher": "螢火蟲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "一人球隊",
+    "matched_author": "李光福,思伶",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=450594&m=ss&k0=%E4%B8%80%E4%BA%BA%E7%90%83%E9%9A%8A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/14213"
+    ],
+    "output_number": 139,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-139"
+  },
+  {
+    "number": "14",
+    "title": "吃肉的大象",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=76&kind=cht&search=1&id=32759",
+    "author": "文 / 九把刀  圖 / 小內",
+    "publisher": "春天出版國際文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "吃肉的大象",
+    "matched_author": "九把刀1978-,小內,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525813&m=ss&k0=%E5%90%83%E8%82%89%E7%9A%84%E5%A4%A7%E8%B1%A1&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/13629"
+    ],
+    "output_number": 140,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-140"
+  },
+  {
+    "number": "3",
+    "title": "小耳",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=77&kind=cht&search=1&id=37114",
+    "author": "文 / 林玫伶  圖 / 王淑慧",
+    "publisher": "聯經",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小耳",
+    "matched_author": "20100726d2010 cd y0chiy50 e,林,王淑慧,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=498886&m=ss&k0=%E5%B0%8F%E8%80%B3&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/11739"
+    ],
+    "output_number": 141,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-141"
+  },
+  {
+    "number": "11",
+    "title": "彩繪中國經典名著：史記故事",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=77&kind=cht&search=1&id=39424",
+    "author": "司馬遷 / 原著",
+    "publisher": "風車圖書",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "史記故事",
+    "matched_author": "幼福編輯部",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=364360&m=ss&k0=%E5%8F%B2%E8%A8%98%E6%95%85%E4%BA%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/641"
+    ],
+    "output_number": 142,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-142"
+  },
+  {
+    "number": "12",
+    "title": "歡迎光臨海愛牛",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=78&kind=cht&search=1&id=26887",
+    "author": "文 / 王文華  圖 / 賴馬",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "歡迎光臨海愛牛",
+    "matched_author": "王文華,賴馬",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=418755&m=ss&k0=%E6%AD%A1%E8%BF%8E%E5%85%89%E8%87%A8%E6%B5%B7%E6%84%9B%E7%89%9B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18472"
+    ],
+    "output_number": 143,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-143"
+  },
+  {
+    "number": "6",
+    "title": "我相信你，蒲公英",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=79&kind=cht&search=1&id=37390",
+    "author": "文 / 克尼斯特  圖 / 伊芙‧塔列特",
+    "publisher": "上人文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "教育, 我相信你 /",
+    "matched_author": "藍偉瑩",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=777150&m=ss&k0=%E6%88%91%E7%9B%B8%E4%BF%A1%E4%BD%A0&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "主書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/46722"
+    ],
+    "output_number": 144,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-144"
+  },
+  {
+    "number": "15",
+    "title": "五百羅漢交通平安",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=81&kind=cht&search=1&id=25909",
+    "author": "文‧圖 / 劉旭恭",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "五百羅漢交通平安",
+    "matched_author": "劉旭恭",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=442423&m=ss&k0=%E4%BA%94%E7%99%BE%E7%BE%85%E6%BC%A2%E4%BA%A4%E9%80%9A%E5%B9%B3%E5%AE%89&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18436"
+    ],
+    "output_number": 145,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-145"
+  },
+  {
+    "number": "1",
+    "title": "板橋三娘子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=83&kind=cht&search=1&id=41796",
+    "author": "文 / 謝武彰  圖 / 蔡其典",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "板橋三娘子",
+    "matched_author": "王宣一,張世明",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=470820&m=ss&k0=%E6%9D%BF%E6%A9%8B%E4%B8%89%E5%A8%98%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://www.ebookservice.tw/chc/search?q=板橋三娘子&scope=title"
+    ],
+    "output_number": 146,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-146"
+  },
+  {
+    "number": "12",
+    "title": "這是祕密！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=83&kind=cht&search=1&id=41809",
+    "author": "文‧圖 / 約翰‧伯寧罕",
+    "publisher": "上誼文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "噓!這是祕密! /",
+    "matched_author": "維諾(Vigneault, Mylen),巫芷玲,侯桀(Roegiers, Maud)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=807976&m=ss&k0=%E9%80%99%E6%98%AF%E7%A5%95%E5%AF%86%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/47304"
+    ],
+    "output_number": 147,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-147"
+  },
+  {
+    "number": "16",
+    "title": "四年級煩惱多",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=83&kind=cht&search=1&id=25432",
+    "author": "文：王淑芬  圖：賴馬",
+    "publisher": "作家",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "4年級煩惱多 /",
+    "matched_author": "王淑芬,1961-,賴馬,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764029&m=ss&k0=%E5%9B%9B%E5%B9%B4%E7%B4%9A%E7%85%A9%E6%83%B1%E5%A4%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18439"
+    ],
+    "output_number": 148,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-148"
+  },
+  {
+    "number": "17",
+    "title": "彩繪中國經典名著：聊齋故事",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=84&kind=cht&search=1&id=36971",
+    "author": "蒲松齡 / 原著",
+    "publisher": "風車圖書",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "夜半吹燈, 讀聊齋 :給現代人的白話聊齋故事 /",
+    "matched_author": "蔡造珉",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=717448&m=ss&k0=%E8%81%8A%E9%BD%8B%E6%95%85%E4%BA%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/44431"
+    ],
+    "output_number": 149,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-149"
+  },
+  {
+    "number": "10",
+    "title": "12生笑童話故事",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=86&kind=cht&search=1&id=33150",
+    "author": "文 / 陳雅純  圖 / 陳庭昀",
+    "publisher": "狗狗圖書",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "12生笑童話故事",
+    "matched_author": "陳雅純,陳庭昀",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=425353&m=ss&k0=12%E7%94%9F%E7%AC%91%E7%AB%A5%E8%A9%B1%E6%95%85%E4%BA%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/13923"
+    ],
+    "output_number": 150,
+    "page": "ebooks_page_6.html",
+    "anchor": "ebooks_page_6.html#ebook-150"
+  },
+  {
+    "number": "7",
+    "title": "小火龍棒球隊",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=90&kind=cht&search=1&id=39357",
+    "author": "文 / 哲也  圖 / 水腦",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "小火龍棒球隊 /",
+    "matched_author": "哲也,水腦",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=618449&m=ss&k0=%E5%B0%8F%E7%81%AB%E9%BE%8D%E6%A3%92%E7%90%83%E9%9A%8A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18431"
+    ],
+    "output_number": 151,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-151"
+  },
+  {
+    "number": "10",
+    "title": "用點心學校",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=90&kind=cht&search=1&id=11967",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "小天下",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "用點心學校. 12, 不打不相識 /",
+    "matched_author": "林哲璋,BO2",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=825230&m=ss&k0=%E7%94%A8%E9%BB%9E%E5%BF%83%E5%AD%B8%E6%A0%A1&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/53845"
+    ],
+    "output_number": 152,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-152"
+  },
+  {
+    "number": "15",
+    "title": "我們班上的小不點",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=90&kind=cht&search=1&id=32194",
+    "author": "文 / 李光福  圖 / KoKo、Bonnie",
+    "publisher": "新苗文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我們班上的小不點",
+    "matched_author": "李光福,KoKo",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=441602&m=ss&k0=%E6%88%91%E5%80%91%E7%8F%AD%E4%B8%8A%E7%9A%84%E5%B0%8F%E4%B8%8D%E9%BB%9E&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/10696"
+    ],
+    "output_number": 153,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-153"
+  },
+  {
+    "number": "6",
+    "title": "最豪華的機器人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=92&kind=cht&search=1&id=37338",
+    "author": "文 / 管家琪  圖 / 陳維霖",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "最豪華的機器人",
+    "matched_author": "管家琪,陳維霖(繪畫, 1960-),凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525719&m=ss&k0=%E6%9C%80%E8%B1%AA%E8%8F%AF%E7%9A%84%E6%A9%9F%E5%99%A8%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14110"
+    ],
+    "output_number": 154,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-154"
+  },
+  {
+    "number": "2",
+    "title": "真假夜鶯",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=94&kind=cht&search=1&id=32758",
+    "author": "安徒生 / 原著  童嘉 / 改寫‧圖",
+    "publisher": "遠流",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "童嘉畫圖說故事 :真假夜鶯 /",
+    "matched_author": "童嘉,童嘉,Andersen, Hans Christian",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=675359&m=ss&k0=%E7%9C%9F%E5%81%87%E5%A4%9C%E9%B6%AF&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/39694"
+    ],
+    "output_number": 155,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-155"
+  },
+  {
+    "number": "5",
+    "title": "遇到一隻送子鳥",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=94&kind=cht&search=1&id=25596",
+    "author": "文 / 管家琪  圖 / 米 力",
+    "publisher": "幼獅文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "遇到一隻送子鳥",
+    "matched_author": "管家琪,米力(家政),凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525720&m=ss&k0=%E9%81%87%E5%88%B0%E4%B8%80%E9%9A%BB%E9%80%81%E5%AD%90%E9%B3%A5&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14143"
+    ],
+    "output_number": 156,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-156"
+  },
+  {
+    "number": "2",
+    "title": "獨臂投手",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=95&kind=cht&search=1&id=31488",
+    "author": "李光福",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "獨臂投手 /",
+    "matched_author": "李光福",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=757352&m=ss&k0=%E7%8D%A8%E8%87%82%E6%8A%95%E6%89%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/43167"
+    ],
+    "output_number": 157,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-157"
+  },
+  {
+    "number": "5",
+    "title": "大腳李柔",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=95&kind=cht&search=1&id=31490",
+    "author": "張如鈞",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "大腳李柔",
+    "matched_author": "張如鈞",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=157551&m=ss&k0=%E5%A4%A7%E8%85%B3%E6%9D%8E%E6%9F%94&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://www.tienwei.com.tw/"
+    ],
+    "output_number": 158,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-158"
+  },
+  {
+    "number": "12",
+    "title": "愛閱讀12：淘氣吉利丁4~我爸爸是外星人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=103&kind=cht&search=1&id=32651",
+    "author": "文 / 張嘉文  圖 / 嚴凱信",
+    "publisher": "文房文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "淘氣吉利丁-4 : 我爸爸是外星人",
+    "matched_author": "張嘉文,嚴凱信",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=393806&m=ss&k0=%E6%B7%98%E6%B0%A3%E5%90%89%E5%88%A9%E4%B8%814~%E6%88%91%E7%88%B8%E7%88%B8%E6%98%AF%E5%A4%96%E6%98%9F%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/15321"
+    ],
+    "output_number": 159,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-159"
+  },
+  {
+    "number": "12",
+    "title": "莎士比亞文學經典：威尼斯商人－友情是無價的生命寶物",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=105&kind=cht&search=1&id=25524",
+    "author": "文 / 威廉‧莎士比亞 圖 / 汪曉玲",
+    "publisher": "明天國際圖書",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "威尼斯商人  /",
+    "matched_author": "ISBN：9789866779442 出版資料:臺北縣中和市 : 明天國際圖書 , 民96",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=610423&m=ss&k0=%E5%A8%81%E5%B0%BC%E6%96%AF%E5%95%86%E4%BA%BA%20%E5%8F%8B%E6%83%85%E6%98%AF%E7%84%A1%E5%83%B9%E7%9A%84%E7%94%9F%E5%91%BD%E5%AF%B6%E7%89%A9&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "http://www.greenebook.com"
+    ],
+    "output_number": 160,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-160"
+  },
+  {
+    "number": "3",
+    "title": "莎士比亞文學經典：皆大歡喜－女扮男裝的愛情遊戲",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=107&kind=cht&search=1&id=38856",
+    "author": "文 / 威廉‧莎士比亞  圖 / 汪曉玲",
+    "publisher": "明天國際圖書",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "皆大歡喜  /",
+    "matched_author": "ISBN：9789866779473 出版資料:臺北縣中和市 : 明天國際圖書 , 民96",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=611886&m=ss&k0=%E7%9A%86%E5%A4%A7%E6%AD%A1%E5%96%9C%20%E5%A5%B3%E6%89%AE%E7%94%B7%E8%A3%9D%E7%9A%84%E6%84%9B%E6%83%85%E9%81%8A%E6%88%B2&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "http://www.greenebook.com"
+    ],
+    "output_number": 161,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-161"
+  },
+  {
+    "number": "6",
+    "title": "二年五班，愛貓咪！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=108&kind=cht&search=1&id=39127",
+    "author": "文 / 洪志明  圖 / 黃雄生",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "二年五班,愛貓咪!",
+    "matched_author": "洪志明",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=206317&m=ss&k0=%E4%BA%8C%E5%B9%B4%E4%BA%94%E7%8F%AD%EF%BC%8C%E6%84%9B%E8%B2%93%E5%92%AA%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://www.tienwei.com.tw"
+    ],
+    "output_number": 162,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-162"
+  },
+  {
+    "number": "7",
+    "title": "大象小姐談戀愛",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=108&kind=cht&search=1&id=26072",
+    "author": "文：黃文輝  圖：達姆",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "大象小姐談戀愛",
+    "matched_author": "黃文輝(機械工程),達姆(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=402736&m=ss&k0=%E5%A4%A7%E8%B1%A1%E5%B0%8F%E5%A7%90%E8%AB%87%E6%88%80%E6%84%9B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/9779"
+    ],
+    "output_number": 163,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-163"
+  },
+  {
+    "number": "9",
+    "title": "世界領袖",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=108&kind=cht&search=1&id=25818",
+    "author": "牛津家族編輯部",
+    "publisher": "牛津家族國際",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我和總統面對面 :黃寶慧與世界領袖的十次對話 = Mister president /",
+    "matched_author": "黃寶慧",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=683753&m=ss&k0=%E4%B8%96%E7%95%8C%E9%A0%98%E8%A2%96&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/42755"
+    ],
+    "output_number": 164,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-164"
+  },
+  {
+    "number": "3",
+    "title": "大巨人普普",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=110&kind=cht&search=1&id=37105",
+    "author": "文 / 周姚萍  圖 / 王書曼",
+    "publisher": "臺灣東方",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "大巨人普普的冒險 /",
+    "matched_author": "周姚萍,王書曼",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=854187&m=ss&k0=%E5%A4%A7%E5%B7%A8%E4%BA%BA%E6%99%AE%E6%99%AE&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/50672"
+    ],
+    "output_number": 165,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-165"
+  },
+  {
+    "number": "10",
+    "title": "看我！看我！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=110&kind=cht&search=1&id=38901",
+    "author": "文‧圖 / 崔永嬿",
+    "publisher": "天下雜誌",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "看我！看我！",
+    "matched_author": "崔永嬿(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=414643&m=ss&k0=%E7%9C%8B%E6%88%91%EF%BC%81%E7%9C%8B%E6%88%91%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18463"
+    ],
+    "output_number": 166,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-166"
+  },
+  {
+    "number": "3",
+    "title": "台灣知識小百科4：臺灣的地名由來",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=111&kind=cht&search=1&id=30977",
+    "author": "幼福編輯部",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "臺灣的地名由來",
+    "matched_author": "幼福文化事業製作部",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=402478&m=ss&k0=%E8%87%BA%E7%81%A3%E7%9A%84%E5%9C%B0%E5%90%8D%E7%94%B1%E4%BE%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/1314"
+    ],
+    "output_number": 167,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-167"
+  },
+  {
+    "number": "7",
+    "title": "台灣知識小百科5：臺灣的節日慶典",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=111&kind=cht&search=1&id=30978",
+    "author": "幼福編輯部",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "臺灣的節日慶典",
+    "matched_author": "幼福文化事業製作部",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=402592&m=ss&k0=%E8%87%BA%E7%81%A3%E7%9A%84%E7%AF%80%E6%97%A5%E6%85%B6%E5%85%B8&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/1319"
+    ],
+    "output_number": 168,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-168"
+  },
+  {
+    "number": "16",
+    "title": "屁屁超人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=111&kind=cht&search=1&id=26116",
+    "author": "文 / 林哲璋  圖 / BO2",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "屁屁超人 /",
+    "matched_author": "林哲璋,BO2,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=672008&m=ss&k0=%E5%B1%81%E5%B1%81%E8%B6%85%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49891"
+    ],
+    "output_number": 169,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-169"
+  },
+  {
+    "number": "7",
+    "title": "一年一班，天兵天將！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=112&kind=cht&search=1&id=31248",
+    "author": "文 / 李光福  圖 / 黃雄生",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "一年一班, 天兵天將! /",
+    "matched_author": "李光福,,黃雄生,",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=627651&m=ss&k0=%E4%B8%80%E5%B9%B4%E4%B8%80%E7%8F%AD%EF%BC%8C%E5%A4%A9%E5%85%B5%E5%A4%A9%E5%B0%87%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/50084"
+    ],
+    "output_number": 170,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-170"
+  },
+  {
+    "number": "9",
+    "title": "不管怎麼樣，你都會愛我嗎？",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=112&kind=cht&search=1&id=41744",
+    "author": "文‧圖 / 黛比‧葛莉歐利",
+    "publisher": "大穎文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "不管怎麼樣你都會愛我嗎? /",
+    "matched_author": "葛莉奧里(Gliori, Debi),李貞慧",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=765304&m=ss&k0=%E4%B8%8D%E7%AE%A1%E6%80%8E%E9%BA%BC%E6%A8%A3%20%E4%BD%A0%E9%83%BD%E6%9C%83%E6%84%9B%E6%88%91%E5%97%8E&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/46139"
+    ],
+    "output_number": 171,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-171"
+  },
+  {
+    "number": "18",
+    "title": "短鼻子大象小小",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=113&kind=cht&search=1&id=38179",
+    "author": "文 / 九把刀 圖 / 小內",
+    "publisher": "春天出版國際文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "短鼻子大象小小 = Short-nosed elephant Xiao Xiao",
+    "matched_author": "九把刀(Giddens),小內,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526495&m=ss&k0=%E7%9F%AD%E9%BC%BB%E5%AD%90%E5%A4%A7%E8%B1%A1%E5%B0%8F%E5%B0%8F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20772"
+    ],
+    "output_number": 172,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-172"
+  },
+  {
+    "number": "2",
+    "title": "小松鼠的月亮",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=115&kind=cht&search=1&id=37687",
+    "author": "冰波原著, 李美華改寫",
+    "publisher": "風車圖書",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小松鼠的月亮",
+    "matched_author": "冰波,洪毅霖,張晉霖,李美華",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=397626&m=ss&k0=%E5%B0%8F%E6%9D%BE%E9%BC%A0%E7%9A%84%E6%9C%88%E4%BA%AE&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/3317"
+    ],
+    "output_number": 173,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-173"
+  },
+  {
+    "number": "10",
+    "title": "湯姆歷險記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=117&kind=cht&search=1&id=95",
+    "author": "馬克‧吐溫",
+    "publisher": "雅典娜書坊",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "湯姆歷險記",
+    "matched_author": "吐溫(Twain, Mark, 1835-1910),Twain,Mark,1835-1910,鄧秋蓉(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=437095&m=ss&k0=%E6%B9%AF%E5%A7%86%E6%AD%B7%E9%9A%AA%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/6281"
+    ],
+    "output_number": 174,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-174"
+  },
+  {
+    "number": "8",
+    "title": "火龍家庭故事集",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=118&kind=cht&search=1&id=38762",
+    "author": "文 / 哲也 圖 / 水腦",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "火龍家庭故事集",
+    "matched_author": "哲也,水腦",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=364971&m=ss&k0=%E7%81%AB%E9%BE%8D%E5%AE%B6%E5%BA%AD%E6%95%85%E4%BA%8B%E9%9B%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33871"
+    ],
+    "output_number": 175,
+    "page": "ebooks_page_7.html",
+    "anchor": "ebooks_page_7.html#ebook-175"
+  },
+  {
+    "number": "15",
+    "title": "鱷魚和長頸鹿：搬過來、搬過去",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=119&kind=cht&search=1&id=26248",
+    "author": "文‧圖 / 達妮拉‧庫洛特",
+    "publisher": "三之三文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "鱷魚愛上長頸鹿.2,搬過來.搬過去 /",
+    "matched_author": "庫洛特(Kulot, Daniela),Kulot, Daniela,林硯芬",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=642209&m=ss&k0=%E6%90%AC%E9%81%8E%E4%BE%86%20%E6%90%AC%E9%81%8E%E5%8E%BB&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/40412"
+    ],
+    "output_number": 176,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-176"
+  },
+  {
+    "number": "3",
+    "title": "路燈阿亮亮亮亮",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=120&kind=cht&search=1&id=38800",
+    "author": "文：陳昇群  圖：方采頤",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "路燈阿亮亮亮亮",
+    "matched_author": "陳昇群(兒童文學),方采頤,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525965&m=ss&k0=%E8%B7%AF%E7%87%88%E9%98%BF%E4%BA%AE%E4%BA%AE%E4%BA%AE%E4%BA%AE&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20238"
+    ],
+    "output_number": 177,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-177"
+  },
+  {
+    "number": "11",
+    "title": "《南瀛之美》圖畫書27：大家來逛魚市場",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=120&kind=cht&search=1&id=39068",
+    "author": "文 / 朱秀芳  圖 / 張燈睿",
+    "publisher": "青林國際",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "大家來逛魚市場",
+    "matched_author": "朱秀芳1958-,張燈睿(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=360685&m=ss&k0=%E5%A4%A7%E5%AE%B6%E4%BE%86%E9%80%9B%E9%AD%9A%E5%B8%82%E5%A0%B4&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/3046"
+    ],
+    "output_number": 178,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-178"
+  },
+  {
+    "number": "15",
+    "title": "小小哭霸王",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=121&kind=cht&search=1&id=33460",
+    "author": "文 / 方素珍  圖 / 小磨菇",
+    "publisher": "天下雜誌",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小小哭霸王 /",
+    "matched_author": "方素珍,小磨菇",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=612854&m=ss&k0=%E5%B0%8F%E5%B0%8F%E5%93%AD%E9%9C%B8%E7%8E%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18283"
+    ],
+    "output_number": 179,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-179"
+  },
+  {
+    "number": "2",
+    "title": "大鼻子小矮人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=122&kind=cht&search=1&id=37558",
+    "author": "Wilhelm Hauff",
+    "publisher": "鳴嵐智識概念館",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "大鼻子小矮人",
+    "matched_author": "郝夫(Hauff, Wilhelm),何在怡",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=386734&m=ss&k0=%E5%A4%A7%E9%BC%BB%E5%AD%90%E5%B0%8F%E7%9F%AE%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/4163"
+    ],
+    "output_number": 180,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-180"
+  },
+  {
+    "number": "5",
+    "title": "愛生氣的小王子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=122&kind=cht&search=1&id=26553",
+    "author": "文：陳可卉  圖：巫 伊",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "愛生氣的小王子",
+    "matched_author": "陳可卉(哲學, 1966-),巫伊(繪畫),凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=525964&m=ss&k0=%E6%84%9B%E7%94%9F%E6%B0%A3%E7%9A%84%E5%B0%8F%E7%8E%8B%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20237"
+    ],
+    "output_number": 181,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-181"
+  },
+  {
+    "number": "18",
+    "title": "小鯊魚吉吉",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=123&kind=cht&search=1&id=30666",
+    "author": "文 / 劉書瑜  圖 / 林傳宗",
+    "publisher": "親親文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小鯊魚吉吉",
+    "matched_author": "劉書瑜",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=386405&m=ss&k0=%E5%B0%8F%E9%AF%8A%E9%AD%9A%E5%90%89%E5%90%89&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/1562"
+    ],
+    "output_number": 182,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-182"
+  },
+  {
+    "number": "18",
+    "title": "我家有個烏龜園",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=124&kind=cht&search=1&id=30678",
+    "author": "文‧圖 / 童嘉",
+    "publisher": "天下雜誌",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我家有個烏龜園 /",
+    "matched_author": "童嘉",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=687030&m=ss&k0=%E6%88%91%E5%AE%B6%E6%9C%89%E5%80%8B%E7%83%8F%E9%BE%9C%E5%9C%92&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49896"
+    ],
+    "output_number": 183,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-183"
+  },
+  {
+    "number": "1",
+    "title": "三年級花樣多",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=126&kind=cht&search=1&id=35552",
+    "author": "文：王淑芬  圖：賴馬",
+    "publisher": "作家",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "3年級花樣多 /",
+    "matched_author": "王淑芬,1961-,賴馬,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764028&m=ss&k0=%E4%B8%89%E5%B9%B4%E7%B4%9A%E8%8A%B1%E6%A8%A3%E5%A4%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18430"
+    ],
+    "output_number": 184,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-184"
+  },
+  {
+    "number": "5",
+    "title": "雪地裡的腳印",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=126&kind=cht&search=1&id=37348",
+    "author": "文‧圖 / 松崗芽衣",
+    "publisher": "三之三文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "雪地裡的腳印",
+    "matched_author": "20060608d2006 k y0chiy09 e,施仲傑,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=499045&m=ss&k0=%E9%9B%AA%E5%9C%B0%E8%A3%A1%E7%9A%84%E8%85%B3%E5%8D%B0&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/3531"
+    ],
+    "output_number": 185,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-185"
+  },
+  {
+    "number": "15",
+    "title": "台灣知識小百科1：臺灣的傳奇神明",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=127&kind=cht&search=1&id=30965",
+    "author": "幼福編輯部",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "臺灣的傳奇神明",
+    "matched_author": "幼福文化事業製作部",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=397673&m=ss&k0=%E8%87%BA%E7%81%A3%E7%9A%84%E5%82%B3%E5%A5%87%E7%A5%9E%E6%98%8E&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/1304"
+    ],
+    "output_number": 186,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-186"
+  },
+  {
+    "number": "3",
+    "title": "台灣知識小百科2：臺灣的流傳俗語",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=128&kind=cht&search=1&id=30968",
+    "author": "幼福編輯部",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "臺灣的流傳俗語",
+    "matched_author": "幼福文化製作部",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=397672&m=ss&k0=%E8%87%BA%E7%81%A3%E7%9A%84%E6%B5%81%E5%82%B3%E4%BF%97%E8%AA%9E&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/1307"
+    ],
+    "output_number": 187,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-187"
+  },
+  {
+    "number": "14",
+    "title": "科學童話：探索新世界",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=131&kind=cht&search=1&id=26157",
+    "author": "幼福編輯部",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "科學童話5, 探索新世界",
+    "matched_author": "20060517d2005 c y0chiy09 e,凌網科技股份有限公司,幼福編輯部",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=499059&m=ss&k0=%E6%8E%A2%E7%B4%A2%E6%96%B0%E4%B8%96%E7%95%8C&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/3584"
+    ],
+    "output_number": 188,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-188"
+  },
+  {
+    "number": "3",
+    "title": "二年級問題多",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=133&kind=cht&search=1&id=36929",
+    "author": "文：王淑芬  圖：賴馬",
+    "publisher": "作家",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "2年級問題多 /",
+    "matched_author": "王淑芬,1961-,賴馬,1968-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764027&m=ss&k0=%E4%BA%8C%E5%B9%B4%E7%B4%9A%E5%95%8F%E9%A1%8C%E5%A4%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18427"
+    ],
+    "output_number": 189,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-189"
+  },
+  {
+    "number": "10",
+    "title": "莫那．魯道",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=134&kind=cht&search=1&id=37975",
+    "author": "文 / 鄧相揚  圖 / 邱若龍",
+    "publisher": "國立台灣美術館",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "遇見莫那.魯道",
+    "matched_author": "彭素華,臺灣,徐至宏",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=556461&m=ss&k0=%E8%8E%AB%E9%82%A3%EF%BC%8E%E9%AD%AF%E9%81%93&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33948"
+    ],
+    "output_number": 190,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-190"
+  },
+  {
+    "number": "8",
+    "title": "隨身聽小孩",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=135&kind=cht&search=1&id=27502",
+    "author": "林滿秋",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "隨身聽小孩  /",
+    "matched_author": "ISBN：9789867188595 出版資料:臺北市 : 小魯文化 , uuuu",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=611777&m=ss&k0=%E9%9A%A8%E8%BA%AB%E8%81%BD%E5%B0%8F%E5%AD%A9&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://www.tienwei.com.tw"
+    ],
+    "output_number": 191,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-191"
+  },
+  {
+    "number": "10",
+    "title": "卡夫卡變形記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=135&kind=cht&search=1&id=32367",
+    "author": "法蘭茲．卡夫卡",
+    "publisher": "明日工作室",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "卡夫卡變形記",
+    "matched_author": "卡夫卡法蘭茲,李毓昭",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=228912&m=ss&k0=%E5%8D%A1%E5%A4%AB%E5%8D%A1%E8%AE%8A%E5%BD%A2%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/6238"
+    ],
+    "output_number": 192,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-192"
+  },
+  {
+    "number": "18",
+    "title": "大膽的膽小鬼",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=137&kind=cht&search=1&id=31650",
+    "author": "文：陳肇宜  圖：李長駿",
+    "publisher": "小兵",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "教室裡有鬼 :大膽的膽小鬼 /",
+    "matched_author": "李光福,王秋香",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=734911&m=ss&k0=%E5%A4%A7%E8%86%BD%E7%9A%84%E8%86%BD%E5%B0%8F%E9%AC%BC&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/43349"
+    ],
+    "output_number": 193,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-193"
+  },
+  {
+    "number": "2",
+    "title": "短耳兔",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=138&kind=cht&search=1&id=30631",
+    "author": "文 / 達文茜  圖 / 唐唐",
+    "publisher": "天下雜誌",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "短耳兔",
+    "matched_author": "達文茜,唐唐",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=341814&m=ss&k0=%E7%9F%AD%E8%80%B3%E5%85%94&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/21142"
+    ],
+    "output_number": 194,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-194"
+  },
+  {
+    "number": "15",
+    "title": "威尼斯商人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=139&kind=cht&search=1&id=27083",
+    "author": "威廉.祬士比亞",
+    "publisher": "企鵝",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "威尼斯商人  /",
+    "matched_author": "ISBN：9789866779442 出版資料:臺北縣中和市 : 明天國際圖書 , 民96",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=610423&m=ss&k0=%E5%A8%81%E5%B0%BC%E6%96%AF%E5%95%86%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://www.greenebook.com"
+    ],
+    "output_number": 195,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-195"
+  },
+  {
+    "number": "8",
+    "title": "中國經典故事9：三十六計",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=141&kind=cht&search=1&id=26852",
+    "author": "幼福編輯部",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "三十六計",
+    "matched_author": "幼福編輯部",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=370434&m=ss&k0=%E4%B8%89%E5%8D%81%E5%85%AD%E8%A8%88&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/644"
+    ],
+    "output_number": 196,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-196"
+  },
+  {
+    "number": "12",
+    "title": "三年五班，真糗！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=141&kind=cht&search=1&id=27628",
+    "author": "洪志明",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "三年五班, 真糗! /",
+    "matched_author": "洪志明,黃雄生",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=856592&m=ss&k0=%E4%B8%89%E5%B9%B4%E4%BA%94%E7%8F%AD%EF%BC%8C%E7%9C%9F%E7%B3%97%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/42990"
+    ],
+    "output_number": 197,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-197"
+  },
+  {
+    "number": "13",
+    "title": "三年五班，真糗！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=141&kind=cht&search=1&id=39148",
+    "author": "洪志明",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "三年五班, 真糗! /",
+    "matched_author": "洪志明,黃雄生",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=856592&m=ss&k0=%E4%B8%89%E5%B9%B4%E4%BA%94%E7%8F%AD%EF%BC%8C%E7%9C%9F%E7%B3%97%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/42990"
+    ],
+    "output_number": 198,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-198"
+  },
+  {
+    "number": "14",
+    "title": "四年五班，魔法老師！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=141&kind=cht&search=1&id=39149",
+    "author": "文 / 洪志明  圖 / 黃雄生",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "四年五班, 魔法老師! /",
+    "matched_author": "洪志明,黃雄生",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=828097&m=ss&k0=%E5%9B%9B%E5%B9%B4%E4%BA%94%E7%8F%AD%EF%BC%8C%E9%AD%94%E6%B3%95%E8%80%81%E5%B8%AB%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/43047"
+    ],
+    "output_number": 199,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-199"
+  },
+  {
+    "number": "7",
+    "title": "天上飛來的魚",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=142&kind=cht&search=1&id=37622",
+    "author": "文‧圖 / 劉伯樂",
+    "publisher": "台灣東華",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "天上飛來的魚 /",
+    "matched_author": "劉伯樂",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=726348&m=ss&k0=%E5%A4%A9%E4%B8%8A%E9%A3%9B%E4%BE%86%E7%9A%84%E9%AD%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/40435"
+    ],
+    "output_number": 200,
+    "page": "ebooks_page_8.html",
+    "anchor": "ebooks_page_8.html#ebook-200"
+  },
+  {
+    "number": "6",
+    "title": "我自己讀的童話書6：童話莊子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=143&kind=cht&search=1&id=2316",
+    "author": "文 / 哲也  圖 / 姬炤華、徐萃",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "童話莊子 /",
+    "matched_author": "哲也,姬炤華,徐萃",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=927158&m=ss&k0=%E7%AB%A5%E8%A9%B1%E8%8E%8A%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/51649"
+    ],
+    "output_number": 201,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-201"
+  },
+  {
+    "number": "5",
+    "title": "納尼亞傳奇：獅子‧女巫‧魔衣櫥",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=145&kind=cht&search=1&id=39734",
+    "author": "C.S.路易斯 / 原著  海玟．歐朗 / 改寫",
+    "publisher": "大田",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "獅子. 女巫. 魔衣櫥 /",
+    "matched_author": "路易斯(Lewis, Clive Staples),鄧嘉宛",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=725627&m=ss&k0=%E7%8D%85%E5%AD%90%E2%80%A7%E5%A5%B3%E5%B7%AB%E2%80%A7%E9%AD%94%E8%A1%A3%E6%AB%A5&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/44486"
+    ],
+    "output_number": 202,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-202"
+  },
+  {
+    "number": "2",
+    "title": "印度尋寶記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=147&kind=cht&search=1&id=26954",
+    "author": "文 / Comdori co. 圖 / 姜境孝",
+    "publisher": "三采文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "神奇樹屋.45,印度尋寶記 /",
+    "matched_author": "奧斯本(Osborne, Mary Pope),張毓如,吳健豐",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=764194&m=ss&k0=%E5%8D%B0%E5%BA%A6%E5%B0%8B%E5%AF%B6%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/51509"
+    ],
+    "output_number": 203,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-203"
+  },
+  {
+    "number": "3",
+    "title": "最重要的事",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=147&kind=cht&search=1&id=31050",
+    "author": "文 / 伊芙‧邦婷 圖 / 羅奈德‧希姆勒",
+    "publisher": "道聲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "OKR : 做最重要的事Google、U2波諾、蓋茲基金會,都採用的團隊激勵與管理法 /",
+    "matched_author": "杜爾(Doerr, John),許瑞宋",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=713129&m=ss&k0=%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/43674"
+    ],
+    "output_number": 204,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-204"
+  },
+  {
+    "number": "12",
+    "title": "我自己讀的童話書6：童話莊子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=149&kind=cht&search=1&id=30835",
+    "author": "文 / 哲也  圖 / 姬炤華、徐萃",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "童話莊子 /",
+    "matched_author": "哲也,姬炤華,徐萃",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=927158&m=ss&k0=%E7%AB%A5%E8%A9%B1%E8%8E%8A%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/51649"
+    ],
+    "output_number": 205,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-205"
+  },
+  {
+    "number": "6",
+    "title": "「哈啾」不見了",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=153&kind=cht&search=1&id=32721",
+    "author": "文 / 張晉霖  圖 / 洪毅霖、程千芬",
+    "publisher": "風車圖書",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "哈啾不見了 : 健康生活的學習",
+    "matched_author": "張晉霖,林恩發,洪毅霖",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=469972&m=ss&k0=%E5%93%88%E5%95%BE%20%E4%B8%8D%E8%A6%8B%E4%BA%86&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/2103"
+    ],
+    "output_number": 206,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-206"
+  },
+  {
+    "number": "9",
+    "title": "最重要的事",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=155&kind=cht&search=1&id=26089",
+    "author": "文 / 伊芙‧邦婷  圖 / 羅奈德‧希姆勒",
+    "publisher": "道聲",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "OKR : 做最重要的事Google、U2波諾、蓋茲基金會,都採用的團隊激勵與管理法 /",
+    "matched_author": "杜爾(Doerr, John),許瑞宋",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=713129&m=ss&k0=%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/43674"
+    ],
+    "output_number": 207,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-207"
+  },
+  {
+    "number": "11",
+    "title": "想要不一樣",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=158&kind=cht&search=1&id=41249",
+    "author": "文‧圖 / 童嘉",
+    "publisher": "遠流",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "想要不一樣 /",
+    "matched_author": "童嘉",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=922069&m=ss&k0=%E6%83%B3%E8%A6%81%E4%B8%8D%E4%B8%80%E6%A8%A3&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://www.ebookservice.tw/chc/search?q=想要不一樣 20&scope=title",
+      "https://www.ebookservice.tw/chc/search?q=想要不一樣"
+    ],
+    "output_number": 208,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-208"
+  },
+  {
+    "number": "4",
+    "title": "小紅帽與大野狼",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=159&kind=cht&search=1&id=35635",
+    "author": "Brothers Grimm / 原著",
+    "publisher": "人類智庫",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "角色扮演之小紅帽與大野狼 :10個經典童話故事與遊戲書 /",
+    "matched_author": "斯萊格斯,林德怡",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=920335&m=ss&k0=%E5%B0%8F%E7%B4%85%E5%B8%BD%E8%88%87%E5%A4%A7%E9%87%8E%E7%8B%BC&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/55486"
+    ],
+    "output_number": 209,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-209"
+  },
+  {
+    "number": "16",
+    "title": "誰是大明星",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=159&kind=cht&search=1&id=36678",
+    "author": "Guido Van Genechten",
+    "publisher": "全美",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "誰是大明星",
+    "matched_author": "謝明芳",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=471361&m=ss&k0=%E8%AA%B0%E6%98%AF%E5%A4%A7%E6%98%8E%E6%98%9F&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/23105"
+    ],
+    "output_number": 210,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-210"
+  },
+  {
+    "number": "4",
+    "title": "湯姆歷險",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=162&kind=cht&search=1&id=39562",
+    "author": "馬克‧吐溫 / 原著 馮凌慧 / 改寫",
+    "publisher": "風車圖書",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "湯姆歷險記",
+    "matched_author": "吐溫(Twain, Mark, 1835-1910),Twain,Mark,1835-1910,鄧秋蓉(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=437095&m=ss&k0=%E6%B9%AF%E5%A7%86%E6%AD%B7%E9%9A%AA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/6281"
+    ],
+    "output_number": 211,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-211"
+  },
+  {
+    "number": "11",
+    "title": "小水滴的旅行",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=162&kind=cht&search=1&id=37527",
+    "author": "文 / 金豆子  圖 / 黃保儒",
+    "publisher": "狗狗圖書",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小水滴的旅行",
+    "matched_author": "金豆子,黃保儒",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=327157&m=ss&k0=%E5%B0%8F%E6%B0%B4%E6%BB%B4%E7%9A%84%E6%97%85%E8%A1%8C&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/3670"
+    ],
+    "output_number": 212,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-212"
+  },
+  {
+    "number": "13",
+    "title": "跟著夢想前進：哥倫布",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=163&kind=cht&search=1&id=37305",
+    "author": "文‧圖 / 彼徳席斯",
+    "publisher": "格林文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "哥倫布",
+    "matched_author": "哥倫布,陳文德",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=636456&m=ss&k0=%E5%93%A5%E5%80%AB%E5%B8%83&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://netcity2.web.hinet.net/UserData/kuangten/"
+    ],
+    "output_number": 213,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-213"
+  },
+  {
+    "number": "15",
+    "title": "我是白癡",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=165&kind=cht&search=1&id=39662",
+    "author": "王淑芬◎著  張宸偉◎繪",
+    "publisher": "作家",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我是白痴 /",
+    "matched_author": "王淑芬,1961-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=787907&m=ss&k0=%E6%88%91%E6%98%AF%E7%99%BD%E7%99%A1&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/18449"
+    ],
+    "output_number": 214,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-214"
+  },
+  {
+    "number": "1",
+    "title": "誰是第一名",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=166&kind=cht&search=1&id=5108",
+    "author": "文‧圖 / 蕭湄羲",
+    "publisher": "信誼基金",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "為什麼不能吃那個? .3 .誰是第一名? /",
+    "matched_author": "余治瑩,,王秋香,",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=918917&m=ss&k0=%E8%AA%B0%E6%98%AF%E7%AC%AC%E4%B8%80%E5%90%8D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/55087"
+    ],
+    "output_number": 215,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-215"
+  },
+  {
+    "number": "4",
+    "title": "少年噶瑪蘭",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=166&kind=cht&search=1&id=12023",
+    "author": "李潼",
+    "publisher": "天衛文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "少年噶瑪蘭 / [國中認證書]",
+    "matched_author": "李潼,1953-2004",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=795859&m=ss&k0=%E5%B0%91%E5%B9%B4%E5%99%B6%E7%91%AA%E8%98%AD&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/51659"
+    ],
+    "output_number": 216,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-216"
+  },
+  {
+    "number": "5",
+    "title": "帕拉帕拉山的妖怪",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=167&kind=cht&search=1&id=33044",
+    "author": "文‧圖 / 賴馬",
+    "publisher": "和英",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "帕拉帕拉山的妖怪 /",
+    "matched_author": "賴馬",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=620201&m=ss&k0=%E5%B8%95%E6%8B%89%E5%B8%95%E6%8B%89%E5%B1%B1%E7%9A%84%E5%A6%96%E6%80%AA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33188"
+    ],
+    "output_number": 217,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-217"
+  },
+  {
+    "number": "6",
+    "title": "世界少年文學名著5：蒼蠅王",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=173&kind=cht&search=1&id=32460",
+    "author": "威廉‧高登 / 原著  夏明華 / 改寫",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "蒼蠅王",
+    "matched_author": "高登,夏明華",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=360739&m=ss&k0=%E8%92%BC%E8%A0%85%E7%8E%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/589"
+    ],
+    "output_number": 218,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-218"
+  },
+  {
+    "number": "8",
+    "title": "世界少年文學名著4：湯姆歷險記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=173&kind=cht&search=1&id=32462",
+    "author": "馬克‧吐溫",
+    "publisher": "幼福文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "湯姆歷險記",
+    "matched_author": "吐溫(Twain, Mark, 1835-1910),Twain,Mark,1835-1910,鄧秋蓉(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=437095&m=ss&k0=%E6%B9%AF%E5%A7%86%E6%AD%B7%E9%9A%AA%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/6281"
+    ],
+    "output_number": 219,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-219"
+  },
+  {
+    "number": "14",
+    "title": "心靈成長小學：我要一個家",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=175&kind=cht&search=1&id=32797",
+    "author": "文 / Maria Martinez i Vendrell 圖 / Roser Capdevila",
+    "publisher": "艾閣萌全美",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "我要一個家",
+    "matched_author": "林良,鄭明進",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=465020&m=ss&k0=%E6%88%91%E8%A6%81%E4%B8%80%E5%80%8B%E5%AE%B6&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/14512"
+    ],
+    "output_number": 220,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-220"
+  },
+  {
+    "number": "16",
+    "title": "沒有人喜歡我",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=175&kind=cht&search=1&id=36",
+    "author": "文‧圖 / 羅爾‧克利尚尼茲",
+    "publisher": "三之三文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "如果沒有人喜歡我,我也要喜歡自己[低年級認證書]",
+    "matched_author": "凡荷納賀頓(Genechten, Guido van),謝靜雯",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=584274&m=ss&k0=%E6%B2%92%E6%9C%89%E4%BA%BA%E5%96%9C%E6%AD%A1%E6%88%91&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/33877"
+    ],
+    "output_number": 221,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-221"
+  },
+  {
+    "number": "15",
+    "title": "迪士尼動物王國：森林王子‧鹿",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=178&kind=cht&search=1&id=36482",
+    "author": "宋如峰",
+    "publisher": "全美文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "森林王子 /",
+    "matched_author": "吉卜林",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=775017&m=ss&k0=%E6%A3%AE%E6%9E%97%E7%8E%8B%E5%AD%90%20%E9%B9%BF&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/45942"
+    ],
+    "output_number": 222,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-222"
+  },
+  {
+    "number": "9",
+    "title": "小松鼠過馬路",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=180&kind=cht&search=1&id=30649",
+    "author": "文 / 陳美玲  圖 / 孫淑萍",
+    "publisher": "親親文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "小松鼠過馬路",
+    "matched_author": "陳美玲.,孫淑萍.",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=386387&m=ss&k0=%E5%B0%8F%E6%9D%BE%E9%BC%A0%E9%81%8E%E9%A6%AC%E8%B7%AF&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/2787"
+    ],
+    "output_number": 223,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-223"
+  },
+  {
+    "number": "4",
+    "title": "二年五班，愛貓咪！",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=181&kind=cht&search=1&id=25045",
+    "author": "文 / 洪志明  圖 / 黃雄生",
+    "publisher": "小魯文化",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "二年五班,愛貓咪!",
+    "matched_author": "洪志明",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=206317&m=ss&k0=%E4%BA%8C%E5%B9%B4%E4%BA%94%E7%8F%AD%EF%BC%8C%E6%84%9B%E8%B2%93%E5%92%AA%EF%BC%81&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://www.tienwei.com.tw"
+    ],
+    "output_number": 224,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-224"
+  },
+  {
+    "number": "16",
+    "title": "我愛瑪婷19：稻草人",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=192&kind=cht&search=1&id=38485",
+    "author": "文 / 吉柏特‧迪拉哈耶 圖 / 馬歇‧馬里耶",
+    "publisher": "翰新文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "稻草人",
+    "matched_author": "林良,鄭明進",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=59885&m=ss&k0=%E7%A8%BB%E8%8D%89%E4%BA%BA&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/51915"
+    ],
+    "output_number": 225,
+    "page": "ebooks_page_9.html",
+    "anchor": "ebooks_page_9.html#ebook-225"
+  },
+  {
+    "number": "1",
+    "title": "湯姆歷險記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=194&kind=cht&search=1&id=25225",
+    "author": "馬克．吐溫 / 原著  德克‧維布雷克 / 改寫",
+    "publisher": "青林國際",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "湯姆歷險記",
+    "matched_author": "吐溫(Twain, Mark, 1835-1910),Twain,Mark,1835-1910,鄧秋蓉(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=437095&m=ss&k0=%E6%B9%AF%E5%A7%86%E6%AD%B7%E9%9A%AA%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/6281"
+    ],
+    "output_number": 226,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-226"
+  },
+  {
+    "number": "1",
+    "title": "擁抱",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=196&kind=cht&search=1&id=5098",
+    "author": "文‧圖 / 莊永佳",
+    "publisher": "國語日報",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "擁抱",
+    "matched_author": "梁永佳,林俐,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=526011&m=ss&k0=%E6%93%81%E6%8A%B1&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/20285"
+    ],
+    "output_number": 227,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-227"
+  },
+  {
+    "number": "18",
+    "title": "我的朋友",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=201&kind=cht&search=1&id=31204",
+    "author": "五味太郎",
+    "publisher": "上誼文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "做我的朋友 /",
+    "matched_author": "蔡文玲",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=638831&m=ss&k0=%E6%88%91%E7%9A%84%E6%9C%8B%E5%8F%8B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/57485"
+    ],
+    "output_number": 228,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-228"
+  },
+  {
+    "number": "4",
+    "title": "世界少年文學精選65：頑童歷險記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=205&kind=cht&search=1&id=25484",
+    "author": "馬克‧吐溫 / 原著  管家琪 / 改寫",
+    "publisher": "東方",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "頑童歷險記 /",
+    "matched_author": "吐溫(Twain, Mark),1835-1910,管家琪,李憶婷",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=706737&m=ss&k0=%E9%A0%91%E7%AB%A5%E6%AD%B7%E9%9A%AA%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/50244"
+    ],
+    "output_number": 229,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-229"
+  },
+  {
+    "number": "14",
+    "title": "床邊動物故事：貪吃的小老鼠",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=205&kind=cht&search=1&id=31665",
+    "author": "文 / Ariane Chottin  圖 / Malgorzata Dzierzawska",
+    "publisher": "臺灣東方",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "貪吃的小老鼠 = The greedy little mouse",
+    "matched_author": "許慧敏,裴蕾 出版資料:臺北縣新店市 : 小太陽, 2007[民96]",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=484089&m=ss&k0=%E8%B2%AA%E5%90%83%E7%9A%84%E5%B0%8F%E8%80%81%E9%BC%A0&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/11239"
+    ],
+    "output_number": 230,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-230"
+  },
+  {
+    "number": "4",
+    "title": "波波寶貝",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=208&kind=cht&search=1&id=25789",
+    "author": "文：唐土兒  圖：賴馬",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "奇遇小黑貓 :波波寶貝 /",
+    "matched_author": "兔子波西,賴馬",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=642059&m=ss&k0=%E6%B3%A2%E6%B3%A2%E5%AF%B6%E8%B2%9D&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/39638"
+    ],
+    "output_number": 231,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-231"
+  },
+  {
+    "number": "11",
+    "title": "繪本童話中國23：板橋三娘子",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=211&kind=cht&search=1&id=39249",
+    "author": "王宣一 / 文  張世明 / 圖",
+    "publisher": "遠流",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "板橋三娘子",
+    "matched_author": "王宣一,張世明",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=470820&m=ss&k0=%E6%9D%BF%E6%A9%8B%E4%B8%89%E5%A8%98%E5%AD%90&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://www.ebookservice.tw/chc/search?q=板橋三娘子&scope=title"
+    ],
+    "output_number": 232,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-232"
+  },
+  {
+    "number": "22",
+    "title": "我有絕招",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=216&kind=cht&search=1&id=26036",
+    "author": "文：可  白  圖：河  馬",
+    "publisher": "小兵",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "我有絕招.I /",
+    "matched_author": "可白,徐建國",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=748176&m=ss&k0=%E6%88%91%E6%9C%89%E7%B5%95%E6%8B%9B&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://bocach.ebook.hyread.com.tw/bookDetail.jsp?id=168063",
+      "https://ebook.nlpi.edu.tw/bookdetail/39573",
+      "https://www.ebookservice.tw/chc/search?q=我有絕招I&scope=title"
+    ],
+    "output_number": 233,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-233"
+  },
+  {
+    "number": "12",
+    "title": "珍珠",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=217&kind=cht&search=1&id=37644",
+    "author": "赫姆‧海恩",
+    "publisher": "上誼文化",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "珍珠",
+    "matched_author": "約翰.史坦貝克(John Steinbeck)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=949527&m=ss&k0=%E7%8F%8D%E7%8F%A0&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/50984"
+    ],
+    "output_number": 234,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-234"
+  },
+  {
+    "number": "2",
+    "title": "漫畫世界文學名著6：湯姆歷險記",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=218&kind=cht&search=1&id=34659",
+    "author": "馬克‧吐溫",
+    "publisher": "牛頓",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "湯姆歷險記",
+    "matched_author": "吐溫(Twain, Mark, 1835-1910),Twain,Mark,1835-1910,鄧秋蓉(繪畫)",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=437095&m=ss&k0=%E6%B9%AF%E5%A7%86%E6%AD%B7%E9%9A%AA%E8%A8%98&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/6281"
+    ],
+    "output_number": 235,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-235"
+  },
+  {
+    "number": "3",
+    "title": "白雪公主",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=219&kind=cht&search=1&id=26834",
+    "author": "格林",
+    "publisher": "光復書局股份有限公司",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "白雪公主",
+    "matched_author": "陳國進 出版資料:臺南市 華淋 1986 集叢名:世界名著故事,世界名著故事華淋幼年童話 網路資源： http://www.hualin.com.tw/index1.htm 館藏量 (1) 放入書櫃 詳細書目",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=623847&m=ss&k0=%E7%99%BD%E9%9B%AA%E5%85%AC%E4%B8%BB&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://www.hualin.com.tw/index1.htm"
+    ],
+    "output_number": 236,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-236"
+  },
+  {
+    "number": "10",
+    "title": "孤雛淚",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=222&kind=cht&search=1&id=33861",
+    "author": "狄更斯 / 原著  郁郁 / 改寫",
+    "publisher": "企鵝圖書",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "孤雛淚",
+    "matched_author": "20060207d2006 k y0chiy09 e,李敏浩,狄更司,凌網科技股份有限公司",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=498980&m=ss&k0=%E5%AD%A4%E9%9B%9B%E6%B7%9A&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "http://ebook.nlpi.edu.tw/bookdetail/9230"
+    ],
+    "output_number": 237,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-237"
+  },
+  {
+    "number": "17",
+    "title": "怪咖動物偵探",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=224&kind=cht&search=1&id=42306",
+    "author": "",
+    "publisher": "",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "怪咖動物偵探 : 城市野住客事件簿 /",
+    "matched_author": "黃一峯",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=745859&m=ss&k0=%E6%80%AA%E5%92%96%E5%8B%95%E7%89%A9%E5%81%B5%E6%8E%A2&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/45445"
+    ],
+    "output_number": 238,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-238"
+  },
+  {
+    "number": "2",
+    "title": "你很特別",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=225&kind=cht&search=1&id=42314",
+    "author": "",
+    "publisher": "",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "你很特別 /",
+    "matched_author": "洛門(Loman, Sam),吳愉萱",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=769747&m=ss&k0=%E4%BD%A0%E5%BE%88%E7%89%B9%E5%88%A5&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/46117"
+    ],
+    "output_number": 239,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-239"
+  },
+  {
+    "number": "9",
+    "title": "打氣粥",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=226&kind=cht&search=1&id=42363",
+    "author": "",
+    "publisher": "",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "打氣粥 /",
+    "matched_author": "邱彩綢1965-,臺灣,莊詠婷1985-",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=889807&m=ss&k0=%E6%89%93%E6%B0%A3%E7%B2%A5&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/44312"
+    ],
+    "output_number": 240,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-240"
+  },
+  {
+    "number": "4",
+    "title": "蛀牙蟲家族大搬家(新版)",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=227&kind=cht&search=1&id=42390",
+    "author": "",
+    "publisher": "",
+    "range": "國小低年級",
+    "certification": "可認證",
+    "matched_title": "蛀牙蟲家族大搬家 /",
+    "matched_author": "西本康子,游珮芸",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=716223&m=ss&k0=%E8%9B%80%E7%89%99%E8%9F%B2%E5%AE%B6%E6%97%8F%E5%A4%A7%E6%90%AC%E5%AE%B6%20%E6%96%B0%E7%89%88&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "標準化書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/50082"
+    ],
+    "output_number": 241,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-241"
+  },
+  {
+    "number": "7",
+    "title": "有趣到睡不著的地球科學：變成化石沒那麼簡單",
+    "url": "https://read.chc.edu.tw/index.php?inter=books&page=227&kind=cht&search=1&id=42402",
+    "author": "",
+    "publisher": "",
+    "range": "國小中年級",
+    "certification": "可認證",
+    "matched_title": "有趣到睡不著的地球科學 :變成化石沒那麼簡單 /",
+    "matched_author": "左卷健男,1949-,陳朕疆",
+    "matched_url": "https://library.toread.bocach.gov.tw/webpac_rwd/content.cfm?mid=808204&m=ss&k0=%E8%AE%8A%E6%88%90%E5%8C%96%E7%9F%B3%E6%B2%92%E9%82%A3%E9%BA%BC%E7%B0%A1%E5%96%AE&t0=k&c0=and&y10=&y20=&cat0=&dt0=&l0=&lv0=&list_num=10¤t_page=1&mt=&at=&sj=&py=&pr=&it=&lr=&lg=&si=",
+    "match_type": "完整書名",
+    "online_resources": [
+      "https://ebook.nlpi.edu.tw/bookdetail/49257"
+    ],
+    "output_number": 242,
+    "page": "ebooks_page_10.html",
+    "anchor": "ebooks_page_10.html#ebook-242"
   }
 ]

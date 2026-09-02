@@ -131,9 +131,8 @@ ebook_finder.bat
 
 - `ebooks_index.html`：電子書搜尋首頁
 - `ebooks_data.json`：電子書資料 JSON
-- `ebooks_page_*.html`：電子書分頁
 
-可用 `EBOOK_OUTPUT_PAGE_SIZE` 調整電子書結果每頁收入幾本書，預設 `25`。
+`ebooks_index.html` 會像主館藏首頁一樣，在前端直接讀取 `ebooks_data.json` 後提供搜尋、語音輸入與分頁切換，因此部署到 GitHub Pages 時不需要再提交 `ebooks_page_*.html` 這類中間頁面。
 
 ### 重新確認既有館藏
 

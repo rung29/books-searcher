@@ -8,6 +8,7 @@ captcha_*.png
 books_page_*.html
 books_with_library_*.html
 books_rechecked_*.html
+ebooks_page_*.html
 
 # 測試用暫存檔
 post_response.html

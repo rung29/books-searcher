@@ -17,5 +17,6 @@ post_response.html
 get_response.html
 get_bypass_response.html
 test_export.xls
+test_*.txt
 
 .vercel

@@ -240,7 +240,6 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
         if incomplete
         else ""
     )
-    embedded_records = json.dumps(records, ensure_ascii=False).replace("</", "<\\/")
     html = f"""<!doctype html>
 <html lang="zh-TW" data-theme="light">
 <head>
@@ -951,9 +950,10 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
   </section>
 </div>
 
-<script id="books-data" type="application/json">{embedded_records}</script>
+<script src="data_source_config.js"></script>
+<script src="data_loader.js"></script>
 <script>
-const DATA_URL = "{data_filename}";
+const DATA_FILENAME = "{data_filename}";
 const searchInput = document.getElementById("search-input");
 const searchClearBtn = document.getElementById("search-clear");
 const resultCount = document.getElementById("result-count");
@@ -1331,30 +1331,11 @@ function initializeBooks(data) {{
   applySearch();
 }}
 
-function embeddedBooks() {{
-  const element = document.getElementById("books-data");
-  if (!element) {{
-    return null;
-  }}
-  try {{
-    const data = JSON.parse(element.textContent || "[]");
-    return Array.isArray(data) ? data : null;
-  }} catch {{
-    return null;
-  }}
-}}
-
-const initialBooks = embeddedBooks();
-if (initialBooks) {{
-  initializeBooks(initialBooks);
-}} else {{
-  fetch(DATA_URL)
-    .then(response => response.json())
-    .then(initializeBooks)
-    .catch(() => {{
-      resultCount.textContent = "無法讀取 books_with_library_data.json。請確認檔案與首頁放在同一個目錄。";
-    }});
-}}
+BookDataLoader.load(DATA_FILENAME)
+  .then(result => initializeBooks(result.data))
+  .catch(() => {{
+    resultCount.textContent = "Supabase 與 GitHub Pages 備援資料皆讀取失敗。";
+  }});
 
 searchInput.addEventListener("input", applySearch);
 </script>

@@ -105,6 +105,12 @@ class EbookFinderTests(unittest.TestCase):
                 "ebooks_data.json",
                 (Path(tmp) / "ebooks_index.html").read_text(encoding="utf-8"),
             )
+            index_html = (Path(tmp) / "ebooks_index.html").read_text(
+                encoding="utf-8"
+            )
+            self.assertIn('src="data_source_config.js"', index_html)
+            self.assertIn('src="data_loader.js"', index_html)
+            self.assertIn('BookDataLoader.load(DATA_FILENAME)', index_html)
 
 
 if __name__ == "__main__":

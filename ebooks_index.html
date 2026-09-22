@@ -112,7 +112,7 @@
       <div class="brand-icon">🌐</div>
       <div class="header-title-group">
         <h1>電子書資源清單</h1>
-        <p>依 ebooks_data.json 載入可線上閱讀的書籍清單。</p>
+        <p>優先載入 Supabase，無法讀取時自動切換至 GitHub Pages 備援。</p>
       </div>
     </div>
     <div class="header-actions">
@@ -149,8 +149,10 @@
     </div>
   </section>
 </div>
+<script src="data_source_config.js"></script>
+<script src="data_loader.js"></script>
 <script>
-const DATA_URL = "ebooks_data.json";
+const DATA_FILENAME = "ebooks_data.json";
 const searchInput = document.getElementById("search-input");
 const voiceSearchBtn = document.getElementById("voice-search");
 const searchClearBtn = document.getElementById("search-clear");
@@ -303,11 +305,10 @@ prevPageTopBtn.addEventListener("click", goToPreviousPage);
 nextPageBtn.addEventListener("click", goToNextPage);
 nextPageTopBtn.addEventListener("click", goToNextPage);
 searchInput.addEventListener("input", applySearch);
-fetch(DATA_URL)
-  .then(response => response.json())
-  .then(initializeBooks)
+BookDataLoader.load(DATA_FILENAME)
+  .then(result => initializeBooks(result.data))
   .catch(() => {
-    resultCount.textContent = "無法讀取 ebooks_data.json。請確認檔案與首頁放在同一個目錄。";
+    resultCount.textContent = "Supabase 與 GitHub Pages 備援資料皆讀取失敗。";
     resultsList.innerHTML = '<p class="muted-text">電子書資料載入失敗。</p>';
   });
 </script>

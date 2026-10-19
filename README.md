@@ -11,6 +11,7 @@
 | 更新既有書單目前的館藏狀態 | `recheck.py` | `books_with_library_page_*.html` | 更新後的館藏頁、JSON 與 `index.html` |
 | 不連線圖書館，只重新產生館藏查詢頁 | `library_output.py` | `books_with_library_page_*.html` | `books_with_library_data.json`、`index.html` |
 | 從完整推薦書單找有網路資源的電子書 | `ebook_finder.py` | `books_page_*.html` | `ebooks_data.json`、`ebooks_index.html` |
+| 用手機相機辨識書架並比對認證書單 | `ocr_index.html` | `books_with_library_data.json`、`ebooks_data.json` | 瀏覽器中的辨識結果，不寫回資料 |
 | 將兩份 JSON 更新到 Supabase | `supabase_upload.py` | 兩份本機 JSON 與 Supabase 設定 | 覆寫 Storage 資料並更新公開 URL 設定 |
 | 在本機瀏覽器即時搜尋與查館藏 | `web_app.py` | 無需先產生 HTML | Flask 網頁，不寫入靜態書單 |
 | 讓 Vercel 載入 Flask app | `api/index.py` | `web_app.py` | Vercel 入口，不需手動執行 |
@@ -220,7 +221,20 @@ ebook_finder.bat
 
 此流程不依賴 `integrate.py` 或 `books_with_library_page_*.html`。首頁會優先讀取 Supabase 的 `ebooks_data.json`，失敗時才讀取 GitHub Pages 同目錄下的備援檔。
 
-### 6. `supabase_upload.py`：更新遠端 JSON
+### 6. `ocr_index.html`：用相機辨識書架
+
+使用時機：想快速確認書架上的書，哪些書名出現在目前的可認證書單中。
+
+使用方式：
+
+1. 從 `index.html` 或 `ebooks_index.html` 開啟「書架辨識」。
+2. 允許瀏覽器使用手機後鏡頭，將書背放入畫面後按「拍照」；若瀏覽器不支援即時相機，可展開備援選項使用手機相機拍攝。
+3. 按「開始辨識」，頁面會呼叫 Gemini 辨識繁體中文書名，再將結果與認證書單比對。
+4. 結果區會列出辨識到的書名、適讀年級、認證狀態與書目連結。
+
+此功能目前只比對 `books_with_library_data.json` 與 `ebooks_data.json` 中認證欄位為 `可認證` 的資料，不會修改 JSON。照片會直接送至 Google Gemini API，請勿拍攝個人或敏感資料；API Key 只儲存在瀏覽器 localStorage。GitHub Pages 必須使用 HTTPS；本機測試則需透過 localhost 開啟，直接用 `file://` 開啟通常無法取得相機權限。
+
+### 7. `supabase_upload.py`：更新遠端 JSON
 
 使用時機：`integrate.py`、`recheck.py` 或 `ebook_finder.py` 產生新資料後，要讓已部署的首頁直接取得新資料而不重新部署 GitHub Pages。
 
@@ -306,6 +320,8 @@ http://192.168.x.x:5000
 | `index.html` | 館藏輸出流程 | GitHub Pages 首頁 | 是 |
 | `ebooks_data.json` | `ebook_finder.py` | 電子書結構化資料 | 是 |
 | `ebooks_index.html` | `ebook_finder.py` | 電子書查詢頁 | 是 |
+| `ocr_index.html` | 專案前端 | 相機 OCR 書架辨識頁 | 是 |
+| `ocr_matcher.js` | 專案前端 | OCR 文字與認證書單比對 | 是 |
 | `data_source_config.js` | `supabase_upload.py`／手動設定 | Supabase 公開資料位置 | 是 |
 | `data_loader.js` | 專案資源 | Supabase 優先與 GitHub 備援載入 | 是 |
 | `catalog_filters.js` | 專案資源 | 兩個首頁共用的適讀年級篩選與相似書名分組 | 是 |
@@ -368,4 +384,5 @@ https://library.toread.bocach.gov.tw
 ```bash
 .venv\Scripts\python.exe -m unittest test_integrate.py test_recheck.py test_ebook_finder.py test_supabase_upload.py
 node --test test_catalog_filters.js
+node --test test_ocr_matcher.js
 ```

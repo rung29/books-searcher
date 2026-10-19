@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>書架認證書單辨識</title>
+  <style>
+    :root {
+      --bg: #f3f8f6;
+      --card: rgba(255, 255, 255, 0.94);
+      --text: #17332e;
+      --muted: #5e7771;
+      --border: #cfe2dc;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --accent-soft: #dff4ed;
+      --warning: #a16207;
+      --warning-soft: #fff7d6;
+      --danger: #b42318;
+      --shadow: 0 14px 38px rgba(22, 73, 64, 0.11);
+    }
+    [data-theme="dark"] {
+      --bg: #10201d;
+      --card: rgba(24, 45, 40, 0.96);
+      --text: #edf8f4;
+      --muted: #b4c9c2;
+      --border: #365b52;
+      --accent: #5eead4;
+      --accent-dark: #99f6e4;
+      --accent-soft: rgba(45, 212, 191, 0.16);
+      --warning: #facc15;
+      --warning-soft: rgba(250, 204, 21, 0.14);
+      --danger: #fca5a5;
+      --shadow: 0 14px 38px rgba(0, 0, 0, 0.25);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 18px 14px 48px;
+      background: radial-gradient(circle at 8% 0%, rgba(20, 184, 166, 0.14), transparent 34%), var(--bg);
+      color: var(--text);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+    .container { width: min(1040px, 100%); margin: 0 auto; display: grid; gap: 16px; }
+    .topbar, .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .topbar { padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: var(--accent); color: #fff; font-size: 1.35rem; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: 1.25rem; }
+    h2 { font-size: 1.05rem; }
+    .subtitle { margin-top: 3px; color: var(--muted); font-size: .88rem; }
+    .actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    a, button { font: inherit; }
+    .nav-link, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .button.primary { border-color: var(--accent); background: var(--accent); color: #fff; }
+    .button.primary:hover { background: var(--accent-dark); }
+    .button:disabled { opacity: .5; cursor: not-allowed; }
+    .panel { padding: 20px; }
+    .panel-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .camera-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(280px, .8fr); gap: 18px; align-items: start; }
+    .camera-box { overflow: hidden; position: relative; min-height: 260px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 16px; background: #0b1715; }
+    #camera-video, #photo-canvas { display: block; width: 100%; height: auto; max-height: 68vh; object-fit: contain; }
+    #camera-video[hidden], #photo-canvas[hidden] { display: none; }
+    .camera-placeholder { padding: 42px 22px; color: #cfe2dc; text-align: center; line-height: 1.7; }
+    .camera-placeholder[hidden] { display: none; }
+    .camera-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .status { min-height: 44px; padding: 11px 13px; border-radius: 12px; background: var(--accent-soft); color: var(--accent-dark); line-height: 1.5; font-size: .9rem; }
+    .status.warning { background: var(--warning-soft); color: var(--warning); }
+    .status.error { background: rgba(180, 35, 24, .11); color: var(--danger); }
+    .hint { color: var(--muted); line-height: 1.65; font-size: .9rem; }
+    .catalog-status { margin-top: 12px; }
+    .file-fallback { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .file-fallback summary { color: var(--muted); cursor: pointer; font-size: .88rem; }
+    .file-fallback input { width: 100%; margin-top: 10px; color: var(--muted); }
+    .progress-track { height: 8px; margin-top: 12px; overflow: hidden; border-radius: 99px; background: var(--border); }
+    .progress-bar { width: 0; height: 100%; background: var(--accent); transition: width .2s ease; }
+    .result-summary { color: var(--muted); font-size: .9rem; }
+    .results { display: grid; gap: 10px; }
+    .result-card { padding: 14px; border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 13px; background: var(--card); }
+    .result-title { color: var(--accent-dark); font-size: 1.02rem; font-weight: 800; }
+    .result-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 6px; color: var(--muted); font-size: .88rem; }
+    .result-text { margin-top: 8px; color: var(--muted); font-size: .86rem; }
+    .result-link { display: inline-block; margin-top: 9px; color: var(--accent-dark); font-weight: 700; }
+    .empty { padding: 26px 10px; color: var(--muted); text-align: center; }
+    .recognized { max-height: 190px; overflow: auto; padding: 12px; border-radius: 12px; background: rgba(15, 118, 110, .08); color: var(--muted); white-space: pre-wrap; line-height: 1.6; }
+    .modal-backdrop { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 18px; background: rgba(5, 26, 22, .58); }
+    .modal-backdrop.hidden { display: none; }
+    .modal { width: min(480px, 100%); padding: 22px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); box-shadow: var(--shadow); }
+    .modal h2 { margin-bottom: 10px; }
+    .modal p { color: var(--muted); line-height: 1.6; font-size: .88rem; }
+    .api-key-input { width: 100%; min-height: 44px; margin: 14px 0 10px; padding: 0 12px; border: 1.5px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); font: inherit; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+    .hidden { display: none !important; }
+    @media (max-width: 760px) {
+      body { padding: 10px 10px 34px; }
+      .topbar, .panel { border-radius: 16px; }
+      .topbar, .panel { padding: 15px; }
+      .camera-layout { grid-template-columns: 1fr; }
+      .camera-box { min-height: 220px; }
+      .actions { width: 100%; }
+      .nav-link, .actions .button { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">📷</div>
+        <div>
+          <h1>書架認證書單辨識</h1>
+          <p class="subtitle">拍攝書架後，辨識書背並比對可認證書單</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="nav-link" href="index.html">← 館藏查詢</a>
+        <a class="nav-link" href="ebooks_index.html">📖 電子書</a>
+        <button class="button" id="open-settings" type="button" aria-label="設定 Gemini API 金鑰" title="設定 Gemini API 金鑰">⚙️</button>
+        <button class="button" id="theme-toggle" type="button" aria-label="切換深淺色模式">🌙</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>1. 開啟相機並拍照</h2>
+        <span class="result-summary" id="catalog-count">認證書單載入中...</span>
+      </div>
+      <div class="camera-layout">
+        <div>
+          <div class="camera-box">
+            <video id="camera-video" autoplay playsinline muted hidden></video>
+            <canvas id="photo-canvas" hidden></canvas>
+            <div class="camera-placeholder" id="camera-placeholder">按下「啟用相機」後，請將書背完整放入畫面。<br>建議一次拍攝 3 到 8 本、保持光線均勻。</div>
+          </div>
+          <div class="camera-controls">
+            <button class="button primary" id="start-camera" type="button">📷 啟用相機</button>
+            <button class="button" id="take-photo" type="button" disabled>拍照</button>
+            <button class="button" id="retake-photo" type="button" disabled>重新拍攝</button>
+          </div>
+          <details class="file-fallback">
+            <summary>相機無法開啟時，改用手機相機拍一張</summary>
+            <input id="photo-input" type="file" accept="image/*" capture="environment">
+          </details>
+        </div>
+        <div>
+          <p class="hint">相機權限只用於目前頁面。拍攝的照片會送至 Google Gemini 進行辨識，請勿拍攝包含個人或敏感資料的影像。</p>
+          <div class="status catalog-status" id="camera-status">等待啟用相機。</div>
+          <div class="status catalog-status" id="ocr-status">認證書單載入中...</div>
+          <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+          <button class="button primary" id="run-ocr" type="button" disabled style="width:100%; margin-top:12px;">🔎 開始辨識</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>辨識文字</h2>
+        <span class="result-summary" id="match-count">尚未辨識</span>
+      </div>
+      <pre class="recognized" id="recognized-text">拍照後會顯示 OCR 文字。</pre>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>命中可認證書單</h2>
+        <span class="result-summary">依 Gemini 辨識文字比對書名</span>
+      </div>
+      <div class="results" id="results"><p class="empty">拍照並開始辨識後，結果會顯示在這裡。</p></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop hidden" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <div class="modal">
+      <h2 id="settings-title">⚙️ Gemini API 設定</h2>
+      <p>請輸入 Google AI Studio API Key。金鑰只會儲存在這個瀏覽器的 localStorage，不會寫入專案檔案。</p>
+      <input class="api-key-input" id="api-key-input" type="password" placeholder="AIzaSy..." autocomplete="off">
+      <p>圖片會直接傳送至 Google Gemini API。若尚未申請金鑰，可至 <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Google AI Studio</a> 建立。</p>
+      <div class="modal-actions">
+        <button class="button" id="close-settings" type="button">關閉</button>
+        <button class="button primary" id="save-settings" type="button">儲存金鑰</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data_source_config.js"></script>
+  <script src="data_loader.js"></script>
+  <script src="catalog_filters.js"></script>
+  <script src="ocr_matcher.js"></script>
+  <script>
+    const video = document.getElementById("camera-video");
+    const canvas = document.getElementById("photo-canvas");
+    const context = canvas.getContext("2d");
+    const placeholder = document.getElementById("camera-placeholder");
+    const startCameraButton = document.getElementById("start-camera");
+    const takePhotoButton = document.getElementById("take-photo");
+    const retakeButton = document.getElementById("retake-photo");
+    const photoInput = document.getElementById("photo-input");
+    const runOcrButton = document.getElementById("run-ocr");
+    const cameraStatus = document.getElementById("camera-status");
+    const ocrStatus = document.getElementById("ocr-status");
+    const progressBar = document.getElementById("progress-bar");
+    const recognizedText = document.getElementById("recognized-text");
+    const results = document.getElementById("results");
+    const matchCount = document.getElementById("match-count");
+    const catalogCount = document.getElementById("catalog-count");
+    const openSettingsButton = document.getElementById("open-settings");
+    const settingsModal = document.getElementById("settings-modal");
+    const apiKeyInput = document.getElementById("api-key-input");
+    const saveSettingsButton = document.getElementById("save-settings");
+    const closeSettingsButton = document.getElementById("close-settings");
+    const themeToggle = document.getElementById("theme-toggle");
+    const API_KEY_STORAGE_KEY = "vision_api_key";
+    let cameraStream = null;
+    let catalogBooks = [];
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function setStatus(element, message, type = "") {
+      element.textContent = message;
+      element.className = `status ${type}`.trim();
+    }
+
+    function showCanvas(image) {
+      const maxWidth = 1800;
+      const scale = Math.min(1, maxWidth / image.naturalWidth);
+      canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+      canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+      canvas.hidden = false;
+      video.hidden = true;
+      placeholder.hidden = true;
+      runOcrButton.disabled = catalogBooks.length === 0;
+      retakeButton.disabled = false;
+    }
+
+    function loadPhotoFile(file) {
+      if (!file) return;
+      const image = new Image();
+      image.onload = () => {
+        showCanvas(image);
+        setStatus(cameraStatus, "照片已準備完成，可以開始辨識。", "");
+        URL.revokeObjectURL(image.src);
+      };
+      image.onerror = () => setStatus(cameraStatus, "照片讀取失敗，請重新拍攝。", "error");
+      image.src = URL.createObjectURL(file);
+    }
+
+    function stopCamera() {
+      if (cameraStream) {
+        cameraStream.getTracks().forEach(track => track.stop());
+        cameraStream = null;
+      }
+      video.srcObject = null;
+      takePhotoButton.disabled = true;
+    }
+
+    async function startCamera() {
+      if (!getApiKey()) {
+        openSettings();
+        setStatus(cameraStatus, "請先設定 Gemini API 金鑰。", "warning");
+        return;
+      }
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        setStatus(cameraStatus, "此瀏覽器不支援即時相機，請展開下方備援選項。", "warning");
+        return;
+      }
+      try {
+        stopCamera();
+        cameraStream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: { ideal: "environment" }, width: { ideal: 1920 }, height: { ideal: 1080 } },
+          audio: false
+        });
+        video.srcObject = cameraStream;
+        video.hidden = false;
+        canvas.hidden = true;
+        placeholder.hidden = true;
+        takePhotoButton.disabled = false;
+        setStatus(cameraStatus, "相機已開啟，請對準書背後按「拍照」。", "");
+      } catch (error) {
+        console.warn("camera access failed", error);
+        setStatus(cameraStatus, "無法取得相機權限，請允許相機或使用下方備援選項。", "warning");
+      }
+    }
+
+    function takePhoto() {
+      if (!video.videoWidth || !video.videoHeight) {
+        setStatus(cameraStatus, "相機畫面尚未準備完成，請稍候再拍。", "warning");
+        return;
+      }
+      const image = { naturalWidth: video.videoWidth, naturalHeight: video.videoHeight };
+      const maxWidth = 1800;
+      const scale = Math.min(1, maxWidth / image.naturalWidth);
+      canvas.width = Math.round(image.naturalWidth * scale);
+      canvas.height = Math.round(image.naturalHeight * scale);
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas.hidden = false;
+      video.hidden = true;
+      stopCamera();
+      retakeButton.disabled = false;
+      runOcrButton.disabled = catalogBooks.length === 0;
+      setStatus(cameraStatus, "照片已擷取，可以開始辨識。", "");
+    }
+
+    function renderMatches(matches) {
+      matchCount.textContent = `命中 ${matches.length} 本`;
+      if (!matches.length) {
+        results.innerHTML = '<p class="empty">這次沒有找到可信的書名匹配。可以重新拍攝，讓書背更正面、清楚且不要反光。</p>';
+        return;
+      }
+      results.innerHTML = matches.map(match => {
+        const book = match.book;
+        const confidence = Math.round(match.score * 100);
+        const link = book.url || book.matched_url || "";
+        return `<article class="result-card">
+          <div class="result-title">${escapeHtml(book.title)}</div>
+          <div class="result-meta"><span>辨識信心 ${confidence}%</span><span>比對方式：${escapeHtml(match.reason)}</span>${book.range ? `<span>🎓 ${escapeHtml(book.range)}</span>` : ""}</div>
+          <div class="result-meta"><span>認證狀態：${escapeHtml(book.certification || "可認證")}</span>${book.library_statuses && book.library_statuses.length ? `<span>館藏：${escapeHtml(book.library_statuses.join("、"))}</span>` : ""}</div>
+          <div class="result-text">OCR 文字：${escapeHtml(match.lines.map(line => line.text).join("／"))}</div>
+          ${link ? `<a class="result-link" href="${escapeHtml(link)}" target="_blank" rel="noopener">查看書目</a>` : ""}
+        </article>`;
+      }).join("");
+    }
+
+    function getApiKey() {
+      return localStorage.getItem(API_KEY_STORAGE_KEY) || "";
+    }
+
+    function openSettings() {
+      apiKeyInput.value = getApiKey();
+      settingsModal.classList.remove("hidden");
+      apiKeyInput.focus();
+    }
+
+    function closeSettings() {
+      settingsModal.classList.add("hidden");
+    }
+
+    function cleanGeminiText(value) {
+      return String(value || "")
+        .split(/\r?\n/)
+        .map(line => line.replace(/^\s*(?:[-*•]|\d+[.)、])\s*/, "").trim())
+        .filter(Boolean)
+        .join("\n");
+    }
+
+    async function runOcr() {
+      if (!canvas.width || !catalogBooks.length) return;
+      const apiKey = getApiKey();
+      if (!apiKey) {
+        openSettings();
+        setStatus(ocrStatus, "請先設定 Gemini API 金鑰。", "warning");
+        return;
+      }
+      runOcrButton.disabled = true;
+      progressBar.style.width = "0%";
+      setStatus(ocrStatus, "正在使用 Gemini 辨識照片中的書名...", "");
+      try {
+        const base64Image = canvas.toDataURL("image/jpeg", 0.85).split(",")[1];
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{
+              parts: [
+                {
+                  text: `請辨識這張書架照片中所有可見的書背或書名文字。
+請遵守：
+1. 每本書只輸出一行書名，不要輸出作者、出版社、解說或序號。
+2. 保留書名中的中文、英文、數字及系列集數；如果只有系列名稱，也請輸出系列名稱。
+3. 不要猜測照片中看不到的文字；完全無法辨識時只回覆空字串。`
+                },
+                { inline_data: { mime_type: "image/jpeg", data: base64Image } }
+              ]
+            }]
+          })
+        });
+        progressBar.style.width = "70%";
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData?.error?.message || `HTTP ${response.status}`);
+        }
+        const data = await response.json();
+        const text = cleanGeminiText(data.candidates?.[0]?.content?.parts?.[0]?.text || "");
+        if (!text) {
+          recognizedText.textContent = "（沒有辨識到書名）";
+          renderMatches([]);
+          setStatus(ocrStatus, "Gemini 沒有辨識到書名，請重新拍攝或調整角度。", "warning");
+          return;
+        }
+        const lines = BookOcrMatcher.extractLines({ text });
+        const matches = BookOcrMatcher.findMatches(lines, catalogBooks);
+        recognizedText.textContent = text;
+        renderMatches(matches);
+        progressBar.style.width = "100%";
+        setStatus(ocrStatus, `辨識完成，共取得 ${lines.length} 行書名。`, "");
+      } catch (error) {
+        console.error("Gemini OCR error", error);
+        progressBar.style.width = "0%";
+        if (/API key|API_KEY_INVALID|401|403/i.test(error.message)) {
+          setStatus(ocrStatus, "Gemini API 金鑰無效或沒有權限，請重新設定。", "error");
+        } else {
+          setStatus(ocrStatus, `Gemini 辨識失敗：${error.message}`, "error");
+        }
+      } finally {
+        runOcrButton.disabled = false;
+      }
+    }
+
+    openSettingsButton.addEventListener("click", openSettings);
+    closeSettingsButton.addEventListener("click", closeSettings);
+    settingsModal.addEventListener("click", event => {
+      if (event.target === settingsModal) closeSettings();
+    });
+    saveSettingsButton.addEventListener("click", () => {
+      const key = apiKeyInput.value.trim();
+      if (key) {
+        localStorage.setItem(API_KEY_STORAGE_KEY, key);
+        setStatus(ocrStatus, "Gemini API 金鑰已儲存，可以開始拍照。", "");
+      } else {
+        localStorage.removeItem(API_KEY_STORAGE_KEY);
+        setStatus(ocrStatus, "已清除 Gemini API 金鑰。", "warning");
+      }
+      closeSettings();
+    });
+
+    photoInput.addEventListener("change", event => {
+      if (!getApiKey()) {
+        event.target.value = "";
+        openSettings();
+        setStatus(cameraStatus, "請先設定 Gemini API 金鑰。", "warning");
+        return;
+      }
+      loadPhotoFile(event.target.files[0]);
+    });
+
+    async function loadCatalog() {
+      const loaded = await Promise.allSettled([
+        BookDataLoader.load("books_with_library_data.json"),
+        BookDataLoader.load("ebooks_data.json")
+      ]);
+      const catalogs = loaded.filter(item => item.status === "fulfilled").map(item => item.value.data);
+      if (!catalogs.length) {
+        setStatus(ocrStatus, "認證書單讀取失敗，請確認資料來源設定。", "error");
+        return;
+      }
+      catalogBooks = BookOcrMatcher.mergeCatalogs(...catalogs);
+      catalogCount.textContent = `可比對 ${catalogBooks.length} 筆認證書目`;
+      setStatus(ocrStatus, "認證書單已載入。", "");
+      runOcrButton.disabled = !canvas.width;
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      themeToggle.textContent = next === "dark" ? "☀️" : "🌙";
+    });
+    startCameraButton.addEventListener("click", startCamera);
+    takePhotoButton.addEventListener("click", takePhoto);
+    retakeButton.addEventListener("click", startCamera);
+    runOcrButton.addEventListener("click", runOcr);
+    window.addEventListener("pagehide", stopCamera);
+    loadCatalog();
+  </script>
+</body>
+</html>

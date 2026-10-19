@@ -930,6 +930,10 @@ def write_results_index(output_dir, page_files, records, incomplete=False):
         <span>📖</span>
         <span>切換至電子書資源</span>
       </a>
+      <a href="ocr_index.html" class="btn-nav">
+        <span>📷</span>
+        <span>書架辨識</span>
+      </a>
       <button type="button" class="btn-icon" id="theme-toggle" aria-label="切換深淺色模式" title="切換深淺色模式">🌙</button>
     </div>
   </header>

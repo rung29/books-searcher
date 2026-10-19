@@ -488,6 +488,7 @@ def _ebook_index_html():
     </div>
     <div class="header-actions">
       <a href="index.html" class="btn-nav"><span>←</span><span>返回館藏查詢</span></a>
+      <a href="ocr_index.html" class="btn-nav"><span>📷</span><span>書架辨識</span></a>
       <button type="button" class="btn-icon" id="theme-toggle" aria-label="切換深淺色模式" title="切換深淺色模式">🌙</button>
     </div>
   </header>

@@ -86,6 +86,13 @@
     #camera-video[hidden], #photo-canvas[hidden] { display: none; }
     .camera-placeholder { padding: 42px 22px; color: #cfe2dc; text-align: center; line-height: 1.7; }
     .camera-placeholder[hidden] { display: none; }
+    .camera-guide { position: absolute; inset: 20% 8%; z-index: 2; border: 2px solid rgba(250, 204, 21, .95); border-radius: 12px; pointer-events: none; box-shadow: 0 0 0 999px rgba(0, 0, 0, .18); }
+    .camera-guide[hidden] { display: none; }
+    .camera-guide::after { content: "讓書背文字填滿框線"; position: absolute; left: 50%; bottom: -32px; transform: translateX(-50%); width: max-content; padding: 4px 9px; border-radius: 99px; background: rgba(0, 0, 0, .66); color: #fff; font-size: .78rem; }
+    .quality-indicator { position: absolute; top: 12px; left: 12px; z-index: 3; max-width: calc(100% - 24px); padding: 7px 11px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 99px; background: rgba(0, 0, 0, .62); color: #fff; font-size: .82rem; font-weight: 800; pointer-events: none; }
+    .quality-indicator.good { background: rgba(22, 101, 52, .9); }
+    .quality-indicator.warn { background: rgba(161, 98, 7, .92); }
+    .quality-indicator.bad { background: rgba(180, 35, 24, .92); }
     .camera-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
     .status { min-height: 44px; padding: 11px 13px; border-radius: 12px; background: var(--accent-soft); color: var(--accent-dark); line-height: 1.5; font-size: .9rem; }
     .status.warning { background: var(--warning-soft); color: var(--warning); }
@@ -153,6 +160,8 @@
           <div class="camera-box">
             <video id="camera-video" autoplay playsinline muted hidden></video>
             <canvas id="photo-canvas" hidden></canvas>
+            <div class="camera-guide" id="camera-guide" hidden></div>
+            <div class="quality-indicator" id="quality-indicator" role="status" aria-live="polite">尚未開啟相機</div>
             <div class="camera-placeholder" id="camera-placeholder">按下「啟用相機」後，請將書背完整放入畫面。<br>建議一次拍攝 3 到 8 本、保持光線均勻。</div>
           </div>
           <div class="camera-controls">
@@ -166,7 +175,7 @@
           </details>
         </div>
         <div>
-          <p class="hint">相機權限只用於目前頁面。拍攝的照片會送至 Google Gemini 進行辨識，請勿拍攝包含個人或敏感資料的影像。</p>
+          <p class="hint">畫面提示是依文字大小、清晰度與光線估算，不代表固定公分距離。拍攝的照片會送至 Google Gemini，請勿拍攝包含個人或敏感資料的影像。</p>
           <div class="status catalog-status" id="camera-status">等待啟用相機。</div>
           <div class="status catalog-status" id="ocr-status">認證書單載入中...</div>
           <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
@@ -214,6 +223,8 @@
     const canvas = document.getElementById("photo-canvas");
     const context = canvas.getContext("2d");
     const placeholder = document.getElementById("camera-placeholder");
+    const cameraGuide = document.getElementById("camera-guide");
+    const qualityIndicator = document.getElementById("quality-indicator");
     const startCameraButton = document.getElementById("start-camera");
     const takePhotoButton = document.getElementById("take-photo");
     const retakeButton = document.getElementById("retake-photo");
@@ -235,6 +246,10 @@
     const API_KEY_STORAGE_KEY = "vision_api_key";
     let cameraStream = null;
     let catalogBooks = [];
+    let qualityTimer = null;
+    let currentQuality = { state: "idle", message: "尚未開啟相機" };
+    const qualityCanvas = document.createElement("canvas");
+    const qualityContext = qualityCanvas.getContext("2d", { willReadFrequently: true });
 
     function escapeHtml(value) {
       return String(value || "")
@@ -250,7 +265,100 @@
       element.className = `status ${type}`.trim();
     }
 
+    function setQualityState(state, message) {
+      currentQuality = { state, message };
+      qualityIndicator.className = `quality-indicator ${state}`.trim();
+      qualityIndicator.textContent = message;
+    }
+
+    function measureImageQuality(source) {
+      const sourceWidth = source.videoWidth || source.naturalWidth || source.width;
+      const sourceHeight = source.videoHeight || source.naturalHeight || source.height;
+      if (!sourceWidth || !sourceHeight) return null;
+
+      const width = 320;
+      const height = Math.max(1, Math.round(width * sourceHeight / sourceWidth));
+      qualityCanvas.width = width;
+      qualityCanvas.height = height;
+      qualityContext.drawImage(source, 0, 0, width, height);
+      const pixels = qualityContext.getImageData(0, 0, width, height).data;
+      const left = Math.round(width * 0.08);
+      const right = Math.round(width * 0.92);
+      const top = Math.round(height * 0.2);
+      const bottom = Math.round(height * 0.8);
+      const luminance = (x, y) => {
+        const index = (y * width + x) * 4;
+        return pixels[index] * 0.299 + pixels[index + 1] * 0.587 + pixels[index + 2] * 0.114;
+      };
+
+      let count = 0;
+      let sum = 0;
+      let squareSum = 0;
+      let edgeCount = 0;
+      let sharpnessSum = 0;
+      for (let y = top + 1; y < bottom - 1; y += 2) {
+        for (let x = left + 1; x < right - 1; x += 2) {
+          const value = luminance(x, y);
+          const horizontal = Math.abs(value - luminance(x - 1, y));
+          const vertical = Math.abs(value - luminance(x, y - 1));
+          const laplacian = Math.abs(
+            4 * value
+            - luminance(x - 1, y)
+            - luminance(x + 1, y)
+            - luminance(x, y - 1)
+            - luminance(x, y + 1)
+          );
+          sum += value;
+          squareSum += value * value;
+          edgeCount += horizontal + vertical > 45 ? 1 : 0;
+          sharpnessSum += laplacian;
+          count += 1;
+        }
+      }
+
+      const brightness = sum / count;
+      const contrast = Math.sqrt(Math.max(0, squareSum / count - brightness * brightness));
+      return {
+        brightness,
+        contrast,
+        edgeRatio: edgeCount / count,
+        sharpness: sharpnessSum / count
+      };
+    }
+
+    function applyQualityAssessment(metrics) {
+      if (!metrics) {
+        setQualityState("idle", "等待相機畫面");
+        return;
+      }
+      if (metrics.brightness < 38) {
+        setQualityState("bad", "光線太暗，請移到較亮處");
+      } else if (metrics.brightness > 228) {
+        setQualityState("bad", "反光或過亮，請調整角度");
+      } else if (metrics.sharpness < 5) {
+        setQualityState("warn", "請保持穩定，等待相機對焦");
+      } else if (metrics.contrast < 14 || metrics.edgeRatio < 0.012) {
+        setQualityState("warn", "請靠近，讓書背文字填滿框線");
+      } else if (metrics.sharpness < 8 || metrics.edgeRatio < 0.02) {
+        setQualityState("warn", "建議再靠近一些，文字會更清楚");
+      } else {
+        setQualityState("good", "距離與清晰度適合拍攝");
+      }
+    }
+
+    function sampleCameraQuality() {
+      if (!video.videoWidth || !video.videoHeight) return null;
+      const metrics = measureImageQuality(video);
+      applyQualityAssessment(metrics);
+      return currentQuality;
+    }
+
+    function evaluateCapturedImage() {
+      applyQualityAssessment(measureImageQuality(canvas));
+    }
+
     function showCanvas(image) {
+      stopCamera();
       const maxWidth = 1800;
       const scale = Math.min(1, maxWidth / image.naturalWidth);
       canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
@@ -259,6 +367,8 @@
       canvas.hidden = false;
       video.hidden = true;
       placeholder.hidden = true;
+      cameraGuide.hidden = true;
+      evaluateCapturedImage();
       runOcrButton.disabled = catalogBooks.length === 0;
       retakeButton.disabled = false;
     }
@@ -276,11 +386,16 @@
     }
 
     function stopCamera() {
+      if (qualityTimer) {
+        clearInterval(qualityTimer);
+        qualityTimer = null;
+      }
       if (cameraStream) {
         cameraStream.getTracks().forEach(track => track.stop());
         cameraStream = null;
       }
       video.srcObject = null;
+      cameraGuide.hidden = true;
       takePhotoButton.disabled = true;
     }
 
@@ -304,10 +419,16 @@
         video.hidden = false;
         canvas.hidden = true;
         placeholder.hidden = true;
+        cameraGuide.hidden = false;
         takePhotoButton.disabled = false;
+        setQualityState("idle", "正在分析畫面...");
+        sampleCameraQuality();
+        qualityTimer = setInterval(sampleCameraQuality, 350);
         setStatus(cameraStatus, "相機已開啟，請對準書背後按「拍照」。", "");
       } catch (error) {
         console.warn("camera access failed", error);
+        cameraGuide.hidden = true;
+        setQualityState("bad", "相機無法開啟");
         setStatus(cameraStatus, "無法取得相機權限，請允許相機或使用下方備援選項。", "warning");
       }
     }
@@ -317,6 +438,7 @@
         setStatus(cameraStatus, "相機畫面尚未準備完成，請稍候再拍。", "warning");
         return;
       }
+      sampleCameraQuality();
       const image = { naturalWidth: video.videoWidth, naturalHeight: video.videoHeight };
       const maxWidth = 1800;
       const scale = Math.min(1, maxWidth / image.naturalWidth);
@@ -326,9 +448,13 @@
       canvas.hidden = false;
       video.hidden = true;
       stopCamera();
+      evaluateCapturedImage();
       retakeButton.disabled = false;
       runOcrButton.disabled = catalogBooks.length === 0;
-      setStatus(cameraStatus, "照片已擷取，可以開始辨識。", "");
+      const qualityMessage = currentQuality.state === "good"
+        ? "照片已擷取，可以開始辨識。"
+        : `照片已擷取；${currentQuality.message}，仍可開始辨識。`;
+      setStatus(cameraStatus, qualityMessage, currentQuality.state === "bad" ? "warning" : "");
     }
 
     function renderMatches(matches) {

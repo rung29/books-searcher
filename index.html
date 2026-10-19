@@ -325,6 +325,39 @@
       color: var(--text-secondary);
     }
 
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .filter-label {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .grade-select {
+      min-height: 42px;
+      min-width: 220px;
+      padding: 0 38px 0 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-inner);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .grade-select:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.14);
+    }
+
     .count-badge {
       display: inline-flex;
       align-items: center;
@@ -667,6 +700,12 @@
       <button type="button" class="voice-search-btn" id="voice-search" aria-label="語音輸入搜尋" title="語音輸入搜尋">🎤</button>
       <button type="button" class="search-clear-btn" id="search-clear" aria-label="清除搜尋">&times;</button>
     </div>
+    <div class="filter-row">
+      <label class="filter-label" for="grade-filter">適讀年級</label>
+      <select class="grade-select" id="grade-filter" disabled>
+        <option value="">全部適讀年級</option>
+      </select>
+    </div>
     <div class="search-meta-row">
       <span>搜尋條件支援關鍵字與 <code>*</code> 通配符號</span>
       <span class="count-badge" id="result-count">資料讀取中...</span>
@@ -710,6 +749,7 @@
 
 <script src="data_source_config.js"></script>
 <script src="data_loader.js"></script>
+<script src="catalog_filters.js"></script>
 <script>
 const DATA_FILENAME = "books_with_library_data.json";
 const searchInput = document.getElementById("search-input");
@@ -721,6 +761,7 @@ const resultsTitle = document.getElementById("results-title");
 const resultsList = document.getElementById("results-list");
 const themeToggleBtn = document.getElementById("theme-toggle");
 const voiceSearchBtn = document.getElementById("voice-search");
+const gradeFilter = document.getElementById("grade-filter");
 const pageSizeSelect = document.getElementById("page-size");
 const pagination = document.getElementById("pagination");
 const paginationTop = document.getElementById("pagination-top");
@@ -896,15 +937,6 @@ function searchConditions(value) {
     .filter(Boolean);
 }
 
-function seriesKey(title) {
-  let value = String(title || "").normalize("NFKC");
-  value = value.replace(/[《》「」『』【】\[\]()（）]/g, " ");
-  value = value.split(/[：:]/)[0];
-  value = value.replace(/\s*(第\s*)?[0-9０-９一二三四五六七八九十]+\s*(集|冊|卷|本)?\s*$/u, "");
-  value = value.replace(/\s+/g, " ").trim();
-  return value || title;
-}
-
 function escapeHtml(value) {
   return String(value || "")
     .replaceAll("&", "&amp;")
@@ -954,26 +986,18 @@ function renderResults(items, title = "搜尋結果") {
   syncPagination(totalPages);
 }
 
-function renderGroups() {
-  const groups = new Map();
-  books.forEach(book => {
-    const key = seriesKey(book.title);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(book);
-  });
-  const grouped = Array.from(groups.entries())
-    .filter(([, items]) => items.length > 1)
-    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "zh-Hant"));
+function renderGroups(sourceBooks) {
+  const grouped = BookCatalogFilters.buildSimilarTitleGroups(sourceBooks);
 
   groupsSection.classList.toggle("hidden", grouped.length === 0);
-  groupsList.innerHTML = grouped.map(([key, items], index) => `
+  groupsList.innerHTML = grouped.map((group, index) => `
     <article class="group-card">
       <button type="button" class="group-toggle-btn" data-group-index="${index}" aria-expanded="false">
-        <span>${escapeHtml(key)} <span class="group-count-tag">${items.length} 本</span></span>
+        <span>${escapeHtml(group.label)} <span class="group-count-tag">${group.count} 本</span></span>
         <span class="group-arrow">▼</span>
       </button>
       <div class="group-items hidden" id="group-${index}">
-        ${items.map(bookHtml).join("")}
+        ${group.books.map(bookHtml).join("")}
       </div>
     </article>
   `).join("");
@@ -986,20 +1010,33 @@ function renderGroups() {
   });
 }
 
+function selectedGradeBooks() {
+  return BookCatalogFilters.filterByGrade(books, gradeFilter.value);
+}
+
+function populateGradeFilter() {
+  const options = BookCatalogFilters.gradeOptions(books);
+  gradeFilter.innerHTML = '<option value="">全部適讀年級</option>'
+    + options.map(option => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}（${option.count} 本）</option>`).join("");
+  gradeFilter.disabled = options.length === 0;
+}
+
 function applySearch() {
   const rawValue = searchInput.value;
+  const gradeBooks = selectedGradeBooks();
+  const gradeName = gradeFilter.value;
   currentPage = 1;
   searchClearBtn.style.display = rawValue ? "flex" : "none";
   const conditions = searchConditions(rawValue);
   if (conditions.length === 0) {
-    renderResults(books, "全部館藏");
-    groupsSection.classList.remove("hidden");
+    renderResults(gradeBooks, gradeName ? `${gradeName}館藏` : "全部館藏");
+    groupsSection.classList.toggle("hidden", groupsList.childElementCount === 0);
     return;
   }
   groupsSection.classList.add("hidden");
   renderResults(
-    books.filter(book => conditions.every(condition => matchesSearch(book, condition))),
-    "搜尋結果"
+    gradeBooks.filter(book => conditions.every(condition => matchesSearch(book, condition))),
+    gradeName ? `${gradeName}搜尋結果` : "搜尋結果"
   );
 }
 
@@ -1085,7 +1122,8 @@ nextPageTopBtn.addEventListener("click", goToNextPage);
 
 function initializeBooks(data) {
   books = Array.isArray(data) ? data : [];
-  renderGroups();
+  populateGradeFilter();
+  renderGroups(selectedGradeBooks());
   applySearch();
 }
 
@@ -1096,6 +1134,11 @@ BookDataLoader.load(DATA_FILENAME)
   });
 
 searchInput.addEventListener("input", applySearch);
+gradeFilter.addEventListener("change", () => {
+  currentPage = 1;
+  renderGroups(selectedGradeBooks());
+  applySearch();
+});
 </script>
 </body>
 </html>

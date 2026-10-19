@@ -127,7 +127,7 @@ integrate.bat
 
 - `books_with_library_page_*.html`：保留查詢結果的本機中間頁，供 `recheck.py` 與 `library_output.py` 使用。
 - `books_with_library_data.json`：館藏前端資料。
-- `index.html`：館藏搜尋首頁，支援相似書名群組、文字／萬用字元／多條件搜尋、語音輸入及分頁。
+- `index.html`：館藏搜尋首頁，支援適讀年級、相似書名群組、文字／萬用字元／多條件搜尋、語音輸入及分頁。切換年級時，書單與相似書名群組會一起重新篩選。
 
 這是查詢量最大的流程。只有來源書單改變、需要重新納入過去未找到館藏的書，或比對邏輯更新時，才需要完整重跑。
 
@@ -216,7 +216,7 @@ ebook_finder.bat
 輸出：
 
 - `ebooks_data.json`：電子書資料。
-- `ebooks_index.html`：電子書搜尋首頁，啟動時讀取同目錄的 JSON，並提供搜尋、語音輸入及分頁。
+- `ebooks_index.html`：電子書搜尋首頁，啟動時讀取 JSON，並提供適讀年級篩選、搜尋、語音輸入及分頁。年級與搜尋文字會同時套用。
 
 此流程不依賴 `integrate.py` 或 `books_with_library_page_*.html`。首頁會優先讀取 Supabase 的 `ebooks_data.json`，失敗時才讀取 GitHub Pages 同目錄下的備援檔。
 
@@ -308,6 +308,7 @@ http://192.168.x.x:5000
 | `ebooks_index.html` | `ebook_finder.py` | 電子書查詢頁 | 是 |
 | `data_source_config.js` | `supabase_upload.py`／手動設定 | Supabase 公開資料位置 | 是 |
 | `data_loader.js` | 專案資源 | Supabase 優先與 GitHub 備援載入 | 是 |
+| `catalog_filters.js` | 專案資源 | 兩個首頁共用的適讀年級篩選與相似書名分組 | 是 |
 | `icon.svg` | 專案資源 | 網頁圖示 | 是 |
 
 GitHub Pages 會以 `index.html` 作為目錄首頁。`ebooks_index.html` 可由館藏首頁連入，不需要改名為另一個 `index.html`；若要把不同資料集放在不同子目錄，每個子目錄則可以各自放一份 `index.html`。
@@ -366,4 +367,5 @@ https://library.toread.bocach.gov.tw
 
 ```bash
 .venv\Scripts\python.exe -m unittest test_integrate.py test_recheck.py test_ebook_finder.py test_supabase_upload.py
+node --test test_catalog_filters.js
 ```

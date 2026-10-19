@@ -110,6 +110,9 @@ class EbookFinderTests(unittest.TestCase):
             )
             self.assertIn('src="data_source_config.js"', index_html)
             self.assertIn('src="data_loader.js"', index_html)
+            self.assertIn('src="catalog_filters.js"', index_html)
+            self.assertIn('id="grade-filter"', index_html)
+            self.assertIn("BookCatalogFilters.filterByGrade", index_html)
             self.assertIn('BookDataLoader.load(DATA_FILENAME)', index_html)
 
 

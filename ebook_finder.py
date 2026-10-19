@@ -441,6 +441,10 @@ def _ebook_index_html():
     .voice-search-btn[hidden] { display: none; }
     @keyframes voice-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.35); } 50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); } }
     .search-meta-row { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 0.88rem; color: var(--text-secondary); }
+    .filter-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+    .filter-label { color: var(--text-secondary); font-size: 0.88rem; font-weight: 700; white-space: nowrap; }
+    .grade-select { min-height: 42px; min-width: 220px; padding: 0 38px 0 12px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg-inner); color: var(--text-primary); font-family: inherit; font-weight: 700; cursor: pointer; outline: none; }
+    .grade-select:focus { border-color: var(--border-focus); box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.14); }
     .count-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: var(--accent-light); color: var(--accent); border-radius: 999px; font-weight: 700; font-size: 0.85rem; }
     .results-toolbar { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: 0.88rem; }
     .results-toolbar-group { display: flex; align-items: center; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
@@ -494,6 +498,12 @@ def _ebook_index_html():
       <button type="button" class="voice-search-btn" id="voice-search" aria-label="語音輸入搜尋" title="語音輸入搜尋">🎤</button>
       <button type="button" class="search-clear-btn" id="search-clear" aria-label="清除搜尋">&times;</button>
     </div>
+    <div class="filter-row">
+      <label class="filter-label" for="grade-filter">適讀年級</label>
+      <select class="grade-select" id="grade-filter" disabled>
+        <option value="">全部適讀年級</option>
+      </select>
+    </div>
     <div class="search-meta-row"><span>即時搜尋線上電子書資源</span><span class="count-badge" id="result-count">載入中...</span></div>
   </section>
   <section class="panel">
@@ -518,11 +528,13 @@ def _ebook_index_html():
 </div>
 <script src="data_source_config.js"></script>
 <script src="data_loader.js"></script>
+<script src="catalog_filters.js"></script>
 <script>
 const DATA_FILENAME = "ebooks_data.json";
 const searchInput = document.getElementById("search-input");
 const voiceSearchBtn = document.getElementById("voice-search");
 const searchClearBtn = document.getElementById("search-clear");
+const gradeFilter = document.getElementById("grade-filter");
 const resultCount = document.getElementById("result-count");
 const resultsList = document.getElementById("results-list");
 const themeToggleBtn = document.getElementById("theme-toggle");
@@ -595,12 +607,19 @@ function applySearch() {
   const rawValue = searchInput.value;
   searchClearBtn.style.display = rawValue ? "flex" : "none";
   currentPage = 1;
-  filteredBooks = books.filter(book => matches(book, normalize(rawValue)));
+  filteredBooks = BookCatalogFilters.filterByGrade(books, gradeFilter.value)
+    .filter(book => matches(book, normalize(rawValue)));
   renderResults();
+}
+function populateGradeFilter() {
+  const options = BookCatalogFilters.gradeOptions(books);
+  gradeFilter.innerHTML = '<option value="">全部適讀年級</option>'
+    + options.map(option => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}（${option.count} 本）</option>`).join("");
+  gradeFilter.disabled = options.length === 0;
 }
 function initializeBooks(data) {
   books = Array.isArray(data) ? data : [];
-  filteredBooks = books.slice();
+  populateGradeFilter();
   applySearch();
 }
 function goToPreviousPage() {
@@ -672,6 +691,7 @@ prevPageTopBtn.addEventListener("click", goToPreviousPage);
 nextPageBtn.addEventListener("click", goToNextPage);
 nextPageTopBtn.addEventListener("click", goToNextPage);
 searchInput.addEventListener("input", applySearch);
+gradeFilter.addEventListener("change", applySearch);
 BookDataLoader.load(DATA_FILENAME)
   .then(result => initializeBooks(result.data))
   .catch(() => {

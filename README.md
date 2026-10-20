@@ -193,10 +193,10 @@ ebook_finder.bat
 
 1. 從 `index.html` 或 `ebooks_index.html` 開啟「書架辨識」。
 2. 允許瀏覽器使用手機後鏡頭，將書背放入畫面後按「拍照」；若瀏覽器不支援即時相機，可展開備援選項使用手機相機拍攝。
-3. 按「開始辨識」，頁面會呼叫 Gemini 辨識繁體中文書名，再將結果與認證書單比對。
+3. 按「開始辨識」，頁面會呼叫 Gemini 辨識繁體中文書名，再將結果與認證書單比對。Gemini 模型預設為 `gemini-2.5-flash`，可在右上角設定視窗切換 `gemini-2.5-flash-lite` 或 `gemini-2.5-pro`。
 4. 結果區會列出辨識到的書名、適讀年級、認證狀態與書目連結。
 
-此功能只比對認證書單，不會讀取 `ebooks_data.json`。書單載入順序是：Supabase 的 `books.json`、Supabase 的 `books_with_library_data.json`，最後才是 GitHub Pages 同目錄的 `books_with_library_data.json`。`books.json` 的 `age_group`、`link`、`certified` 欄位會轉換成比對器使用的適讀年段、書目連結與認證狀態，不會修改 JSON。照片會直接送至 Google Gemini API，請勿拍攝個人或敏感資料；API Key 只儲存在瀏覽器 localStorage。GitHub Pages 必須使用 HTTPS；本機測試則需透過 localhost 開啟，直接用 `file://` 開啟通常無法取得相機權限。
+此功能只比對認證書單，不會讀取 `ebooks_data.json`。書單載入順序是：Supabase 的 `books.json`、Supabase 的 `books_with_library_data.json`，最後才是 GitHub Pages 同目錄的 `books_with_library_data.json`。`books.json` 的 `age_group`、`link`、`certified` 欄位會轉換成比對器使用的適讀年段、書目連結與認證狀態，不會修改 JSON。照片會直接送至 Google Gemini API，請勿拍攝個人或敏感資料；API Key 與模型選擇只儲存在瀏覽器 localStorage。GitHub Pages 必須使用 HTTPS；本機測試則需透過 localhost 開啟，直接用 `file://` 開啟通常無法取得相機權限。
 
 ### 6. `supabase_upload.py`：更新遠端 JSON
 

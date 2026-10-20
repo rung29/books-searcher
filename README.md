@@ -10,7 +10,7 @@
 | 從完整推薦書單找出伸港有館藏的書 | `integrate.py` | `books_page_*.html` | `books_with_library_page_*.html`、`books_with_library_data.json`、`index.html` |
 | 更新既有書單目前的館藏狀態 | `recheck.py` | `books_with_library_page_*.html` | 更新後的館藏頁、JSON 與 `index.html` |
 | 從完整推薦書單找有網路資源的電子書 | `ebook_finder.py` | `books_page_*.html` | `ebooks_data.json`、`ebooks_index.html` |
-| 用手機相機辨識書架並比對認證書單 | `ocr_index.html` | `books_with_library_data.json`、`ebooks_data.json` | 瀏覽器中的辨識結果，不寫回資料 |
+| 用手機相機辨識書架並比對認證書單 | `ocr_index.html` | Supabase `books.json`；失敗時用 `books_with_library_data.json` | 瀏覽器中的辨識結果，不寫回資料 |
 | 將兩份 JSON 更新到 Supabase | `supabase_upload.py` | 兩份本機 JSON 與 Supabase 設定 | 覆寫 Storage 資料並更新公開 URL 設定 |
 | 在本機瀏覽器即時搜尋與查館藏 | `web_app.py` | 無需先產生 HTML | Flask 網頁，不寫入靜態書單 |
 
@@ -196,7 +196,7 @@ ebook_finder.bat
 3. 按「開始辨識」，頁面會呼叫 Gemini 辨識繁體中文書名，再將結果與認證書單比對。
 4. 結果區會列出辨識到的書名、適讀年級、認證狀態與書目連結。
 
-此功能目前只比對 `books_with_library_data.json` 與 `ebooks_data.json` 中認證欄位為 `可認證` 的資料，不會修改 JSON。照片會直接送至 Google Gemini API，請勿拍攝個人或敏感資料；API Key 只儲存在瀏覽器 localStorage。GitHub Pages 必須使用 HTTPS；本機測試則需透過 localhost 開啟，直接用 `file://` 開啟通常無法取得相機權限。
+此功能只比對認證書單，不會讀取 `ebooks_data.json`。書單載入順序是：Supabase 的 `books.json`、Supabase 的 `books_with_library_data.json`，最後才是 GitHub Pages 同目錄的 `books_with_library_data.json`。`books.json` 的 `age_group`、`link`、`certified` 欄位會轉換成比對器使用的適讀年段、書目連結與認證狀態，不會修改 JSON。照片會直接送至 Google Gemini API，請勿拍攝個人或敏感資料；API Key 只儲存在瀏覽器 localStorage。GitHub Pages 必須使用 HTTPS；本機測試則需透過 localhost 開啟，直接用 `file://` 開啟通常無法取得相機權限。
 
 ### 6. `supabase_upload.py`：更新遠端 JSON
 

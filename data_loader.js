@@ -83,33 +83,40 @@
     }, noticeDurationMs);
   }
 
+  async function loadSupabase(fileName) {
+    const supabaseBaseUrl = configuredSupabaseBaseUrl();
+    if (!supabaseBaseUrl) {
+      throw new Error("Supabase 公開網址尚未設定");
+    }
+    const data = await fetchJson(`${supabaseBaseUrl}/${fileName}`);
+    showSourceNotice(`資料來源：Supabase（${fileName}）`, false);
+    return { data, source: "supabase", fileName };
+  }
+
+  async function loadLocal(fileName) {
+    const data = await fetchJson(fileName);
+    showSourceNotice(`資料來源：GitHub Pages 備援（${fileName}）`, true);
+    return { data, source: "github", fileName };
+  }
+
   async function load(fileName) {
     const supabaseBaseUrl = configuredSupabaseBaseUrl();
-    if (supabaseBaseUrl) {
-      try {
-        const data = await fetchJson(`${supabaseBaseUrl}/${fileName}`);
-        showSourceNotice("資料來源：Supabase", false);
-        return { data, source: "supabase" };
-      } catch (error) {
-        console.warn(`Supabase ${fileName} 讀取失敗，改用 GitHub Pages 備援。`, error);
+    try {
+      return await loadSupabase(fileName);
+    } catch (supabaseError) {
+      if (supabaseBaseUrl) {
+        console.warn(`Supabase ${fileName} 讀取失敗，改用 GitHub Pages 備援。`, supabaseError);
       }
     }
 
     try {
-      const data = await fetchJson(fileName);
-      showSourceNotice(
-        supabaseBaseUrl
-          ? "Supabase 讀取失敗，已切換至 GitHub Pages 備援"
-          : "資料來源：GitHub Pages 備援（Supabase 尚未設定）",
-        true
-      );
-      return { data, source: "github" };
-    } catch (error) {
+      return await loadLocal(fileName);
+    } catch (localError) {
       throw new Error(`Supabase 與 GitHub Pages 都無法讀取 ${fileName}`, {
-        cause: error,
+        cause: localError,
       });
     }
   }
 
-  global.BookDataLoader = { load };
+  global.BookDataLoader = { load, loadLocal, loadSupabase };
 })(window);

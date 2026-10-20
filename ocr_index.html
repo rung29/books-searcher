@@ -615,19 +615,52 @@
       loadPhotoFile(event.target.files[0]);
     });
 
+    function normalizeCatalogBook(book) {
+      const certified = book.certified === true
+        || book.certified === 1
+        || String(book.certified || "").toLowerCase() === "true";
+      return {
+        ...book,
+        url: book.url || book.link || "",
+        range: book.range || book.age_group || "",
+        certification: book.certification || (certified ? "可認證" : "不可認證")
+      };
+    }
+
     async function loadCatalog() {
-      const loaded = await Promise.allSettled([
-        BookDataLoader.load("books_with_library_data.json"),
-        BookDataLoader.load("ebooks_data.json")
-      ]);
-      const catalogs = loaded.filter(item => item.status === "fulfilled").map(item => item.value.data);
-      if (!catalogs.length) {
-        setStatus(ocrStatus, "認證書單讀取失敗，請確認資料來源設定。", "error");
+      const attempts = [
+        {
+          label: "Supabase books.json",
+          load: () => BookDataLoader.loadSupabase("books.json")
+        },
+        {
+          label: "Supabase books_with_library_data.json",
+          load: () => BookDataLoader.loadSupabase("books_with_library_data.json")
+        },
+        {
+          label: "本地 books_with_library_data.json",
+          load: () => BookDataLoader.loadLocal("books_with_library_data.json")
+        }
+      ];
+      let loaded = null;
+      for (const attempt of attempts) {
+        try {
+          loaded = await attempt.load();
+          break;
+        } catch (error) {
+          console.warn(`${attempt.label} 讀取失敗。`, error);
+        }
+      }
+      if (!loaded) {
+        setStatus(ocrStatus, "認證書單讀取失敗，請確認 Supabase 或本地 JSON。", "error");
         return;
       }
-      catalogBooks = BookOcrMatcher.mergeCatalogs(...catalogs);
+
+      const catalog = loaded.data.map(normalizeCatalogBook);
+      catalogBooks = BookOcrMatcher.mergeCatalogs(catalog);
       catalogCount.textContent = `可比對 ${catalogBooks.length} 筆認證書目`;
-      setStatus(ocrStatus, "認證書單已載入。", "");
+      const sourceLabel = loaded.source === "supabase" ? `Supabase：${loaded.fileName}` : `本地備援：${loaded.fileName}`;
+      setStatus(ocrStatus, `認證書單已載入（${sourceLabel}）。`, "");
       runOcrButton.disabled = !canvas.width;
     }
 

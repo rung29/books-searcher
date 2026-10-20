@@ -9,12 +9,10 @@
 | 下載最新推薦書單 | `crawler.py` | 無 | `books_page_*.html` |
 | 從完整推薦書單找出伸港有館藏的書 | `integrate.py` | `books_page_*.html` | `books_with_library_page_*.html`、`books_with_library_data.json`、`index.html` |
 | 更新既有書單目前的館藏狀態 | `recheck.py` | `books_with_library_page_*.html` | 更新後的館藏頁、JSON 與 `index.html` |
-| 不連線圖書館，只重新產生館藏查詢頁 | `library_output.py` | `books_with_library_page_*.html` | `books_with_library_data.json`、`index.html` |
 | 從完整推薦書單找有網路資源的電子書 | `ebook_finder.py` | `books_page_*.html` | `ebooks_data.json`、`ebooks_index.html` |
 | 用手機相機辨識書架並比對認證書單 | `ocr_index.html` | `books_with_library_data.json`、`ebooks_data.json` | 瀏覽器中的辨識結果，不寫回資料 |
 | 將兩份 JSON 更新到 Supabase | `supabase_upload.py` | 兩份本機 JSON 與 Supabase 設定 | 覆寫 Storage 資料並更新公開 URL 設定 |
 | 在本機瀏覽器即時搜尋與查館藏 | `web_app.py` | 無需先產生 HTML | Flask 網頁，不寫入靜態書單 |
-| 讓 Vercel 載入 Flask app | `api/index.py` | `web_app.py` | Vercel 入口，不需手動執行 |
 
 `*.bat` 是對應 Python 程式的 Windows 啟動捷徑；`integrate.sh`、`webapp.sh` 則可在 Git Bash 類環境使用。
 
@@ -34,7 +32,7 @@ crawler.py
 4. 執行 `supabase_upload.py`，把兩份 JSON 更新到 Supabase Storage。
 5. 確認靜態首頁後，再把需要的檔案部署到 GitHub Pages。
 
-`integrate.py` 已經會呼叫 `library_output.py` 的輸出功能，所以完整查詢後不必再執行一次 `library_output.py`。
+`integrate.py` 與 `recheck.py` 會自動使用 `library_output.py` 的內部共用功能產生館藏中間頁與 JSON；`library_output.py` 不再是需要單獨執行的流程。
 
 ### 只更新既有館藏狀態
 
@@ -46,15 +44,7 @@ crawler.py
 
 使用 `recheck.py` 即可，不必重新執行 `crawler.py` 或 `integrate.py`。它只重查上一次已收入的書，因此適合更新「在架／借出」狀態，但不會發現推薦書單中新增加的書，也不會重新檢查先前沒有館藏而被排除的書。
 
-### 只重建靜態查詢頁
-
-如果館藏資料沒有改變，只是調整了 `library_output.py` 的前端樣式、搜尋或分頁功能，執行：
-
-```bash
-.venv\Scripts\python.exe library_output.py
-```
-
-它只解析本機既有的 `books_with_library_page_*.html`，不會連線圖書館，因此速度最快。
+館藏首頁是資料驅動的靜態頁面，顯示內容由 `books_with_library_data.json` 載入。`library_output.py` 目前只保留為 `integrate.py`、`recheck.py` 與 `ebook_finder.py` 共用的內部模組，不需單獨執行。
 
 ### 只更新電子書清單
 
@@ -126,7 +116,7 @@ integrate.bat
 
 輸出：
 
-- `books_with_library_page_*.html`：保留查詢結果的本機中間頁，供 `recheck.py` 與 `library_output.py` 使用。
+- `books_with_library_page_*.html`：保留查詢結果的本機中間頁，供 `recheck.py` 更新館藏狀態使用。
 - `books_with_library_data.json`：館藏前端資料。
 - `index.html`：館藏搜尋首頁，支援適讀年級、相似書名群組、文字／萬用字元／多條件搜尋、語音輸入及分頁。切換年級時，書單與相似書名群組會一起重新篩選。
 
@@ -165,33 +155,7 @@ recheck.bat 中年級
 
 `recheck.py` 不會讀取完整的 `books_page_*.html`，所以執行速度通常比 `integrate.py` 快，但範圍只限既有館藏清單。
 
-### 4. `library_output.py`：由館藏中間頁重建前端
-
-使用時機：已經有正確的 `books_with_library_page_*.html`，只想重新整理 JSON、分頁及 `index.html`，不想再次查詢圖書館。
-
-執行專案根目錄的結果：
-
-```bash
-.venv\Scripts\python.exe library_output.py
-```
-
-指定其他結果目錄或首頁：
-
-```bash
-.venv\Scripts\python.exe library_output.py 中年級
-.venv\Scripts\python.exe library_output.py 中年級\index.html
-```
-
-Windows 捷徑：
-
-```bat
-library_output.bat
-library_output.bat 中年級
-```
-
-它會重新解析書名、作者、出版社、適讀年段、命中館藏、索書號與館藏狀態，並按照 `INTEGRATE_OUTPUT_PAGE_SIZE` 重建所有館藏分頁、`books_with_library_data.json` 與 `index.html`。
-
-### 5. `ebook_finder.py`：建立電子書資源清單
+### 4. `ebook_finder.py`：建立電子書資源清單
 
 使用時機：要從推薦書單找出圖書館搜尋結果中「網路資源」欄位有資料的書。
 
@@ -221,7 +185,7 @@ ebook_finder.bat
 
 此流程不依賴 `integrate.py` 或 `books_with_library_page_*.html`。首頁會優先讀取 Supabase 的 `ebooks_data.json`，失敗時才讀取 GitHub Pages 同目錄下的備援檔。
 
-### 6. `ocr_index.html`：用相機辨識書架
+### 5. `ocr_index.html`：用相機辨識書架
 
 使用時機：想快速確認書架上的書，哪些書名出現在目前的可認證書單中。
 
@@ -234,7 +198,7 @@ ebook_finder.bat
 
 此功能目前只比對 `books_with_library_data.json` 與 `ebooks_data.json` 中認證欄位為 `可認證` 的資料，不會修改 JSON。照片會直接送至 Google Gemini API，請勿拍攝個人或敏感資料；API Key 只儲存在瀏覽器 localStorage。GitHub Pages 必須使用 HTTPS；本機測試則需透過 localhost 開啟，直接用 `file://` 開啟通常無法取得相機權限。
 
-### 7. `supabase_upload.py`：更新遠端 JSON
+### 6. `supabase_upload.py`：更新遠端 JSON
 
 使用時機：`integrate.py`、`recheck.py` 或 `ebook_finder.py` 產生新資料後，要讓已部署的首頁直接取得新資料而不重新部署 GitHub Pages。
 
@@ -308,16 +272,16 @@ http://192.168.x.x:5000
 - 每次開啟新的結果頁或切換頁碼，都會向讀步彰化網站取得該頁書單。
 - 勾選館藏查詢時，瀏覽器會逐本呼叫本機 `/api/library-status` 即時查詢；已查結果會保存在瀏覽器本機快取，重設搜尋時才會清除。
 - 它不會更新 `books_page_*.html`、`books_with_library_data.json` 或 `ebooks_data.json`。
-- `api/index.py` 只是 Vercel 載入 `web_app.py` 的入口，不需要手動執行。
+- `web_app.py` 僅保留作為本機或同一區網的互動工具，目前不部署到雲端服務。
 
 ## 產出檔案與部署
 
 | 檔案 | 來源 | 用途 | 建議部署 |
 | --- | --- | --- | --- |
 | `books_page_*.html` | `crawler.py` | 完整推薦書單中間檔 | 否 |
-| `books_with_library_page_*.html` | `integrate.py`／`recheck.py`／`library_output.py` | 館藏重查與重建前端的中間檔 | 否 |
+| `books_with_library_page_*.html` | `integrate.py`／`recheck.py` | 館藏重查用的本機中間檔 | 否 |
 | `books_with_library_data.json` | 館藏輸出流程 | 館藏結構化資料 | 是 |
-| `index.html` | 館藏輸出流程 | GitHub Pages 首頁 | 是 |
+| `index.html` | 專案前端 | GitHub Pages 首頁，依 JSON 即時載入資料 | 是 |
 | `ebooks_data.json` | `ebook_finder.py` | 電子書結構化資料 | 是 |
 | `ebooks_index.html` | `ebook_finder.py` | 電子書查詢頁 | 是 |
 | `ocr_index.html` | 專案前端 | 相機 OCR 書架辨識頁 | 是 |
@@ -364,12 +328,12 @@ set INTEGRATE_PAGE_SLEEP_SECONDS=0.3
 
 若圖書館開始回應失敗、HTTP 500 或來源結構異常，應增加等待時間，不建議用大量並行請求。
 
-## 網頁版與雲端限制
+## 網頁版與部署限制
 
 - GitHub Pages 只能提供靜態檔案，不能執行 Flask、Python、驗證碼或即時館藏 API；適合部署產生好的 `index.html`、`ebooks_index.html` 與 JSON。
-- Vercel 可以載入 Flask app，但實測從 Vercel Function 連線 `library.toread.bocach.gov.tw` 會發生 `ConnectTimeout`，即使更換區域、延長逾時及降低並行數仍可能失敗。
+- 目前不部署 Flask 後端；`web_app.py`、`webapp.bat` 與 `webapp.sh` 僅供本機或同一區網測試使用。
 - GitHub Actions 適合測試或定期產生靜態結果，不適合作為需要驗證碼的互動式爬蟲。
-- 目前最穩定的方式仍是在本機執行命令列流程，或在本機／同一區網使用 `web_app.py`。
+- 目前最穩定的方式是在本機執行命令列流程，再將 JSON 與靜態前端部署到 GitHub Pages；資料更新則可透過 Supabase Storage。
 
 如果未來部署到 VPS 或其他後端主機，應先確認該主機可以連線：
 

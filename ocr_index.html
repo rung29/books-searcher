@@ -84,8 +84,11 @@
     .panel-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
     .camera-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(280px, .8fr); gap: 18px; align-items: start; }
     .camera-box { overflow: hidden; position: relative; min-height: 260px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 16px; background: #0b1715; }
-    #camera-video, #photo-canvas { display: block; width: 100%; height: auto; max-height: 68vh; object-fit: contain; }
-    #camera-video[hidden], #photo-canvas[hidden] { display: none; }
+    #camera-video { display: block; width: 100%; height: auto; max-height: 68vh; object-fit: contain; }
+    #camera-video[hidden], .photo-stage[hidden] { display: none; }
+    .photo-stage { position: relative; display: grid; width: 100%; place-items: center; }
+    .photo-stage canvas { grid-area: 1 / 1; display: block; width: auto; height: auto; max-width: 100%; max-height: 68vh; }
+    #detection-canvas { z-index: 1; pointer-events: none; }
     .camera-placeholder { padding: 42px 22px; color: #cfe2dc; text-align: center; line-height: 1.7; }
     .camera-placeholder[hidden] { display: none; }
     .camera-guide { position: absolute; inset: 20% 8%; z-index: 2; border: 2px solid rgba(250, 204, 21, .95); border-radius: 12px; pointer-events: none; box-shadow: 0 0 0 999px rgba(0, 0, 0, .18); }
@@ -185,7 +188,10 @@
         <div>
           <div class="camera-box">
             <video id="camera-video" autoplay playsinline muted hidden></video>
-            <canvas id="photo-canvas" hidden></canvas>
+            <div class="photo-stage" id="photo-stage" hidden>
+              <canvas id="photo-canvas"></canvas>
+              <canvas id="detection-canvas" aria-label="書背物件偵測框"></canvas>
+            </div>
             <div class="camera-guide" id="camera-guide" hidden></div>
             <div class="quality-indicator" id="quality-indicator" role="status" aria-live="polite">尚未開啟相機</div>
             <div class="camera-placeholder" id="camera-placeholder">按下「啟用相機」後，請將書背完整放入畫面。<br>建議一次拍攝 3 到 8 本、保持光線均勻。</div>
@@ -201,7 +207,7 @@
           </details>
         </div>
         <div>
-          <p class="hint">畫面提示是依文字大小、清晰度與光線估算，不代表固定公分距離。拍攝的照片會送至 Google Gemini，請勿拍攝包含個人或敏感資料的影像。</p>
+          <p class="hint">畫面提示是依文字大小、清晰度與光線估算，不代表固定公分距離。辨識後會以綠框標示命中書單、橘框標示未命中、紅框標示無法讀取。照片會送至 Google Gemini，請勿拍攝包含個人或敏感資料的影像。</p>
           <div class="status catalog-status" id="camera-status">等待啟用相機。</div>
           <div class="status catalog-status" id="ocr-status">認證書單載入中...</div>
           <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
@@ -255,10 +261,14 @@
   <script src="data_loader.js"></script>
   <script src="catalog_filters.js"></script>
   <script src="ocr_matcher.js"></script>
+  <script src="ocr_detection.js"></script>
   <script>
     const video = document.getElementById("camera-video");
+    const photoStage = document.getElementById("photo-stage");
     const canvas = document.getElementById("photo-canvas");
     const context = canvas.getContext("2d");
+    const detectionCanvas = document.getElementById("detection-canvas");
+    const detectionContext = detectionCanvas.getContext("2d");
     const placeholder = document.getElementById("camera-placeholder");
     const cameraGuide = document.getElementById("camera-guide");
     const qualityIndicator = document.getElementById("quality-indicator");
@@ -294,6 +304,40 @@
       "gemma-4-26b-a4b-it",
       "gemma-4-31b-it"
     ];
+    const DETECTION_RESPONSE_SCHEMA = {
+      type: "OBJECT",
+      properties: {
+        books: {
+          type: "ARRAY",
+          items: {
+            type: "OBJECT",
+            properties: {
+              box_2d: { type: "ARRAY", items: { type: "INTEGER" } }
+            },
+            required: ["box_2d"]
+          }
+        }
+      },
+      required: ["books"]
+    };
+    const RECOGNITION_RESPONSE_SCHEMA = {
+      type: "OBJECT",
+      properties: {
+        books: {
+          type: "ARRAY",
+          items: {
+            type: "OBJECT",
+            properties: {
+              id: { type: "INTEGER" },
+              title: { type: "STRING" },
+              confidence: { type: "NUMBER" }
+            },
+            required: ["id", "title", "confidence"]
+          }
+        }
+      },
+      required: ["books"]
+    };
     let cameraStream = null;
     let catalogBooks = [];
     let qualityTimer = null;
@@ -319,6 +363,120 @@
       currentQuality = { state, message };
       qualityIndicator.className = `quality-indicator ${state}`.trim();
       qualityIndicator.textContent = message;
+    }
+
+    function clearDetectionOverlay() {
+      detectionCanvas.width = canvas.width || 1;
+      detectionCanvas.height = canvas.height || 1;
+      detectionContext.clearRect(0, 0, detectionCanvas.width, detectionCanvas.height);
+    }
+
+    function resetRecognitionDisplay() {
+      clearDetectionOverlay();
+      progressBar.style.width = "0%";
+      recognizedText.textContent = "拍照後會顯示辨識出的書名。";
+      matchCount.textContent = "尚未辨識";
+      results.innerHTML = '<p class="empty">拍照並開始辨識後，結果會顯示在這裡。</p>';
+    }
+
+    function drawDetectionBoxes(detections, recognitions = [], matchedIds = new Set()) {
+      clearDetectionOverlay();
+      const recognitionById = new Map(recognitions.map(item => [item.id, item]));
+      const lineWidth = Math.max(4, Math.round(canvas.width / 360));
+      detectionContext.lineWidth = lineWidth;
+
+      detections.forEach(detection => {
+        const [ymin, xmin, ymax, xmax] = detection.box_2d;
+        const x = xmin / 1000 * canvas.width;
+        const y = ymin / 1000 * canvas.height;
+        const width = (xmax - xmin) / 1000 * canvas.width;
+        const height = (ymax - ymin) / 1000 * canvas.height;
+        const recognition = recognitionById.get(detection.id);
+        let color = "#38bdf8";
+        if (recognition) {
+          color = matchedIds.has(detection.id)
+            ? "#22c55e"
+            : recognition.title ? "#f59e0b" : "#ef4444";
+        }
+
+        detectionContext.strokeStyle = color;
+        detectionContext.fillStyle = `${color}22`;
+        detectionContext.fillRect(x, y, width, height);
+        detectionContext.strokeRect(x, y, width, height);
+      });
+    }
+
+    function cropRectangle(box) {
+      const [ymin, xmin, ymax, xmax] = box;
+      const left = xmin / 1000 * canvas.width;
+      const top = ymin / 1000 * canvas.height;
+      const width = (xmax - xmin) / 1000 * canvas.width;
+      const height = (ymax - ymin) / 1000 * canvas.height;
+      const horizontalPadding = Math.max(4, width * 0.08);
+      const verticalPadding = Math.max(4, height * 0.03);
+      const x = Math.max(0, left - horizontalPadding);
+      const y = Math.max(0, top - verticalPadding);
+      return {
+        x,
+        y,
+        width: Math.min(canvas.width - x, width + horizontalPadding * 2),
+        height: Math.min(canvas.height - y, height + verticalPadding * 2)
+      };
+    }
+
+    function createBookSpineContactSheet(detections) {
+      const count = detections.length;
+      const columns = count <= 4 ? count : count <= 9 ? 3 : 4;
+      const rows = Math.ceil(count / columns);
+      const tileWidth = 320;
+      const tileHeight = 600;
+      const labelHeight = 48;
+      const gap = 14;
+      const sheet = document.createElement("canvas");
+      sheet.width = columns * tileWidth + (columns + 1) * gap;
+      sheet.height = rows * tileHeight + (rows + 1) * gap;
+      const sheetContext = sheet.getContext("2d");
+      sheetContext.fillStyle = "#f8fafc";
+      sheetContext.fillRect(0, 0, sheet.width, sheet.height);
+      sheetContext.imageSmoothingEnabled = true;
+      sheetContext.imageSmoothingQuality = "high";
+
+      detections.forEach((detection, index) => {
+        const column = index % columns;
+        const row = Math.floor(index / columns);
+        const tileX = gap + column * tileWidth;
+        const tileY = gap + row * tileHeight;
+        const crop = cropRectangle(detection.box_2d);
+        const contentWidth = tileWidth - 20;
+        const contentHeight = tileHeight - labelHeight - 14;
+        const scale = Math.min(contentWidth / crop.width, contentHeight / crop.height);
+        const drawWidth = Math.max(1, crop.width * scale);
+        const drawHeight = Math.max(1, crop.height * scale);
+        const drawX = tileX + (tileWidth - drawWidth) / 2;
+        const drawY = tileY + labelHeight + (contentHeight - drawHeight) / 2;
+
+        sheetContext.fillStyle = "#ffffff";
+        sheetContext.fillRect(tileX, tileY, tileWidth, tileHeight);
+        sheetContext.drawImage(
+          canvas,
+          crop.x,
+          crop.y,
+          crop.width,
+          crop.height,
+          drawX,
+          drawY,
+          drawWidth,
+          drawHeight
+        );
+        sheetContext.strokeStyle = "#0f766e";
+        sheetContext.lineWidth = 3;
+        sheetContext.strokeRect(tileX, tileY, tileWidth, tileHeight);
+        sheetContext.fillStyle = "#0f172a";
+        sheetContext.font = "700 28px sans-serif";
+        sheetContext.fillText(`[${detection.id}]`, tileX + 12, tileY + 34);
+      });
+
+      return sheet;
     }
 
     function measureImageQuality(source) {
@@ -414,10 +572,11 @@
       canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
       canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
-      canvas.hidden = false;
+      photoStage.hidden = false;
       video.hidden = true;
       placeholder.hidden = true;
       cameraGuide.hidden = true;
+      resetRecognitionDisplay();
       evaluateCapturedImage();
       runOcrButton.disabled = catalogBooks.length === 0;
       retakeButton.disabled = false;
@@ -467,10 +626,11 @@
         });
         video.srcObject = cameraStream;
         video.hidden = false;
-        canvas.hidden = true;
+        photoStage.hidden = true;
         placeholder.hidden = true;
         cameraGuide.hidden = false;
         takePhotoButton.disabled = false;
+        resetRecognitionDisplay();
         setQualityState("idle", "正在分析畫面...");
         sampleCameraQuality();
         qualityTimer = setInterval(sampleCameraQuality, 350);
@@ -495,9 +655,10 @@
       canvas.width = Math.round(image.naturalWidth * scale);
       canvas.height = Math.round(image.naturalHeight * scale);
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      canvas.hidden = false;
+      photoStage.hidden = false;
       video.hidden = true;
       stopCamera();
+      resetRecognitionDisplay();
       evaluateCapturedImage();
       retakeButton.disabled = false;
       runOcrButton.disabled = catalogBooks.length === 0;
@@ -547,12 +708,50 @@
       settingsModal.classList.add("hidden");
     }
 
-    function cleanGeminiText(value) {
-      return String(value || "")
-        .split(/\r?\n/)
-        .map(line => line.replace(/^\s*(?:[-*•]|\d+[.)、])\s*/, "").trim())
-        .filter(Boolean)
-        .join("\n");
+    async function requestGeminiJson(apiKey, model, prompt, base64Image, responseSchema) {
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+      const sendRequest = includeSchema => fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{
+            parts: [
+              { text: prompt },
+              { inline_data: { mime_type: "image/jpeg", data: base64Image } }
+            ]
+          }],
+          generationConfig: includeSchema
+            ? {
+                temperature: 0.1,
+                responseMimeType: "application/json",
+                responseSchema
+              }
+            : { temperature: 0.1 }
+        })
+      });
+
+      let response = await sendRequest(true);
+      if (!response.ok) {
+        let errorData = await response.json().catch(() => ({}));
+        let message = errorData?.error?.message || `HTTP ${response.status}`;
+        const schemaUnsupported = response.status === 400
+          && /schema|response.?mime|structured|generation.?config|unknown name/i.test(message);
+        if (!schemaUnsupported) throw new Error(message);
+
+        response = await sendRequest(false);
+        if (!response.ok) {
+          errorData = await response.json().catch(() => ({}));
+          message = errorData?.error?.message || `HTTP ${response.status}`;
+          throw new Error(message);
+        }
+      }
+
+      const data = await response.json();
+      const text = (data.candidates?.[0]?.content?.parts || [])
+        .map(part => part.text || "")
+        .join("")
+        .trim();
+      return BookOcrDetection.parseGeminiJson(text);
     }
 
     async function runOcr() {
@@ -566,48 +765,68 @@
       runOcrButton.disabled = true;
       progressBar.style.width = "0%";
       const model = getGeminiModel();
-      setStatus(ocrStatus, `正在使用 ${model} 辨識照片中的書名...`, "");
+      setStatus(ocrStatus, `正在使用 ${model} 尋找照片中的書背...`, "");
       try {
-        const base64Image = canvas.toDataURL("image/jpeg", 0.85).split(",")[1];
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [{
-              parts: [
-                {
-                  text: `請辨識這張書架照片中所有可見的書背或書名文字。
-請遵守：
-1. 每本書只輸出一行書名，不要輸出作者、出版社、解說或序號。
-2. 保留書名中的中文、英文、數字及系列集數；如果只有系列名稱，也請輸出系列名稱。
-3. 不要猜測照片中看不到的文字；完全無法辨識時只回覆空字串。`
-                },
-                { inline_data: { mime_type: "image/jpeg", data: base64Image } }
-              ]
-            }]
-          })
-        });
-        progressBar.style.width = "70%";
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({}));
-          throw new Error(errorData?.error?.message || `HTTP ${response.status}`);
-        }
-        const data = await response.json();
-        const text = cleanGeminiText(data.candidates?.[0]?.content?.parts?.[0]?.text || "");
-        if (!text) {
-          recognizedText.textContent = "（沒有辨識到書名）";
+        clearDetectionOverlay();
+        const originalImage = canvas.toDataURL("image/jpeg", 0.9).split(",")[1];
+        const detectionPayload = await requestGeminiJson(
+          apiKey,
+          model,
+          `請偵測這張照片中每一本可見的書背或正面書封。
+每本書必須各自有一個緊貼書本邊界的 box_2d，格式為 [ymin, xmin, ymax, xmax]，所有座標正規化為 0 到 1000。
+不要框出書架、裝飾、空隙或多本書組成的大區域，最多回傳 12 本。
+只回傳 JSON：{"books":[{"box_2d":[0,0,1000,1000]}]}。`,
+          originalImage,
+          DETECTION_RESPONSE_SCHEMA
+        );
+        const detections = BookOcrDetection.normalizeDetections(detectionPayload, 12);
+        progressBar.style.width = "40%";
+        if (!detections.length) {
+          recognizedText.textContent = "（沒有偵測到獨立書背）";
           renderMatches([]);
-          setStatus(ocrStatus, "Gemini 沒有辨識到書名，請重新拍攝或調整角度。", "warning");
+          setStatus(ocrStatus, "Gemini 沒有偵測到獨立書背，請靠近書架或調整拍攝角度。", "warning");
           return;
         }
-        const lines = BookOcrMatcher.extractLines({ text });
+
+        drawDetectionBoxes(detections);
+        setStatus(ocrStatus, `已找到 ${detections.length} 本書，正在放大書背辨識書名...`, "");
+        const contactSheet = createBookSpineContactSheet(detections);
+        const contactSheetImage = contactSheet.toDataURL("image/jpeg", 0.92).split(",")[1];
+        const recognitionPayload = await requestGeminiJson(
+          apiKey,
+          model,
+          `這張圖片是由多張書背裁圖組成，每格上方有 [ID] 編號。
+請辨識每一格中實際可見的完整書名，保留中文、英文、數字、標點與系列集數，不要輸出作者、出版社或自行猜測看不到的文字。
+每個 ID 都必須回傳一次；無法確定書名時 title 使用空字串。confidence 使用 0 到 1。
+只回傳 JSON：{"books":[{"id":1,"title":"書名","confidence":0.9}]}。`,
+          contactSheetImage,
+          RECOGNITION_RESPONSE_SCHEMA
+        );
+        progressBar.style.width = "82%";
+        const recognitions = BookOcrDetection.normalizeRecognitions(recognitionPayload, detections);
+        const lines = recognitions
+          .filter(item => item.title)
+          .map(item => ({
+            id: item.id,
+            index: item.id - 1,
+            text: item.title,
+            bbox: item.box_2d
+          }));
         const matches = BookOcrMatcher.findMatches(lines, catalogBooks);
-        recognizedText.textContent = text;
+        const matchedIds = new Set(matches.flatMap(match => match.lines.map(line => line.id)));
+        drawDetectionBoxes(detections, recognitions, matchedIds);
+        recognizedText.textContent = recognitions
+          .map(item => `[${item.id}] ${item.title || "（無法辨識）"}`)
+          .join("\n");
         renderMatches(matches);
         progressBar.style.width = "100%";
-        setStatus(ocrStatus, `辨識完成，共取得 ${lines.length} 行書名。`, "");
+        setStatus(
+          ocrStatus,
+          `辨識完成：偵測 ${detections.length} 本、讀出 ${lines.length} 個書名、命中 ${matches.length} 本認證書。`,
+          lines.length ? "" : "warning"
+        );
       } catch (error) {
-        console.error("Gemini OCR error", error);
+        console.error("Gemini detection/OCR error", error);
         progressBar.style.width = "0%";
         if (/API key|API_KEY_INVALID|401|403/i.test(error.message)) {
           setStatus(ocrStatus, "Gemini API 金鑰無效或沒有權限，請重新設定。", "error");

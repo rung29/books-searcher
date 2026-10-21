@@ -193,8 +193,8 @@ ebook_finder.bat
 
 1. 從 `index.html` 或 `ebooks_index.html` 開啟「書架辨識」。
 2. 允許瀏覽器使用手機後鏡頭，將書背放入畫面後按「拍照」；若瀏覽器不支援即時相機，可展開備援選項使用手機相機拍攝。
-3. 按「開始辨識」，頁面會呼叫 Gemini 辨識繁體中文書名，再將結果與認證書單比對。Gemini 模型預設為 `gemini-2.5-flash`，可在右上角設定視窗切換 `gemini-3.8-flash`、`gemini-3.6-flash`、`gemini-2.5-flash-lite`、`gemini-3.5-flash-lite`、`gemini-3.1-flash-lite`、`gemma-4-26b-a4b-it` 或 `gemma-4-31b-it`。
-4. 結果區會列出辨識到的書名、適讀年級、認證狀態與書目連結。
+3. 按「開始辨識」後，頁面會先呼叫 Gemini 偵測每本書的位置，再從未加框的原圖裁切書背、組成編號拼圖進行第二次書名辨識。Gemini 模型預設為 `gemini-2.5-flash`，可在右上角設定視窗切換 `gemini-3.8-flash`、`gemini-3.6-flash`、`gemini-2.5-flash-lite`、`gemini-3.5-flash-lite`、`gemini-3.1-flash-lite`、`gemma-4-26b-a4b-it` 或 `gemma-4-31b-it`。
+4. 原圖上的綠框代表命中認證書單、橘框代表讀到書名但未命中、紅框代表無法讀取；結果區會另外列出辨識到的書名、適讀年級、認證狀態與書目連結。
 
 此功能只比對認證書單，不會讀取 `ebooks_data.json`。書單載入順序是：Supabase 的 `books.json`、Supabase 的 `books_with_library_data.json`，最後才是 GitHub Pages 同目錄的 `books_with_library_data.json`。`books.json` 的 `age_group`、`link`、`certified` 欄位會轉換成比對器使用的適讀年段、書目連結與認證狀態，不會修改 JSON。照片會直接送至 Google Gemini API，請勿拍攝個人或敏感資料；API Key 與模型選擇只儲存在瀏覽器 localStorage。GitHub Pages 必須使用 HTTPS；本機測試則需透過 localhost 開啟，直接用 `file://` 開啟通常無法取得相機權限。
 
@@ -286,6 +286,7 @@ http://192.168.x.x:5000
 | `ebooks_index.html` | `ebook_finder.py` | 電子書查詢頁 | 是 |
 | `ocr_index.html` | 專案前端 | 相機 OCR 書架辨識頁 | 是 |
 | `ocr_matcher.js` | 專案前端 | OCR 文字與認證書單比對 | 是 |
+| `ocr_detection.js` | 專案前端 | Gemini 物件框與二次辨識 JSON 正規化 | 是 |
 | `data_source_config.js` | `supabase_upload.py`／手動設定 | Supabase 公開資料位置 | 是 |
 | `data_loader.js` | 專案資源 | Supabase 優先與 GitHub 備援載入 | 是 |
 | `catalog_filters.js` | 專案資源 | 兩個首頁共用的適讀年級篩選與相似書名分組 | 是 |
@@ -349,4 +350,5 @@ https://library.toread.bocach.gov.tw
 .venv\Scripts\python.exe -m unittest test_integrate.py test_recheck.py test_ebook_finder.py test_supabase_upload.py
 node --test test_catalog_filters.js
 node --test test_ocr_matcher.js
+node --test test_ocr_detection.js
 ```
